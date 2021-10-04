@@ -1,0 +1,72 @@
+// Color Palette
+$red: #EB5757;
+$danger: red;
+$black: #1F1F1F;
+$orange: #F2994A;
+$yellow: #F2C94C;
+$white: #fff;
+
+// Grays
+$gray-1: #333333;
+$gray-2: #4F4F4F;
+$gray-3: #3f3c41;
+$gray-4: #BDBDBD;
+$gray-5: #E0E0E0;
+$gray-6: #F2F2F2;
+
+// Greens
+$green-1: #219653;
+$green-2: #27AE60;
+
+// Bootrap Override Colors
+$primary: $red;
+$secondary: $orange;
+$light: $gray-5;
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  // "success":    $success,
+  // "info":       $info,
+  // "warning":    $warning,
+  // "danger":     $danger,
+  "light":      $light,
+  // "dark":       $dark
+);
+
+$colors-list: (
+  red: $red,
+  orange: $orange,
+  danger: $danger,
+  black: $black,
+  white: $white,
+  yellow: $yellow,
+  gray-1: $gray-1,
+  gray-2: $gray-2,
+  gray-3: $gray-3,
+  gray-4: $gray-4,
+  gray-5: $gray-5,
+  gray-6: $gray-6,
+  green-1: $green-1,
+  green-2: $green-2,
+  primary: $primary,
+  secondary: $secondary,
+);
+
+@each $name,
+$value in $colors-list {
+
+  // Text Color
+  .txt-#{'' + $name} {
+    color: $value !important;
+  }
+
+  // BG Color
+  .bg-#{'' + $name} {
+    background-color: $value !important;
+  }
+
+  // Border Color
+  .border-#{'' + $name} {
+    border: 1px solid $value !important;
+  }
+}

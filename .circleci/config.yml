@@ -1,0 +1,25 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+jobs:
+  build-and-test:
+    working_directory: ~/angular-circleci-surge
+    docker:
+      - image: circleci/node:12-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: angular-circleci-surge-{{ .Branch }}-{{ checksum "package-lock.json"}}
+      - run: npm install
+      - save_cache:
+          key: angular-circleci-surge-{{ .Branch }}-{{ checksum "package-lock.json"}}
+          paths:
+            - "nodes_modules"
+      - run: npm run test -- --no-watch --no-progress
+      - run: npm run cypress:cli
+      - run: npm run build
+
+workflows:
+    build-and-test:
+      jobs:
+        - build-and-test

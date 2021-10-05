@@ -15,7 +15,7 @@ const appReducer = createReducer(
     ...state,
     myState: payload
   }))
-)
+);
 
 export  function  reducer(state: AppState | undefined, action: Action) {
   return appReducer(state, action);
@@ -26,4 +26,4 @@ export const selectAppState = createFeatureSelector<AppState>('app');
 export const selectMyState = createSelector(
   selectAppState,
   (state: AppState) => state.myState
-)
+);

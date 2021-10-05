@@ -21,7 +21,7 @@ describe('example to-do app', () => {
   })
 
   it('displays two todo items by default', () => {
-    cy.get('.toolbar').should('exist');
+    cy.get('.toolbar').should('not.exist');
   })
 
 })

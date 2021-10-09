@@ -4,12 +4,8 @@ import Button from './button.component';
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
+  title: 'Components/Button',
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 } as Meta;
 
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
@@ -20,7 +16,6 @@ const Template: Story<Button> = (args: Button) => ({
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/angular/writing-stories/args
 Primary.args = {
-  primary: true,
   label: 'Button',
 };
 
@@ -37,6 +32,6 @@ Large.args = {
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 'small',
+  size: 'large',
   label: 'Button',
 };

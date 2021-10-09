@@ -6,41 +6,21 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./button.scss'],
 })
 export default class ButtonComponent {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  @Input()
-  primary = false;
+  @Input() type?: 'primary' | 'secondary' | 'success' = 'primary';
+  @Input() size?: 'medium' | 'large' = 'large';
+  @Input() label = 'Button';
+  @Input() isOutline = false;
+  @Input() hasShadow = false;
+  @Input() isDisabled = false;
 
-  /**
-   * What background color to use
-   */
-  @Input()
-  backgroundColor?: string;
-
-  /**
-   * How large should the button be?
-   */
-  @Input()
-  size: 'small' | 'medium' | 'large' = 'medium';
-
-  /**
-   * Button contents
-   *
-   * @required
-   */
-  @Input()
-  label = 'Button';
-
-  /**
-   * Optional click handler
-   */
-  @Output()
-  onClick = new EventEmitter<Event>();
+  @Output() onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
-    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-
-    return ['storybook-button', `storybook-button--${this.size}`, mode];
+    const btnType = !this.isDisabled? this.type : 'light';
+    const classes = ['btn', `btn-${this.isOutline? 'outline-' : ''}${btnType}`];
+    if (this.hasShadow) {
+      classes.push('btn-shadow');
+    }
+    return classes;
   }
 }

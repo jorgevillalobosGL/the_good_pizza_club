@@ -1,25 +1,16 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import Button from './button.component';
+import Chip from './chip.component';
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Button',
-  component: Button,
+  title: 'Components/Chip',
+  component: Chip,
 } as Meta;
 
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
-const Template: Story<Button> = (args: Button) => ({
+const Template: Story<Chip> = (args: Chip) => ({
   props: args,
 });
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/angular/writing-stories/args
-Primary.args = {
-  label: 'CUSTOMIZE YOUR OWN',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'CUSTOMIZE YOUR OWN',
-};

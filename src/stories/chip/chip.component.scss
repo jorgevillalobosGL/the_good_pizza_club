@@ -1,0 +1,30 @@
+@import '../../assets/scss/colors';
+
+.badge {
+  color: $white;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 8px 18px;
+  line-height: 21px;
+  font-style: normal;
+  text-align: center;
+  align-items: center;
+  border-radius: 20px;
+  letter-spacing: 0em;
+  justify-content: center;
+  font-family: 'Red Hat Display';
+
+  &-primary {
+    background-color: $green-2;
+  }
+
+  &-secondary {
+    background-color: $gray-2;
+  }
+
+  img {
+    bottom: 1px;
+    cursor: pointer;
+    margin-left: 18px;
+  }
+}

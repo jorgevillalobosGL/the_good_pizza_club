@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'storybook-button',
+  selector: 'sb-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.scss'],
 })

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-icon-button',
+  selector: 'sb-icon-button',
   templateUrl: './icon-button.component.html',
   styleUrls: ['./icon-button.component.scss']
 })

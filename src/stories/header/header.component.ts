@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'storybook-header',
+  selector: 'sb-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.scss'],
 })

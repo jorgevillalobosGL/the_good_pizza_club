@@ -15,6 +15,11 @@ const Template: Story<IconButton> = (args: IconButton) => ({
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/angular/writing-stories/args
-// Primary.args = {
-//   label: 'Button',
-// };
+Primary.args = {
+  label: 'ADD TO CART',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  label: 'ADD TO CART',
+};

@@ -1,16 +1,17 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'storybook-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.scss'],
+  selector: 'app-icon-button',
+  templateUrl: './icon-button.component.html',
+  styleUrls: ['./icon-button.component.scss']
 })
-export default class ButtonComponent {
+export default class IconButtonComponent {
   @Input() type?: 'primary' | 'secondary' | 'success' = 'primary';
   @Input() label = 'Button';
   @Input() isOutline = false;
   @Input() hasShadow = false;
   @Input() isDisabled = false;
+  @Input() showIcon = false;
 
   @Output() onClick = new EventEmitter<Event>();
 
@@ -22,4 +23,6 @@ export default class ButtonComponent {
     }
     return classes;
   }
+
+  constructor() { }
 }

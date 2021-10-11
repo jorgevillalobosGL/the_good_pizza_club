@@ -1,0 +1,39 @@
+@import '../../assets/scss/colors';
+
+.btn {
+  left: 80px;
+  padding: 15.5px 46px;
+  font-size: 20px;
+  margin: 0px 10px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+  font-style: normal;
+  align-items: center;
+  font-family: Rowdies;
+  border-radius: 200px;
+  justify-content: center;
+
+  &-primary,
+  &-secondary {
+    color: $gray-6;
+  }
+
+  &-light {
+    opacity: 1;
+    color: $gray-4;
+    .icon {
+      filter: grayscale(100%);
+    }
+  }
+
+  &-shadow {
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  .icon {
+      top: 2px;
+      position: relative;
+      padding-right: 10px;
+    }
+}

@@ -173,7 +173,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../assets/scss/colors';\n\n.btn {\n  top: 20px;\n  left: 20px;\n  // width: 604px;\n  // height: 117px;\n  padding: 40px;\n  display: flex;\n  font-size: 30px;\n  line-height: 37px;\n  position: absolute;\n  text-align: center;\n  font-style: normal;\n  flex-direction: row;\n  align-items: center;\n  font-family: Rowdies;\n  border-radius: 200px;\n  justify-content: center;\n  &-primary,\n  &-secondary {\n    color: $gray-6;\n  }\n  &-light {\n    opacity: 1;\n    color: $gray-4;\n  }\n  &-shadow {\n    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);\n  }\n}\n",
+                    "data": "@import '../../assets/scss/colors';\n\n.btn {\n  top: 20px;\n  left: 20px;\n  padding: 40px;\n  font-size: 30px;\n  line-height: 37px;\n  text-align: center;\n  font-style: normal;\n  align-items: center;\n  font-family: Rowdies;\n  border-radius: 200px;\n  justify-content: center;\n  &-primary,\n  &-secondary {\n    color: $gray-6;\n  }\n  &-light {\n    opacity: 1;\n    color: $gray-4;\n  }\n  &-shadow {\n    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);\n  }\n}\n",
                     "styleUrl": "./button.scss"
                 }
             ],
@@ -264,6 +264,131 @@
             ],
             "stylesData": "",
             "templateData": "<header>\n  <div class=\"wrapper\">\n  </div>\n</header>"
+        },
+        {
+            "name": "IconButtonComponent",
+            "id": "component-IconButtonComponent-73242896cd9074e53e1984f02ceffab4",
+            "file": "src/stories/icon-button/icon-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-icon-button",
+            "styleUrls": [
+                "./icon-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./icon-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "hasShadow",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean"
+                },
+                {
+                    "name": "isDisabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean"
+                },
+                {
+                    "name": "isOutline",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean"
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
+                    "name": "showIcon",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean"
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'large'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "\"medium\" | \"large\""
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "\"primary\" | \"secondary\" | \"success\""
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-icon-button',\n  templateUrl: './icon-button.component.html',\n  styleUrls: ['./icon-button.component.scss']\n})\nexport default class IconButtonComponent {\n  @Input() type?: 'primary' | 'secondary' | 'success' = 'primary';\n  @Input() size?: 'medium' | 'large' = 'large';\n  @Input() label = 'Button';\n  @Input() isOutline = false;\n  @Input() hasShadow = false;\n  @Input() isDisabled = false;\n  @Input() showIcon = false;\n\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const btnType = !this.isDisabled? this.type : 'light';\n    const classes = ['btn', `btn-${this.isOutline? 'outline-' : ''}${btnType}`];\n    if (this.hasShadow) {\n      classes.push('btn-shadow');\n    }\n    return classes;\n  }\n\n  constructor() { }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../assets/scss/colors';\n\n.btn {\n  left: 80px;\n  padding: 15.5px 46px;\n  font-size: 20px;\n  margin: 0px 10px;\n  font-weight: 400;\n  line-height: 25px;\n  text-align: center;\n  font-style: normal;\n  align-items: center;\n  font-family: Rowdies;\n  border-radius: 200px;\n  justify-content: center;\n\n  &-primary,\n  &-secondary {\n    color: $gray-6;\n  }\n\n  &-light {\n    opacity: 1;\n    color: $gray-4;\n    .icon {\n      filter: grayscale(100%);\n    }\n  }\n\n  &-shadow {\n    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);\n  }\n}\n",
+                    "styleUrl": "./icon-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 26
+            },
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 19
+                    }
+                }
+            },
+            "templateData": "<button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\" [disabled]=\"isDisabled\">\n    <img class=\"icon\" src=\"/assets/images/pizza-icon.svg\" />\n    {{ label }}\n</button>"
         }
     ],
     "modules": [
@@ -502,6 +627,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -579,6 +714,16 @@
                 "deprecationMessage": "",
                 "type": "Story<Header>",
                 "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<IconButton>",
+                "defaultValue": "(args: IconButton) => ({\n  props: args,\n})"
             }
         ],
         "functions": [
@@ -826,6 +971,28 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "createAction(\n  Types.MY_ACTION,\n  props<{ payload: string }>()\n)"
+                }
+            ],
+            "src/stories/icon-button/icon-button.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<IconButton>",
+                    "defaultValue": "(args: IconButton) => ({\n  props: args,\n})"
                 }
             ],
             "src/shared/shared.module.ts": [
@@ -1125,6 +1292,35 @@
             },
             {
                 "filePath": "src/stories/header/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/icon-button/icon-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/icon-button/icon-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/icon-button/icon-button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

@@ -185,7 +185,7 @@
         },
         {
             "name": "ChipComponent",
-            "id": "component-ChipComponent-99b233d3805e3508374fc6c31d44d25a",
+            "id": "component-ChipComponent-ff8a8499cb1d4d09c992a666a0e357c9",
             "file": "src/stories/chip/chip.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -238,7 +238,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'sb-chip',\n  templateUrl: './chip.component.html',\n  styleUrls: ['./chip.component.scss']\n})\nexport default class ChipComponent {\n  @Input() label = 'text';\n  @Input() type?: 'primary' | 'secondary' = 'primary';\n  @Output() onClick = new EventEmitter<Event>();\n  \n  public get classes(): string[] {\n    const classes = ['badge', `badge-${this.type}`];\n    return classes;\n  }\n \n  constructor() { }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'sb-chip',\n  templateUrl: './chip.component.html',\n  styleUrls: ['./chip.component.scss']\n})\nexport default class ChipComponent {\n  @Input() label = 'text';\n  @Input() type?: 'primary' | 'secondary' = 'primary';\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const classes = ['badge', `badge-${this.type}`];\n    return classes;\n  }\n\n  constructor() { }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -270,7 +270,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-28f607650febf61729c90a19295bc75d",
+            "id": "component-HeaderComponent-5999dfbf6d17fc42a5ac6dac24a8b9e9",
             "file": "src/stories/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -322,7 +322,21 @@
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "menuItems",
+                    "defaultValue": "[\n    {\n      name: \"Menu\",\n      url: \"\",\n    },\n    {\n      name: \"About Us\",\n      url: \"\",\n    },\n    {\n      name: \"Contact\",\n      url: \"\",\n    },\n    {\n      name: \"Login / Sign up\",\n      url: \"\",\n    },\n    {\n      name: \"Help\",\n      url: \"\",\n    },\n    {\n      name: \"🛒\",\n      url: \"\",\n    }\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -331,16 +345,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'sb-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.scss'],\n})\nexport default class HeaderComponent {\n  @Input() user: unknown = null;\n\n  @Output() onLogin = new EventEmitter<Event>();\n  @Output() onLogout = new EventEmitter<Event>();\n  @Output() onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: \"sb-header\",\n  templateUrl: \"./header.component.html\",\n  styleUrls: [\"./header.scss\"],\n})\nexport default class HeaderComponent {\n  @Input() user: unknown = null;\n\n  @Output() onLogin = new EventEmitter<Event>();\n  @Output() onLogout = new EventEmitter<Event>();\n  @Output() onCreateAccount = new EventEmitter<Event>();\n\n  public menuItems = [\n    {\n      name: \"Menu\",\n      url: \"\",\n    },\n    {\n      name: \"About Us\",\n      url: \"\",\n    },\n    {\n      name: \"Contact\",\n      url: \"\",\n    },\n    {\n      name: \"Login / Sign up\",\n      url: \"\",\n    },\n    {\n      name: \"Help\",\n      url: \"\",\n    },\n    {\n      name: \"🛒\",\n      url: \"\",\n    }\n  ];\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n",
+                    "data": "@import '../../assets/scss/colors';\n\n.sb-nav-item {\n  a {\n    order: 0;\n    color: $gray-6;\n    font-size: 24px;\n    font-weight: 300;\n    margin: 0px 10px;\n    position: static;\n    font-style: normal;\n    line-height: 30px;\n    text-align: center;\n    font-family: Rowdies;\n  }\n\n  .nav-link { \n    &.active, &:hover{\n      color: $gray-4; \n    }\n  }\n}",
                     "styleUrl": "./header.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<header>\n  <div class=\"wrapper\">\n  </div>\n</header>"
+            "templateData": "<header>\n  <nav class=\"navbar navbar-expand-lg navbar-light\">\n    <div class=\"container-fluid\">\n      <div class=\"collapse navbar-collapse\" id=\"navbarText\">\n        <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">\n          <li *ngFor=\"let menuItem of menuItems\" class=\"nav-item sb-nav-item\">\n            <a class=\"nav-link active\" [routerLink]=\"['/users']\">{{ menuItem.name }}</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</header>"
         },
         {
             "name": "IconButtonComponent",
@@ -433,7 +447,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../assets/scss/colors';\n\n.btn {\n  left: 80px;\n  padding: 15.5px 46px;\n  font-size: 20px;\n  margin: 0px 10px;\n  font-weight: 400;\n  line-height: 25px;\n  text-align: center;\n  font-style: normal;\n  align-items: center;\n  font-family: Rowdies;\n  border-radius: 200px;\n  justify-content: center;\n\n  &-primary,\n  &-secondary {\n    color: $gray-6;\n  }\n\n  &-light {\n    opacity: 1;\n    color: $gray-4;\n    .icon {\n      filter: grayscale(100%);\n    }\n  }\n\n  &-shadow {\n    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);\n  }\n\n  .icon {\n      top: 2px;\n      position: relative;\n      padding-right: 10px;\n    }\n}\n",
+                    "data": "@import '../../assets/scss/colors';\n\n.btn {\n  left: 80px;\n  padding: 15.5px 46px;\n  font-size: 20px;\n  margin: 0px 10px;\n  font-weight: 400;\n  line-height: 25px;\n  text-align: center;\n  font-style: normal;\n  align-items: center;\n  font-family: Rowdies;\n  border-radius: 200px;\n  justify-content: center;\n\n  &-primary,\n  &-secondary {\n    color: $gray-6;\n  }\n\n  &-light {\n    opacity: 1;\n    color: $gray-4;\n    .icon {\n      filter: grayscale(100%);\n    }\n  }\n\n  &-shadow {\n    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);\n  }\n\n  .icon {\n      bottom: 2px;\n      position: relative;\n      padding-right: 10px;\n    }\n}\n",
                     "styleUrl": "./icon-button.component.scss"
                 }
             ],
@@ -679,7 +693,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icon-button/icon-button.stories.ts",
+                "file": "src/stories/chip/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -699,7 +713,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/chip/chip.stories.ts",
+                "file": "src/stories/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -718,7 +732,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icon-button/icon-button.stories.ts",
+                "file": "src/stories/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -728,7 +742,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
+                "file": "src/stories/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -768,21 +782,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/header/header.stories.ts",
+                "file": "src/stories/chip/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                "type": "Story<Chip>",
+                "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/icon-button/icon-button.stories.ts",
+                "file": "src/stories/header/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<IconButton>",
-                "defaultValue": "(args: IconButton) => ({\n  props: args,\n})"
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -798,11 +812,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/chip/chip.stories.ts",
+                "file": "src/stories/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Chip>",
-                "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
+                "type": "Story<IconButton>",
+                "defaultValue": "(args: IconButton) => ({\n  props: args,\n})"
             }
         ],
         "functions": [
@@ -1000,22 +1014,12 @@
                     "defaultValue": "createAction(\n  Types.MY_ACTION,\n  props<{ payload: string }>()\n)"
                 }
             ],
-            "src/stories/icon-button/icon-button.stories.ts": [
+            "src/stories/chip/chip.stories.ts": [
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/icon-button/icon-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/icon-button/icon-button.stories.ts",
+                    "file": "src/stories/chip/chip.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -1025,11 +1029,11 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/icon-button/icon-button.stories.ts",
+                    "file": "src/stories/chip/chip.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<IconButton>",
-                    "defaultValue": "(args: IconButton) => ({\n  props: args,\n})"
+                    "type": "Story<Chip>",
+                    "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/button/button.stories.ts": [
@@ -1064,12 +1068,22 @@
                     "defaultValue": "(args: Button) => ({\n  props: args,\n})"
                 }
             ],
-            "src/stories/chip/chip.stories.ts": [
+            "src/stories/icon-button/icon-button.stories.ts": [
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/chip/chip.stories.ts",
+                    "file": "src/stories/icon-button/icon-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/icon-button/icon-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -1079,11 +1093,11 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/chip/chip.stories.ts",
+                    "file": "src/stories/icon-button/icon-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<Chip>",
-                    "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
+                    "type": "Story<IconButton>",
+                    "defaultValue": "(args: IconButton) => ({\n  props: args,\n})"
                 }
             ],
             "src/shared/shared.module.ts": [
@@ -1367,7 +1381,7 @@
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {

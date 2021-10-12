@@ -1,9 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: "sb-header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.scss"],
+  selector: 'sb-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.scss'],
 })
 export default class HeaderComponent {
   @Input() user: unknown = null;
@@ -14,28 +14,29 @@ export default class HeaderComponent {
 
   public menuItems = [
     {
-      name: "Menu",
-      url: "/",
+      name: 'Menu',
+      url: '/',
     },
     {
-      name: "About Us",
-      url: "about-us",
+      name: 'About Us',
+      url: 'about-us',
     },
     {
-      name: "Contact",
-      url: "/contact",
+      name: 'Contact',
+      url: '/contact',
     },
     {
-      name: "Login / Sign up",
-      url: "/login",
+      name: 'Login / Sign up',
+      url: '/login',
     },
     {
-      name: "Help",
-      url: "/help",
+      name: 'Help',
+      url: '/help',
     },
     {
-      name: "🛒",
-      url: "/shopping",
+      name: '',
+      url: '/shopping',
+      icon: 'icon-shopping'
     }
   ];
 }

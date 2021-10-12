@@ -8,19 +8,18 @@
       order: 0;
       margin: 0px;
       padding: 0px;
-      color: $gray-6;
       font-size: 24px;
       font-weight: 300;
       position: static;
-      font-style: normal;
       line-height: 30px;
+      font-style: normal;
       text-align: center;
-      font-family: Rowdies;
       padding-right: 90px;
+      font-family: Rowdies;
     }
 
-    .nav-link {
-
+    .nav-link, .icon {
+       color: $gray-6;
       &.active,
       &:hover {
         color: $gray-4;

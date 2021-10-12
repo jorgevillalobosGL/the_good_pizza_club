@@ -5,6 +5,7 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 
 import Button from '../button/button.component';
 import Header from './header.component';
+import {RouterModule} from '@angular/router';
 
 export default {
   title: 'Components/Header',
@@ -12,7 +13,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [Button],
-      imports: [CommonModule],
+      imports: [CommonModule, RouterModule],
     }),
   ],
 } as Meta;

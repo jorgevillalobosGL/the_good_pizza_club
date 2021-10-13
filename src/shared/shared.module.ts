@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 
 // Stories
 import Button from '../stories/button/button.component';
+import Dropdown from '../stories/dropdown/dropdown.component';
 
 const STORIES = [
-  Button
+  Button,
+  Dropdown
 ];
 
 @NgModule({

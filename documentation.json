@@ -23,6 +23,47 @@
             "indexSignatures": [],
             "kind": 164,
             "methods": []
+        },
+        {
+            "name": "DropdownValue",
+            "id": "interface-DropdownValue-ab80daad96e631394117b3ad3e36da9d",
+            "file": "src/stories/dropdown/dropdown.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\ninterface DropdownValue {\n  value: string | number;\n  text?: string;\n  disabled?: boolean;\n}\n\n@Component({\n  selector: 'sb-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss']\n})\nexport default class DropdownComponent {\n  @Input() dropdownValues: DropdownValue[] = [];\n  @Input() label = 'Select an Item';\n  @Output() itemSelected = new EventEmitter<DropdownValue>();\n  onItemClick(value: DropdownValue) {\n    this.itemSelected.emit(value);\n  }\n  constructor() { }\n}\n",
+            "properties": [
+                {
+                    "name": "disabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | number",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 164,
+            "methods": []
         }
     ],
     "injectables": [],
@@ -33,7 +74,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-400b91bd951934802b610ce883083e93",
+            "id": "component-AppComponent-22d480c01325f62b77147cffd41c55a8",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -53,6 +94,19 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "dropdownValues",
+                    "defaultValue": "[\n    {\n      value: \"1\",\n      text: \"Item One\",\n      disabled: true,\n    },\n    {\n      value: \"2\",\n      text: \"Item Two\"\n    },\n    {\n      value: \"3\",\n      text: \"Item Three\"\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
                     "name": "title",
                     "defaultValue": "'theGoodPizzaClub'",
                     "deprecated": false,
@@ -63,7 +117,36 @@
                     "line": 9
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "onItemSelected",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -71,7 +154,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'theGoodPizzaClub';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'theGoodPizzaClub';\n  public dropdownValues: any[] = [\n    {\n      value: \"1\",\n      text: \"Item One\",\n      disabled: true,\n    },\n    {\n      value: \"2\",\n      text: \"Item Two\"\n    },\n    {\n      value: \"3\",\n      text: \"Item Three\"\n    },\n  ];\n\n  onItemSelected(item: any) {\n    console.log(item);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -80,7 +163,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<router-outlet></router-outlet>\n<div class=\"container p-3 bg-black\">\n  <button type=\"button\" class=\"btn btn-primary mr-2\">Primary</button>\n  <button type=\"button\" class=\"btn btn-secondary txt-gray-6 mr-2\">Secondary</button>\n  <button type=\"button\" class=\"btn bg-green-1 txt-gray-6 mr-2\">Green</button>\n  <button type=\"button\" class=\"btn btn-light txt-gray-4 mr-2\">Light</button>\n  <br><br>\n  <button type=\"button\" class=\"btn btn-outline-primary mr-2\">Primary</button>\n  <button type=\"button\" class=\"btn btn-outline-secondary mr-2\">Secondary</button>\n  <button type=\"button\" class=\"btn btn-outline-light mr-2\">Light</button>\n  <h3 class=\"txt-primary pt-1\">Primary Text</h3>\n  <h3 class=\"txt-secondary pt-1\">Secondary Text</h3>\n  <h3 class=\"txt-yellow pt-1\">Title Text</h3>\n  <h3 class=\"txt-white pt-1\">Title Text Secondary</h3>\n  <hr>\n  <h4 class=\"txt-green-1 pt-1\">From StoryBook:</h4>\n  <sb-button type=\"primary\" label=\"CUSTUMIZE YOUR OWN\"></sb-button>\n  <i class=\"icon-lock txt-green-1\"></i>\n</div>\n"
+            "templateData": "<router-outlet></router-outlet>\n<div class=\"container p-3 bg-black\">\n  <button type=\"button\" class=\"btn btn-primary mr-2\">Primary</button>\n  <button type=\"button\" class=\"btn btn-secondary txt-gray-6 mr-2\">Secondary</button>\n  <button type=\"button\" class=\"btn bg-green-1 txt-gray-6 mr-2\">Green</button>\n  <button type=\"button\" class=\"btn btn-light txt-gray-4 mr-2\">Light</button>\n  <br><br>\n  <button type=\"button\" class=\"btn btn-outline-primary mr-2\">Primary</button>\n  <button type=\"button\" class=\"btn btn-outline-secondary mr-2\">Secondary</button>\n  <button type=\"button\" class=\"btn btn-outline-light mr-2\">Light</button>\n  <h3 class=\"txt-primary pt-1\">Primary Text</h3>\n  <h3 class=\"txt-secondary pt-1\">Secondary Text</h3>\n  <h3 class=\"txt-yellow pt-1\">Title Text</h3>\n  <h3 class=\"txt-white pt-1\">Title Text Secondary</h3>\n  <hr>\n  <h4 class=\"txt-green-1 pt-1\">From StoryBook:</h4>\n  <sb-button type=\"primary\" label=\"CUSTUMIZE YOUR OWN\"></sb-button>\n  <i class=\"icon-lock txt-green-1\"></i>\n  <span class=\"icon-lock txt-green-1\"></span>\n</div>\n<sb-dropdown [dropdownValues]=\"dropdownValues\" (itemSelected)=\"onItemSelected($event)\"></sb-dropdown>\n"
         },
         {
             "name": "ButtonComponent",
@@ -269,6 +352,109 @@
             "templateData": "<span [ngClass]=\"classes\">\n  {{ label }}\n  <img class=\"icon\" src=\"/assets/images/x-icon.svg\" (click)=\"onClick.emit($event)\" />\n</span>"
         },
         {
+            "name": "DropdownComponent",
+            "id": "component-DropdownComponent-ab80daad96e631394117b3ad3e36da9d",
+            "file": "src/stories/dropdown/dropdown.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sb-dropdown",
+            "styleUrls": [
+                "./dropdown.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dropdown.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "dropdownValues",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "DropdownValue[]"
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Select an Item'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "itemSelected",
+                    "defaultValue": "new EventEmitter<DropdownValue>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onItemClick",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "DropdownValue",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "DropdownValue",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\ninterface DropdownValue {\n  value: string | number;\n  text?: string;\n  disabled?: boolean;\n}\n\n@Component({\n  selector: 'sb-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss']\n})\nexport default class DropdownComponent {\n  @Input() dropdownValues: DropdownValue[] = [];\n  @Input() label = 'Select an Item';\n  @Output() itemSelected = new EventEmitter<DropdownValue>();\n  onItemClick(value: DropdownValue) {\n    this.itemSelected.emit(value);\n  }\n  constructor() { }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../assets/scss/colors';\n\n.dropdown {\n  list-style-type: none;\n  &.show .dropdown-toggle::before {\n      transform:rotate(180deg);\n    }\n\n  &-toggle {\n    text-decoration: none;\n    margin-left: 5px;\n    background: $gray-2;\n    padding: 25px;\n    border-radius: 10px;\n    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);\n    color: $white;\n    font-family: 'Red Hat Display';\n    font-style: normal;\n    font-weight: normal;\n    font-size: 20px;\n    line-height: 26px;\n    min-width: 230px;\n    display: inline-block;\n\n    &::after {\n      display: none;\n    }\n\n    &::before {\n      font-size: 30px;\n      float: right;\n    }\n  }\n\n  &-menu {\n    background: $gray-2;\n    min-width: 230px;\n    margin:0px;\n    top: -10px !important;\n    .dropdown-item.disabled {\n      color: $gray-3;\n    }\n    .dropdown-item {\n      color: $white;\n      font-family: 'Red Hat Display';\n      font-style: normal;\n      font-weight: normal;\n      font-size: 20px;\n      line-height: 26px;\n    }\n    .dropdown-item:hover {\n      background-color: $green-2;\n      border-radius: 50px;\n      text-decoration: none;\n    }\n  }\n}",
+                    "styleUrl": "./dropdown.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 20
+            },
+            "templateData": "<li class=\"dropdown\">\n  <a class=\"dropdown-toggle icon-menu-arrow\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\"\n    aria-expanded=\"false\">{{label}}</a>\n  <div class=\"dropdown-menu\">\n    <a \n      *ngFor=\"let dropdownValue of dropdownValues\"\n      [ngClass]=\"{'disabled': dropdownValue.disabled}\"\n      (click)=\"onItemClick(dropdownValue)\"\n      class=\"dropdown-item\">\n      {{dropdownValue.text || dropdownValue.value}}\n    </a> \n  </div>\n</li>"
+        },
+        {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-ca96c306c1ae76ce7bb812cbcdffdbe0",
             "file": "src/stories/header/header.component.ts",
@@ -349,12 +535,12 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../assets/scss/colors';\n\n.nav-containter {\n  padding: 30px 37.5px;\n\n  .sb-nav-item {\n    a {\n      order: 0;\n      margin: 0px;\n      padding: 0px;\n      color: $gray-6;\n      font-size: 24px;\n      font-weight: 300;\n      position: static;\n      font-style: normal;\n      line-height: 30px;\n      text-align: center;\n      font-family: Rowdies;\n      padding-right: 90px;\n    }\n\n    .nav-link {\n\n      &.active,\n      &:hover {\n        color: $gray-4;\n      }\n    }\n  }\n}",
+                    "data": "@import '../../assets/scss/colors';\n\n.nav-containter {\n  padding: 30px 37.5px;\n\n  .sb-nav-item {\n    a {\n      order: 0;\n      margin: 0px;\n      padding: 0px;\n      font-size: 24px;\n      font-weight: 300;\n      position: static;\n      line-height: 30px;\n      font-style: normal;\n      text-align: center;\n      padding-right: 90px;\n      font-family: Rowdies;\n    }\n\n    .nav-link, .icon {\n       color: $gray-6;\n      &.active,\n      &:hover {\n        color: $gray-4;\n      }\n    }\n  }\n}",
                     "styleUrl": "./header.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<header>\n  <nav class=\"navbar navbar-expand-lg navbar-light\">\n    <div class=\"container-fluid\">\n      <div class=\"collapse navbar-collapse nav-containter\" id=\"navbarText\">\n        <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">\n          <li *ngFor=\"let menuItem of menuItems\" class=\"nav-item sb-nav-item\">\n            <a class=\"nav-link\" [href]=\"menuItem.url\">\n              {{ menuItem.name }} <span class=\"icon-shoppings\"></span>\n            </a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</header>"
+            "templateData": "<header>\n  <nav class=\"navbar navbar-expand-lg navbar-light\">\n    <div class=\"container-fluid\">\n      <div class=\"collapse navbar-collapse nav-containter\" id=\"navbarText\">\n        <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">\n          <li *ngFor=\"let menuItem of menuItems\" class=\"nav-item sb-nav-item\">\n            <a class=\"nav-link\" [href]=\"menuItem.url\">\n              {{ menuItem.name }} <span *ngIf=\"menuItem.icon\" class=\"icon\" [ngClass]=\"menuItem.icon\"></span>\n            </a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</header>"
         },
         {
             "name": "IconButtonComponent",
@@ -477,13 +663,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-b181016d57b5ec3474881c53983690bc",
+            "id": "module-AppModule-52ee8b3ff243162ccd1b1eedd774a2a2",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { StoreModule } from '@ngrx/store';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { StoreDevtoolsModule } from '@ngrx/store-devtools';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\n\nimport { reducer } from './store/app.reducer';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './app-routing.module';\nimport { environment } from '../environments/environment';\n\n// Share\nimport { SharedModule } from '../shared/shared.module';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    SharedModule,\n    BrowserModule,\n    AppRoutingModule,\n    BrowserAnimationsModule,\n    StoreModule.forRoot({app: reducer}),\n    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { StoreModule } from '@ngrx/store';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { StoreDevtoolsModule } from '@ngrx/store-devtools';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\n\nimport { reducer } from './store/app.reducer';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './app-routing.module';\nimport { environment } from '../environments/environment';\n\n// Share\nimport { SharedModule } from '../shared/shared.module';\nimport { BsDropdownModule } from 'ngx-bootstrap/dropdown';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    SharedModule,\n    BrowserModule,\n    BsDropdownModule.forRoot(),\n    AppRoutingModule,\n    BrowserAnimationsModule,\n    StoreModule.forRoot({app: reducer}),\n    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -564,13 +750,13 @@
         },
         {
             "name": "SharedModule",
-            "id": "module-SharedModule-051d4198d261cdf7612081fc213f9f70",
+            "id": "module-SharedModule-8e5c677f7d9a6100af36e63f3e68c774",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/shared/shared.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n// Stories\nimport Button from '../stories/button/button.component';\n\nconst STORIES = [\n  Button\n];\n\n@NgModule({\n  imports: [\n    CommonModule\n  ],\n  declarations: [...STORIES],\n  exports: [...STORIES]\n})\nexport class SharedModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n// Stories\nimport Button from '../stories/button/button.component';\nimport Dropdown from '../stories/dropdown/dropdown.component';\n\nconst STORIES = [\n  Button,\n  Dropdown\n];\n\n@NgModule({\n  imports: [\n    CommonModule\n  ],\n  declarations: [...STORIES],\n  exports: [...STORIES]\n})\nexport class SharedModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -581,6 +767,9 @@
                     "elements": [
                         {
                             "name": "Button"
+                        },
+                        {
+                            "name": "Dropdown"
                         }
                     ]
                 },
@@ -593,6 +782,9 @@
                     "elements": [
                         {
                             "name": "Button"
+                        },
+                        {
+                            "name": "Dropdown"
                         }
                     ]
                 },
@@ -693,7 +885,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
+                "file": "src/stories/chip/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -703,7 +895,17 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/chip/chip.stories.ts",
+                "file": "src/stories/dropdown/dropdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -776,17 +978,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n  Button\n]"
+                "defaultValue": "[\n  Button,\n  Dropdown\n]"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
+                "file": "src/stories/chip/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                "type": "Story<Chip>",
+                "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/dropdown/dropdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Dropdown>",
+                "defaultValue": "(args: Dropdown) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -802,11 +1014,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/chip/chip.stories.ts",
+                "file": "src/stories/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Chip>",
-                "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1014,6 +1226,50 @@
                     "defaultValue": "createAction(\n  Types.MY_ACTION,\n  props<{ payload: string }>()\n)"
                 }
             ],
+            "src/stories/chip/chip.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Chip>",
+                    "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/dropdown/dropdown.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/dropdown/dropdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/dropdown/dropdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Dropdown>",
+                    "defaultValue": "(args: Dropdown) => ({\n  props: args,\n})"
+                }
+            ],
             "src/stories/button/button.stories.ts": [
                 {
                     "name": "Primary",
@@ -1044,28 +1300,6 @@
                     "deprecationMessage": "",
                     "type": "Story<Button>",
                     "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/stories/chip/chip.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/chip/chip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/chip/chip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Chip>",
-                    "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/icon-button/icon-button.stories.ts": [
@@ -1109,7 +1343,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n  Button\n]"
+                    "defaultValue": "[\n  Button,\n  Dropdown\n]"
                 }
             ]
         },
@@ -1205,7 +1439,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -1367,6 +1601,44 @@
             },
             {
                 "filePath": "src/stories/chip/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/dropdown/dropdown.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DropdownComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/dropdown/dropdown.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "DropdownValue",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/dropdown/dropdown.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/dropdown/dropdown.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

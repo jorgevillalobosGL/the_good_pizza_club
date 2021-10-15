@@ -30,7 +30,7 @@
         "@angular-eslint/use-pipe-transform-interface": "off",
         "@angular-eslint/component-class-suffix": "off",
         "@angular-eslint/directive-class-suffix": "off",
-        "max-len": ["error", { "code": 140 }],
+        "max-len": ["error", { "code": 140, "ignoreRegExpLiterals": true }],
         "spaced-comment": ["error", "always", { "exceptions": ["-", "+"] }],
         "semi": ["error", "always"],
         "no-trailing-spaces": [

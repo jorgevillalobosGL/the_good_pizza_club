@@ -5,7 +5,7 @@ jobs:
   build-and-test:
     working_directory: ~/angular-circleci-surge
     docker:
-      - image: circleci/node:12-browsers
+      - image: circleci/node:10.14-browsers
     steps:
       - checkout
       - restore_cache:

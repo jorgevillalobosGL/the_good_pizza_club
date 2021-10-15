@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 // Stories
 import Button from '../stories/button/button.component';
 import Dropdown from '../stories/dropdown/dropdown.component';
+import TextInput from '../stories/text-input/text-input.component';
 
 const STORIES = [
   Button,
-  Dropdown
+  Dropdown,
+  TextInput
 ];
 
 @NgModule({

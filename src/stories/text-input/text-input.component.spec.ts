@@ -39,12 +39,12 @@ describe('Text-Input Story', () => {
       app.inputErrors$.pipe(
         take(1)
       ).subscribe(
-        result => { 
+        result => {
           expect(result?.hasErrors).toBeTruthy();
           expect(result.message).toEqual('Please enter a valid email address.');
           done();
         }
-      )
+      );
       app.keyStreem$.next('email');
     });
   });

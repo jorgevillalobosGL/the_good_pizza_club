@@ -661,7 +661,7 @@
         },
         {
             "name": "TextInputComponent",
-            "id": "component-TextInputComponent-83499505dfae3975c864d2e4e1ab9dfa",
+            "id": "component-TextInputComponent-a19afae65dbe0d3a0a2a80ec5a1d8979",
             "file": "src/stories/text-input/text-input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -683,7 +683,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 24,
                     "type": "boolean"
                 },
                 {
@@ -691,14 +691,14 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "string"
                 },
                 {
                     "name": "state",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 26,
                     "type": ""
                 },
                 {
@@ -706,7 +706,7 @@
                     "defaultValue": "'text'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 25,
                     "type": "\"text\" | \"password\" | \"email\""
                 }
             ],
@@ -714,6 +714,7 @@
             "propertiesClass": [
                 {
                     "name": "_state",
+                    "defaultValue": "'success'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
@@ -793,7 +794,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
+                        121
                     ]
                 },
                 {
@@ -845,7 +846,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { Observable, of, Subject } from 'rxjs';\nimport { debounceTime, switchMap, tap } from 'rxjs/operators';\n\nconst EmailRegExp = /^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$/;\nconst PasswordHasSpacesRegExp = /^(.*\\s+.*)+$/;\nconst PasswordLength = /^[\\p{Z}\\s]*(?:[^\\p{Z}\\s][\\p{Z}\\s]*){7,}$/;\nconst PasswordHasNumber = /\\d/;\nconst PasswordHasUppercase = /^(.*[A-Z]+.*)+$/;\nconst EmailErrorMessage = 'Please enter a valid email address.';\nconst IncludeSpacesErrorMessage = 'Passwords can’t contain spaces.';\nconst HasIndicatedLengthErrorMessage = 'Must be at least 7 characters long.';\nconst IncludeNumbersErrorMessage = 'Must include a number.';\nconst IncludeUpperLetterMessage = 'Must include at least one upper lettter case.'\n\n@Component({\n  selector: 'sb-text-input',\n  templateUrl: './text-input.component.html',\n  styleUrls: ['./text-input.component.scss'],\n})\nexport default class TextInputComponent implements OnInit {\n  @Input() placeholder: string = '';\n  @Input() disabled: boolean = false;\n  @Input() type: 'text' | 'password' | 'email' = 'text';\n  @Input() set state(state: 'success' | 'danger') {\n    this._state = state || 'success';\n    console.log('_state->', this._state);\n  }\n\n  public _state: string;\n  public keyStreem$: Subject<string> = new Subject();\n  public inputErrors$: Observable<any> = new Observable();\n\n  get classes() {\n    return [`type-${this.type}`, `state-${this._state}`];\n  }\n\n  get iconClass() {\n    let icon;\n    switch (this.type) {\n      case 'password':\n        icon = 'icon-lock';\n        break;\n      case 'email':\n        icon = 'icon-mail';\n        break;\n      default:\n        icon = '';\n        break;\n    }\n    return [icon];\n  }\n\n  public onKey(algo: KeyboardEvent): void {\n    this.keyStreem$.next((algo.target as HTMLInputElement).value);\n  }\n\n  public inputErrorsSubscription(): void {\n    this.inputErrors$ = this.keyStreem$.pipe(\n      debounceTime(500),\n      switchMap((text) => {\n        if (this.type === 'email') {\n          return of({\n            hasErrors: !EmailRegExp.test(String(text).toLowerCase()),\n            message: EmailErrorMessage,\n          });\n        } else if (this.type === 'password') {\n          return of(this.checkPassword(text));\n        }\n        return of({ hasErrors: false });\n      }),\n      tap(inputError => {\n          this._state = inputError.hasErrors ? 'danger' : 'success';\n      })\n    );\n  }\n\n  private checkPassword(password: string) {\n    const includeSpaces = PasswordHasSpacesRegExp.test(password);\n    const hasIndicatedLength = PasswordLength.test(password);\n    const includeNumbers = PasswordHasNumber.test(password);\n    const includeUpperLetter = PasswordHasUppercase.test(password);\n\n    return {\n      hasErrors:\n        includeSpaces ||\n        !hasIndicatedLength ||\n        !includeNumbers ||\n        !includeUpperLetter,\n      message: `${includeSpaces ? IncludeSpacesErrorMessage : ''} \n                ${!hasIndicatedLength ? HasIndicatedLengthErrorMessage : ''}\n                ${!includeNumbers ? IncludeNumbersErrorMessage : ''}\n                ${!includeUpperLetter ? IncludeUpperLetterMessage : ''}\n                Password doesn’t match.`,\n    };\n  }\n\n  ngOnInit(): void {\n    this.inputErrorsSubscription();\n  }\n\n  constructor() {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { Observable, of, Subject } from 'rxjs';\nimport { debounceTime, switchMap, tap } from 'rxjs/operators';\n\nconst EmailRegExp =\n/^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$/;\nconst PasswordHasSpacesRegExp = /^(.*\\s+.*)+$/;\nconst PasswordLength = /^[\\p{Z}\\s]*(?:[^\\p{Z}\\s][\\p{Z}\\s]*){7,}$/;\nconst PasswordHasNumber = /\\d/;\nconst PasswordHasUppercase = /^(.*[A-Z]+.*)+$/;\nconst EmailErrorMessage = 'Please enter a valid email address.';\nconst IncludeSpacesErrorMessage = 'Can’t contain spaces.';\nconst HasIndicatedLengthErrorMessage = 'Must be at least 7 characters long.';\nconst IncludeNumbersErrorMessage = 'Must include a number.';\nconst IncludeUpperLetterMessage = 'Must include at least one upper lettter case.';\n\n@Component({\n  selector: 'sb-text-input',\n  templateUrl: './text-input.component.html',\n  styleUrls: ['./text-input.component.scss'],\n})\nexport default class TextInputComponent implements OnInit {\n  @Input() placeholder: string = '';\n  @Input() disabled: boolean = false;\n  @Input() type: 'text' | 'password' | 'email' = 'text';\n  @Input() set state(state: 'success' | 'danger') {\n    this._state = state || 'success';\n  }\n\n  public _state= 'success';\n  public keyStreem$: Subject<string> = new Subject();\n  public inputErrors$: Observable<any> = new Observable();\n\n  get classes() {\n    return [`type-${this.type}`, `state-${this._state}`];\n  }\n\n  get iconClass() {\n    let icon;\n    switch (this.type) {\n    case 'password':\n      icon = 'icon-lock';\n      break;\n    case 'email':\n      icon = 'icon-mail';\n      break;\n    default:\n      icon = '';\n      break;\n    }\n    return [icon];\n  }\n\n  public onKey(algo: KeyboardEvent): void {\n    this.keyStreem$.next((algo.target as HTMLInputElement).value);\n  }\n\n  private inputErrorsSubscription(): void {\n    this.inputErrors$ = this.keyStreem$.pipe(\n      debounceTime(500),\n      switchMap((text) => {\n        if (this.type === 'email') {\n          return of({\n            hasErrors: !EmailRegExp.test(String(text).toLowerCase()),\n            message: EmailErrorMessage,\n          });\n        } else if (this.type === 'password') {\n          return of(this.checkPassword(text));\n        }\n        return of({ hasErrors: false });\n      }),\n      tap(inputError => {\n        this._state = inputError.hasErrors ? 'danger' : 'success';\n      })\n    );\n  }\n\n  private checkPassword(password: string) {\n    const includeSpaces = PasswordHasSpacesRegExp.test(password);\n    const hasIndicatedLength = PasswordLength.test(password);\n    const includeNumbers = PasswordHasNumber.test(password);\n    const includeUpperLetter = PasswordHasUppercase.test(password);\n\n    return {\n      hasErrors:\n        includeSpaces ||\n        !hasIndicatedLength ||\n        !includeNumbers ||\n        !includeUpperLetter,\n      message: `Password ${includeSpaces ? IncludeSpacesErrorMessage : ''} \n                ${!hasIndicatedLength ? HasIndicatedLengthErrorMessage : ''}\n                ${!includeNumbers ? IncludeNumbersErrorMessage : ''}\n                ${!includeUpperLetter ? IncludeUpperLetterMessage : ''}\n                Password doesn’t match.`,\n    };\n  }\n\n  ngOnInit(): void {\n    this.inputErrorsSubscription();\n  }\n\n  constructor() {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -882,7 +883,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 25,
+                        "line": 26,
                         "jsdoctags": [
                             {
                                 "name": "state",
@@ -915,7 +916,7 @@
                     }
                 }
             },
-            "templateData": "<br><br>\n<div class=\"input-icons\">\n  <i class=\"icon\" [ngClass]=\"iconClass\" *ngIf=\"type === 'email' || type === 'password'\"></i>\n  <input\n    class=\"input-field\" \n    [type]=\"type\" \n    [placeholder]=\"placeholder\" \n    [ngClass]=\"classes\" \n    (keyup)=\"onKey($event)\"\n    [disabled]=\"disabled\">\n  <ng-container *ngIf=\"(inputErrors$ | async) as inputErrors\">\n    <p *ngIf=\"inputErrors.hasErrors\" class=\"txt-red py-2 px-4\">{{inputErrors.message}}</p>\n  </ng-container>\n</div>"
+            "templateData": "<div class=\"input-icons\">\n  <i class=\"icon\" [ngClass]=\"iconClass\" *ngIf=\"type === 'email' || type === 'password'\"></i>\n  <input\n    class=\"input-field\" \n    [type]=\"type\" \n    [placeholder]=\"placeholder\" \n    [ngClass]=\"classes\" \n    (keyup)=\"onKey($event)\"\n    [disabled]=\"disabled\">\n  <ng-container *ngIf=\"(inputErrors$ | async) as inputErrors\">\n    <p *ngIf=\"inputErrors.hasErrors\" class=\"txt-red py-2 px-4\">{{inputErrors.message}}</p>\n  </ng-container>\n</div>"
         }
     ],
     "modules": [
@@ -1173,7 +1174,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
-                "defaultValue": "'Passwords can’t contain spaces.'"
+                "defaultValue": "'Can’t contain spaces.'"
             },
             {
                 "name": "IncludeUpperLetterMessage",
@@ -1279,6 +1280,16 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1300,16 +1311,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/dropdown/dropdown.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/chip/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1398,21 +1399,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/button/button.stories.ts",
+                "file": "src/stories/chip/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                "type": "Story<Chip>",
+                "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/header/header.stories.ts",
+                "file": "src/stories/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1428,6 +1429,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/text-input/text-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<TextInput>",
+                "defaultValue": "(args: TextInput) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/dropdown/dropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1438,21 +1449,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/chip/chip.stories.ts",
+                "file": "src/stories/header/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Chip>",
-                "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/text-input/text-input.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<TextInput>",
-                "defaultValue": "(args: TextInput) => ({\n  props: args,\n})"
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
             },
             {
                 "name": "Text",
@@ -1463,15 +1464,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
-            },
-            {
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/text-input/text-input.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "useArgTypes()"
             }
         ],
         "functions": [
@@ -1671,15 +1663,6 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
-                },
-                {
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/text-input/text-input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "useArgTypes()"
                 }
             ],
             "src/stories/text-input/text-input.component.ts": [
@@ -1731,7 +1714,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
-                    "defaultValue": "'Passwords can’t contain spaces.'"
+                    "defaultValue": "'Can’t contain spaces.'"
                 },
                 {
                     "name": "IncludeUpperLetterMessage",
@@ -1852,6 +1835,28 @@
                     "defaultValue": "createAction(\n  Types.MY_ACTION,\n  props<{ payload: string }>()\n)"
                 }
             ],
+            "src/stories/chip/chip.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Chip>",
+                    "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
+                }
+            ],
             "src/stories/button/button.stories.ts": [
                 {
                     "name": "Primary",
@@ -1936,28 +1941,6 @@
                     "deprecationMessage": "",
                     "type": "Story<Dropdown>",
                     "defaultValue": "(args: Dropdown) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/stories/chip/chip.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/chip/chip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/chip/chip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Chip>",
-                    "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
                 }
             ],
             "src/shared/shared.module.ts": [
@@ -2526,15 +2509,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Text",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/text-input/text-input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

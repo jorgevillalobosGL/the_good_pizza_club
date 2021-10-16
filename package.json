@@ -11,7 +11,7 @@
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
     "cypress:run": "cypress run",
-    "cypress:cli": "start-server-and-test start http://localhost:3000 cypress:run",
+    "cypress:cli": "start-server-and-test start http://localhost:4200 cypress:run",
     "lint": "ng lint"
   },
   "private": true,

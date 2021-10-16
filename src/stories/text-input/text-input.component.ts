@@ -9,7 +9,7 @@ const PasswordLength = /^[\p{Z}\s]*(?:[^\p{Z}\s][\p{Z}\s]*){7,}$/;
 const PasswordHasNumber = /\d/;
 const PasswordHasUppercase = /^(.*[A-Z]+.*)+$/;
 const EmailErrorMessage = 'Please enter a valid email address.';
-const IncludeSpacesErrorMessage = 'Passwords can’t contain spaces.';
+const IncludeSpacesErrorMessage = 'Can’t contain spaces.';
 const HasIndicatedLengthErrorMessage = 'Must be at least 7 characters long.';
 const IncludeNumbersErrorMessage = 'Must include a number.';
 const IncludeUpperLetterMessage = 'Must include at least one upper lettter case.';
@@ -25,10 +25,9 @@ export default class TextInputComponent implements OnInit {
   @Input() type: 'text' | 'password' | 'email' = 'text';
   @Input() set state(state: 'success' | 'danger') {
     this._state = state || 'success';
-    console.log('_state->', this._state);
   }
 
-  public _state: string;
+  public _state= 'success';
   public keyStreem$: Subject<string> = new Subject();
   public inputErrors$: Observable<any> = new Observable();
 
@@ -88,7 +87,7 @@ export default class TextInputComponent implements OnInit {
         !hasIndicatedLength ||
         !includeNumbers ||
         !includeUpperLetter,
-      message: `${includeSpaces ? IncludeSpacesErrorMessage : ''} 
+      message: `Password ${includeSpaces ? IncludeSpacesErrorMessage : ''} 
                 ${!hasIndicatedLength ? HasIndicatedLengthErrorMessage : ''}
                 ${!includeNumbers ? IncludeNumbersErrorMessage : ''}
                 ${!includeUpperLetter ? IncludeUpperLetterMessage : ''}

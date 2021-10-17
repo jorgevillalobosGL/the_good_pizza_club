@@ -22,9 +22,14 @@
     background-color: $gray-2;
   }
 
-  img {
-    bottom: 1px;
+  .icon {
+    color: $white;
     cursor: pointer;
-    margin-left: 18px;
+    font-size: 10px;
+    display: contents;
+    list-style-type: none;
+    &::before {
+      margin-left: 15px;
+    }
   }
 }

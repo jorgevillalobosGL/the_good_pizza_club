@@ -14,26 +14,29 @@
   border-radius: 200px;
   justify-content: center;
 
+  .icon {
+      top: 1px;
+      color: $yellow;
+      display: inline;
+      list-style-type: none;
+      &::before {
+        margin-right: 8px;
+      }
+    }
+
   &-primary,
   &-secondary {
     color: $gray-6;
   }
 
-  &-light {
+  &-outline-light, &-light {
     opacity: 1;
-    color: $gray-4;
-    .icon {
-      filter: grayscale(100%);
+    &, .icon {
+      color: $gray-4 !important;
     }
   }
 
   &-shadow {
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
   }
-
-  .icon {
-      bottom: 2px;
-      position: relative;
-      padding-right: 10px;
-    }
 }

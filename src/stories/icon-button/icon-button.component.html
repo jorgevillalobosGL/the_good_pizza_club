@@ -2,6 +2,6 @@
     type="button"
     (click)="onClick.emit($event)"
     [ngClass]="classes" [disabled]="isDisabled">
-    <img class="icon" src="/assets/images/pizza-icon.svg" *ngIf="showIcon" />
+    <li *ngIf="showIcon" class="icon icon-pizza"></li>
     {{ label }}
 </button>

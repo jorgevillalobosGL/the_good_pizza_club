@@ -15,9 +15,5 @@ export default class ChipComponent {
     return classes;
   }
 
-  public onCrossClick(event: PointerEvent) {
-    this.onClick.emit(event);
-  }
-
   constructor() { }
 }

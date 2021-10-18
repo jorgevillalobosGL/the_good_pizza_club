@@ -163,7 +163,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<router-outlet></router-outlet>\n<div class=\"container p-3 bg-black\">\n  <button type=\"button\" class=\"btn btn-primary mr-2\">Primary</button>\n  <button type=\"button\" class=\"btn btn-secondary txt-gray-6 mr-2\">Secondary</button>\n  <button type=\"button\" class=\"btn bg-green-1 txt-gray-6 mr-2\">Green</button>\n  <button type=\"button\" class=\"btn btn-light txt-gray-4 mr-2\">Light</button>\n  <br><br>\n  <button type=\"button\" class=\"btn btn-outline-primary mr-2\">Primary</button>\n  <button type=\"button\" class=\"btn btn-outline-secondary mr-2\">Secondary</button>\n  <button type=\"button\" class=\"btn btn-outline-light mr-2\">Light</button>\n  <h3 class=\"txt-primary pt-1\">Primary Text</h3>\n  <h3 class=\"txt-secondary pt-1\">Secondary Text</h3>\n  <h3 class=\"txt-yellow pt-1\">Title Text</h3>\n  <h3 class=\"txt-white pt-1\">Title Text Secondary</h3>\n  <hr>\n  <h4 class=\"txt-green-1 pt-1\">From StoryBook:</h4>\n  <sb-button type=\"primary\" label=\"CUSTUMIZE YOUR OWN\"></sb-button>\n  <i class=\"icon-lock txt-green-1\"></i>\n  <span class=\"icon-lock txt-green-1\"></span>\n</div>\n<sb-dropdown [dropdownValues]=\"dropdownValues\" (itemSelected)=\"onItemSelected($event)\"></sb-dropdown>\n<sb-text-input state='success'></sb-text-input>\n"
+            "templateData": "<router-outlet></router-outlet>\n<div class=\"container p-3 bg-black\">\n  <button type=\"button\" class=\"btn btn-primary mr-2\">Primary</button>\n  <button type=\"button\" class=\"btn btn-secondary txt-gray-6 mr-2\">Secondary</button>\n  <button type=\"button\" class=\"btn bg-green-1 txt-gray-6 mr-2\">Green</button>\n  <button type=\"button\" class=\"btn btn-light txt-gray-4 mr-2\">Light</button>\n  <br><br>\n  <button type=\"button\" class=\"btn btn-outline-primary mr-2\">Primary</button>\n  <button type=\"button\" class=\"btn btn-outline-secondary mr-2\">Secondary</button>\n  <button type=\"button\" class=\"btn btn-outline-light mr-2\">Light</button>\n  <h3 class=\"txt-primary pt-1\">Primary Text</h3>\n  <h3 class=\"txt-secondary pt-1\">Secondary Text</h3>\n  <h3 class=\"txt-yellow pt-1\">Title Text</h3>\n  <h3 class=\"txt-white pt-1\">Title Text Secondary</h3>\n  <hr>\n  <h4 class=\"txt-green-1 pt-1\">From StoryBook:</h4>\n  <sb-button type=\"primary\" label=\"CUSTUMIZE YOUR OWN\"></sb-button>\n  <i class=\"icon-lock txt-green-1\"></i>\n  <span class=\"icon-lock txt-green-1\"></span>\n</div>\n<sb-dropdown [dropdownValues]=\"dropdownValues\" (itemSelected)=\"onItemSelected($event)\"></sb-dropdown>\n<sb-text-input state='success'></sb-text-input>\n<sb-pizza-menu-card></sb-pizza-menu-card>\n"
         },
         {
             "name": "ButtonComponent",
@@ -248,7 +248,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../assets/scss/colors';\n\n.btn {\n  top: 20px;\n  left: 20px;\n  padding: 40px;\n  font-size: 30px;\n  line-height: 37px;\n  text-align: center;\n  font-style: normal;\n  align-items: center;\n  font-family: Rowdies;\n  border-radius: 200px;\n  justify-content: center;\n  &-primary,\n  &-secondary {\n    color: $gray-6;\n  }\n  &-light {\n    opacity: 1;\n    color: $gray-4;\n  }\n  &-shadow {\n    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);\n  }\n}\n",
+                    "data": "@import '../../assets/scss/colors';\n\n.btn {\n  top: 20px;\n  left: 20px;\n  padding: 15.5px 41.5px;\n  font-size: 30px;\n  line-height: 37px;\n  text-align: center;\n  font-style: normal;\n  align-items: center;\n  font-family: Rowdies;\n  border-radius: 200px;\n  justify-content: center;\n  &-primary,\n  &-secondary {\n    color: $gray-6;\n  }\n  &-light {\n    opacity: 1;\n    color: $gray-4;\n  }\n  &-shadow {\n    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);\n  }\n}\n",
                     "styleUrl": "./button.scss"
                 }
             ],
@@ -325,7 +325,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../assets/scss/colors';\n\n.badge {\n  color: $white;\n  font-size: 16px;\n  font-weight: 400;\n  padding: 8px 18px;\n  line-height: 21px;\n  font-style: normal;\n  text-align: center;\n  align-items: center;\n  border-radius: 20px;\n  letter-spacing: 0em;\n  justify-content: center;\n  font-family: 'Red Hat Display';\n\n  &-primary {\n    background-color: $green-2;\n  }\n\n  &-secondary {\n    background-color: $gray-2;\n  }\n\n  img {\n    bottom: 1px;\n    cursor: pointer;\n    margin-left: 18px;\n  }\n}",
+                    "data": "@import '../../assets/scss/colors';\n\n.badge {\n  color: $white;\n  font-size: 16px;\n  font-weight: 400;\n  padding: 8px 18px;\n  line-height: 21px;\n  font-style: normal;\n  text-align: center;\n  align-items: center;\n  border-radius: 20px;\n  letter-spacing: 0em;\n  justify-content: center;\n  font-family: 'Red Hat Display';\n\n  &-primary {\n    background-color: $green-2;\n  }\n\n  &-secondary {\n    background-color: $gray-2;\n  }\n\n  .icon {\n    color: $white;\n    cursor: pointer;\n    font-size: 10px;\n    display: contents;\n    list-style-type: none;\n    &::before {\n      margin-left: 15px;\n    }\n  }\n}",
                     "styleUrl": "./chip.component.scss"
                 }
             ],
@@ -349,7 +349,7 @@
                     }
                 }
             },
-            "templateData": "<span [ngClass]=\"classes\">\n  {{ label }}\n  <img class=\"icon\" src=\"/assets/images/x-icon.svg\" (click)=\"onClick.emit($event)\" />\n</span>"
+            "templateData": "<span [ngClass]=\"classes\">\n  {{ label }}\n  <li class=\"icon icon-x\" (click)=\"onClick.emit($event)\"></li>\n</span>"
         },
         {
             "name": "DropdownComponent",
@@ -633,7 +633,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../assets/scss/colors';\n\n.btn {\n  left: 80px;\n  padding: 15.5px 46px;\n  font-size: 20px;\n  margin: 0px 10px;\n  font-weight: 400;\n  line-height: 25px;\n  text-align: center;\n  font-style: normal;\n  align-items: center;\n  font-family: Rowdies;\n  border-radius: 200px;\n  justify-content: center;\n\n  &-primary,\n  &-secondary {\n    color: $gray-6;\n  }\n\n  &-light {\n    opacity: 1;\n    color: $gray-4;\n    .icon {\n      filter: grayscale(100%);\n    }\n  }\n\n  &-shadow {\n    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);\n  }\n\n  .icon {\n      bottom: 2px;\n      position: relative;\n      padding-right: 10px;\n    }\n}\n",
+                    "data": "@import '../../assets/scss/colors';\n\n.btn {\n  left: 80px;\n  padding: 15.5px 40px;\n  font-size: 20px;\n  font-weight: 400;\n  line-height: 25px;\n  text-align: center;\n  font-style: normal;\n  align-items: center;\n  font-family: Rowdies;\n  border-radius: 200px;\n  justify-content: center;\n\n  .icon {\n      top: 1px;\n      color: $yellow;\n      display: inline;\n      list-style-type: none;\n      &::before {\n        margin-right: 8px;\n      }\n    }\n\n  &-primary,\n  &-secondary {\n    color: $gray-6;\n  }\n\n  &-outline-light, &-light {\n    opacity: 1;\n    &, .icon {\n      color: $gray-4 !important;\n    }\n  }\n\n  &-shadow {\n    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);\n  }\n}\n",
                     "styleUrl": "./icon-button.component.scss"
                 }
             ],
@@ -657,11 +657,136 @@
                     }
                 }
             },
-            "templateData": "<button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\" [disabled]=\"isDisabled\">\n    <img class=\"icon\" src=\"/assets/images/pizza-icon.svg\" *ngIf=\"showIcon\" />\n    {{ label }}\n</button>"
+            "templateData": "<button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\" [disabled]=\"isDisabled\">\n    <li *ngIf=\"showIcon\" class=\"icon icon-pizza\"></li>\n    {{ label }}\n</button>"
+        },
+        {
+            "name": "PizzaMenuCardComponent",
+            "id": "component-PizzaMenuCardComponent-dc15911dafe7450410d2ab10284e792a",
+            "file": "src/stories/pizza-menu-card/pizza-menu-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sb-pizza-menu-card",
+            "styleUrls": [
+                "./pizza-menu-card.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./pizza-menu-card.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "bgColorGradientFrom",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "bgColorGradientTo",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string"
+                },
+                {
+                    "name": "cardBackgroundUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "numOfCalories",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "number"
+                },
+                {
+                    "name": "numOfGrams",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "number"
+                },
+                {
+                    "name": "price",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "number"
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'sb-pizza-menu-card',\n  templateUrl: './pizza-menu-card.component.html',\n  styleUrls: ['./pizza-menu-card.component.scss']\n})\nexport default class PizzaMenuCardComponent {\n  @Input() title: string;\n  @Input() numOfGrams: number;\n  @Input() numOfCalories: number;\n  @Input() description: string;\n  @Input() price: number;\n  @Input() cardBackgroundUrl: string;\n  @Input() bgColorGradientFrom: string;\n  @Input() bgColorGradientTo: string;\n\n  @Output() onClick = new EventEmitter<Event>();\n\n  get background() {\n    return ({ \n      'background-image': `url(${this.cardBackgroundUrl}),\n                           radial-gradient(187.18% 90.09% at 50% 9.91%, ${this.bgColorGradientFrom} 0%, ${this.bgColorGradientTo} 100%)`\n    });\n  }\n  constructor() { }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../assets/scss/colors';\n\n.pizza-card {\n  width: 308px;\n  height: 449px;\n  padding-left: 30px;\n  padding-right: 15px;\n  border-radius: 10px 100px 10px 10px;\n  background-repeat: no-repeat, repeat;\n  box-shadow: 0px 4px 16px 12px rgba(0, 0, 0, 0.14);\n\n  .content {\n    position: relative;\n    top: 50%;\n    height: 50%;\n\n    .calories {\n      margin-left: 36px;\n    }\n\n    .description {\n      color: $gray-1;\n      font-size: 16px;\n      line-height: 21px;\n      font-style: normal;\n      font-weight: normal;\n      font-family: 'Red Hat Display';\n    }\n\n    .pizza-card-footer {\n      bottom: 20px;\n      position: absolute;\n      width: -webkit-fill-available;\n\n      .price-container {\n        display: inline-grid;\n\n        .price-label {\n          margin: 0;\n          color: $gray-1;\n          font-size: 12px;\n          font-weight: 300;\n          line-height: 15px;\n          text-align: center;\n          font-style: normal;\n          font-family: Rowdies;\n        }\n\n        .price {\n          color: $gray-1;\n          font-size: 24px;\n          font-weight: bold;\n          line-height: 30px;\n          font-style: normal;\n          text-align: center;\n          font-family: Rowdies;\n        }\n      }\n\n      .add-btn {\n        right: 20px;\n        position: relative;\n      }\n    }\n  }\n}",
+                    "styleUrl": "./pizza-menu-card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 25
+            },
+            "accessors": {
+                "background": {
+                    "name": "background",
+                    "getSignature": {
+                        "name": "background",
+                        "type": "",
+                        "returnType": "",
+                        "line": 20
+                    }
+                }
+            },
+            "templateData": "<div class=\"pizza-card\" [ngStyle]=\"background\">\n  <div class=\"content\">\n    <h4 class=\"mb-1\">{{title}}</h4>\n    <div>\n      <caption class=\"d-inline txt-gray-6\">{{numOfGrams}}g</caption>\n      <caption class=\"d-inline txt-gray-6 calories\">{{numOfCalories}} cal</caption>\n    </div>\n    <p class=\"description pt-1 pb-1 m-0\">{{description}}</p>\n    <div class=\"row pizza-card-footer\">\n      <div class=\"price-container pr-3 pl-0 py-2 col-4\">\n        <label class=\"price-label\">starts at</label>\n        <span class=\"price\">{{price | currency : 'USD' : 'symbol' : '1.0-0'}}</span>\n      </div>\n      <div class=\"col-8 px-0\">\n        <sb-icon-button class=\"add-btn float-right\" label=\"ADD\" (click)=\"onClick.emit($event)\"></sb-icon-button>\n      </div>\n    </div>\n  </div>\n</div>"
         },
         {
             "name": "SearchInputComponent",
-            "id": "component-SearchInputComponent-643527ed3ff28999e2ab3236bf633f52",
+            "id": "component-SearchInputComponent-076c74f7c5fffb06e1c4dd80528b3bf5",
             "file": "src/stories/search-input/search-input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -697,7 +822,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'sb-search-input',\n  templateUrl: './search-input.component.html',\n  styleUrls: ['./search-input.component.scss']\n})\nexport default class SearchInputComponent {\n  @Input() type: 'search' | 'address' = 'search';\n\n  get iconClass() {\n    return (this.type === 'search') ? 'icon-search' : 'icon-pointer';\n  }\n  get placeholder() {\n    const searchType = (this.type === 'search') ? 'topping' : 'address';\n    return `Search for specific ${searchType}`;\n  }\n \n  constructor() { }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'sb-search-input',\n  templateUrl: './search-input.component.html',\n  styleUrls: ['./search-input.component.scss']\n})\nexport default class SearchInputComponent {\n  @Input() type: 'search' | 'address' = 'search';\n\n  get iconClass() {\n    return (this.type === 'search') ? 'icon-search' : 'icon-pointer';\n  }\n  get placeholder() {\n    const searchType = (this.type === 'search') ? 'topping' : 'address';\n    return `Search for specific ${searchType}`;\n  }\n\n  constructor() { }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1086,13 +1211,13 @@
         },
         {
             "name": "SharedModule",
-            "id": "module-SharedModule-9e42a0bc6a3db5901abd88a6ffef3329",
+            "id": "module-SharedModule-ae1b6ad9fa9c31d6d1411080b947bed3",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/shared/shared.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n// Stories\nimport Button from '../stories/button/button.component';\nimport Dropdown from '../stories/dropdown/dropdown.component';\nimport TextInput from '../stories/text-input/text-input.component';\n\nconst STORIES = [\n  Button,\n  Dropdown,\n  TextInput\n];\n\n@NgModule({\n  imports: [\n    CommonModule\n  ],\n  declarations: [...STORIES],\n  exports: [...STORIES]\n})\nexport class SharedModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n// Stories\nimport Button from '../stories/button/button.component';\nimport IconButton from '../stories/icon-button/icon-button.component';\nimport Dropdown from '../stories/dropdown/dropdown.component';\nimport TextInput from '../stories/text-input/text-input.component';\nimport PizzaMenuCardComponent from '../stories/pizza-menu-card/pizza-menu-card.component';\n\nconst STORIES = [\n  Button,\n  Dropdown,\n  TextInput,\n  IconButton,\n  PizzaMenuCardComponent\n];\n\n@NgModule({\n  imports: [\n    CommonModule\n  ],\n  declarations: [...STORIES],\n  exports: [...STORIES]\n})\nexport class SharedModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -1106,6 +1231,12 @@
                         },
                         {
                             "name": "Dropdown"
+                        },
+                        {
+                            "name": "IconButton"
+                        },
+                        {
+                            "name": "PizzaMenuCardComponent"
                         },
                         {
                             "name": "TextInput"
@@ -1124,6 +1255,12 @@
                         },
                         {
                             "name": "Dropdown"
+                        },
+                        {
+                            "name": "IconButton"
+                        },
+                        {
+                            "name": "PizzaMenuCardComponent"
                         },
                         {
                             "name": "TextInput"
@@ -1178,6 +1315,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/text-input/text-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "EggBasil",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1284,6 +1431,26 @@
                 "defaultValue": "{\n  myState: ''\n}"
             },
             {
+                "name": "italian",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "lives",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1364,10 +1531,10 @@
                 "defaultValue": "/^[\\p{Z}\\s]*(?:[^\\p{Z}\\s][\\p{Z}\\s]*){7,}$/"
             },
             {
-                "name": "Primary",
+                "name": "pepperoni",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/chip/chip.stories.ts",
+                "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1378,6 +1545,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/chip/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1411,6 +1588,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
+            },
+            {
+                "name": "salami",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Search",
@@ -1490,17 +1677,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n  Button,\n  Dropdown,\n  TextInput\n]"
+                "defaultValue": "[\n  Button,\n  Dropdown,\n  TextInput,\n  IconButton,\n  PizzaMenuCardComponent\n]"
             },
             {
-                "name": "Template",
+                "name": "supreme",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/chip/chip.stories.ts",
+                "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Chip>",
-                "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Template",
@@ -1511,6 +1698,16 @@
                 "deprecationMessage": "",
                 "type": "Story<Button>",
                 "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Chip>",
+                "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1536,21 +1733,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/header/header.stories.ts",
+                "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                "type": "Story<PizzaMenuCard>",
+                "defaultValue": "(args: PizzaMenuCard) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/search-input/search-input.stories.ts",
+                "file": "src/stories/header/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<SearchInput>",
-                "defaultValue": "(args: SearchInput) => ({\n  props: args,\n})"
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1563,10 +1760,40 @@
                 "defaultValue": "(args: TextInput) => ({\n  props: args,\n})"
             },
             {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/search-input/search-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SearchInput>",
+                "defaultValue": "(args: SearchInput) => ({\n  props: args,\n})"
+            },
+            {
                 "name": "Text",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/text-input/text-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "tomato",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "VeggieBasil",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1804,6 +2031,98 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
+            "src/stories/pizza-menu-card/pizza-menu-card.stories.ts": [
+                {
+                    "name": "EggBasil",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "italian",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "lives",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "pepperoni",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "salami",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "supreme",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<PizzaMenuCard>",
+                    "defaultValue": "(args: PizzaMenuCard) => ({\n  props: args,\n})"
+                },
+                {
+                    "name": "tomato",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "VeggieBasil",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
             "src/stories/text-input/text-input.component.ts": [
                 {
                     "name": "EmailErrorMessage",
@@ -1974,28 +2293,6 @@
                     "defaultValue": "createAction(\n  Types.MY_ACTION,\n  props<{ payload: string }>()\n)"
                 }
             ],
-            "src/stories/chip/chip.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/chip/chip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/chip/chip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Chip>",
-                    "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
-                }
-            ],
             "src/stories/button/button.stories.ts": [
                 {
                     "name": "Primary",
@@ -2026,6 +2323,28 @@
                     "deprecationMessage": "",
                     "type": "Story<Button>",
                     "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/chip/chip.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Chip>",
+                    "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/dropdown/dropdown.stories.ts": [
@@ -2091,7 +2410,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n  Button,\n  Dropdown,\n  TextInput\n]"
+                    "defaultValue": "[\n  Button,\n  Dropdown,\n  TextInput,\n  IconButton,\n  PizzaMenuCardComponent\n]"
                 }
             ]
         },
@@ -2469,6 +2788,105 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pizza-menu-card/pizza-menu-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PizzaMenuCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "EggBasil",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "italian",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "lives",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "pepperoni",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "salami",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "supreme",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "tomato",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pizza-menu-card/pizza-menu-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "VeggieBasil",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

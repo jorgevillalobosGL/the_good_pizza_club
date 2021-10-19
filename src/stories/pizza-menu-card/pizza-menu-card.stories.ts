@@ -3,15 +3,15 @@ import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 
 import PizzaMenuCard from './pizza-menu-card.component';
-import ButtonJVS from '../button/button.component';
-import IconButtonJVS from '../icon-button/icon-button.component';
+import Button from '../button/button.component';
+import IconButton from '../icon-button/icon-button.component';
 
 export default {
   title: 'Components/Pizza-Menu-Card',
   component: PizzaMenuCard,
   decorators: [
     moduleMetadata({
-      declarations: [ButtonJVS, IconButtonJVS],
+      declarations: [Button, IconButton],
       imports: [CommonModule],
     }),
   ],

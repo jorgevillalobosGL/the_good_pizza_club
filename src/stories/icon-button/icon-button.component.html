@@ -1,0 +1,7 @@
+<button
+    type="button"
+    (click)="onClick.emit($event)"
+    [ngClass]="classes" [disabled]="isDisabled">
+    <li *ngIf="showIcon" class="icon icon-pizza"></li>
+    {{ label }}
+</button>

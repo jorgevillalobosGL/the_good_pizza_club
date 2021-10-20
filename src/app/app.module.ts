@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 
-//Share
+// Share
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({

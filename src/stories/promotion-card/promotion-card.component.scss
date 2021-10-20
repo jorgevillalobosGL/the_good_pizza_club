@@ -1,0 +1,60 @@
+@import '../../assets/scss/colors';
+
+.promotion-card {
+  width: 588px;
+  height: 369px;
+  padding: 18px;
+  position: relative;
+  text-align: center;
+  border-radius: 10px;
+  mix-blend-mode: normal;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+
+  .main-title-content {
+    z-index: 10;
+
+    .decorator-left {
+      position: absolute;
+      left: 0px;
+      bottom: -10px;
+      z-index: -1;
+    }
+
+    .decorator-right {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      z-index: -1;
+    }
+  }
+
+  .second-title {
+    margin-left: 75px;
+    margin-right: 75px;
+  }
+
+  .description {
+    color: $white;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'Red Hat Display';
+  }
+
+  .promotion-footer {
+    bottom: 10px;
+    position: absolute;
+
+    .disclaimer {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 16px;
+      margin-left: 55px;
+      font-style: normal;
+      margin-right: 55px;
+      font-family: 'Red Hat Display';
+    }
+  }
+}

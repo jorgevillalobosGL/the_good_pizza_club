@@ -1,0 +1,40 @@
+@import '../../assets/scss/colors';
+
+.btn {
+  left: 80px;
+  padding: 15.5px 35px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+  font-style: normal;
+  align-items: center;
+  font-family: Rowdies;
+  border-radius: 200px;
+  justify-content: center;
+
+  .icon {
+      top: 1px;
+      color: $yellow;
+      display: inline;
+      &::before {
+        margin-right: 8px;
+      }
+    }
+
+  &-primary,
+  &-secondary {
+    color: $gray-6;
+  }
+
+  &-outline-light, &-light {
+    opacity: 1;
+    &, .icon {
+      color: $gray-4 !important;
+    }
+  }
+
+  &-shadow {
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+  }
+}

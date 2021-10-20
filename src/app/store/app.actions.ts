@@ -1,7 +1,7 @@
-import { createAction, props } from "@ngrx/store";
+import { createAction, props } from '@ngrx/store';
 
 export enum Types {
-  MY_ACTION = "[core] my action",
+  MY_ACTION = '[core] my action',
 }
 
 export const myAction = createAction(

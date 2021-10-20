@@ -1,7 +1,6 @@
 @import '../../assets/scss/colors';
 
 .dropdown {
-	list-style-type: none;
 	&.show {
 		.dropdown-toggle {
 			&::before {

@@ -12,7 +12,8 @@
     "build-storybook": "npm run docs:json && build-storybook",
     "cypress:run": "cypress run",
     "cypress:cli": "start-server-and-test start http://localhost:4200 cypress:run",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "chromatic": "npx chromatic --project-token=cf5e5c9cb7d7"
   },
   "private": true,
   "dependencies": {

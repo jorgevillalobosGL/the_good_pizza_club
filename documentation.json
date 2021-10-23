@@ -74,7 +74,7 @@
     "components": [
         {
             "name": "AddressCreditCardComponent",
-            "id": "component-AddressCreditCardComponent-2c891b6193ea22062ddee70f78ba2c5b",
+            "id": "component-AddressCreditCardComponent-b8b955b8e0ff34c28cb2cd710817014b",
             "file": "src/stories/address-credit-card/address-credit-card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -107,6 +107,7 @@
                 },
                 {
                     "name": "creditCardBrand",
+                    "defaultValue": "CreditCardBrand.MasterCard",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 31,
@@ -170,11 +171,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\nexport enum CardTypes {\n  'Address' = 'address',\n  'Credit' = 'credit'\n};\n\nexport enum CardStates {\n  'NEW' = 'NEW',\n  'EDIT' = 'EDIT',\n  'DELETE' = 'DELETE'\n};\n\nexport enum CreditCardBrand {\n  'MasterCard' = 'MasterCard',\n  'Visa' = 'Visa'\n};\n\n@Component({\n  selector: 'sb-address-credit-card',\n  templateUrl: './address-credit-card.component.html',\n  styleUrls: ['./address-credit-card.component.scss']\n})\nexport default class AddressCreditCardComponent {\n  @Input() title: string;\n  @Input() content1: string;\n  @Input() content2: string;\n  @Input() isDefault: boolean = false;\n  @Input() type: CardTypes;\n  @Input() state: CardStates = CardStates.NEW;\n  @Input() creditCardBrand: CreditCardBrand;\n\n  @Output() onClick = new EventEmitter<Event>();\n  @Output() onDefaultClick = new EventEmitter<Event>();\n\n  public get footerText() : string {\n    let text;\n    if(this.type === CardTypes.Address) {\n      text = this.isDefault ? 'Default address' : 'Make Favorite';\n      text = this.state === CardStates.NEW ? 'Add new address' : text;\n    } else {\n      text = this.isDefault ? 'Using this card' : 'Use this card';\n      text = this.state === CardStates.NEW ? 'Add payment method' : text;\n    }\n    return text;\n  }\n\n  constructor() { }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\nexport enum CardTypes {\n  'Address' = 'address',\n  'Credit' = 'credit'\n};\n\nexport enum CardStates {\n  'NEW' = 'NEW',\n  'EDIT' = 'EDIT',\n  'DELETE' = 'DELETE'\n};\n\nexport enum CreditCardBrand {\n  'MasterCard' = 'mastercard',\n  'Visa' = 'visa'\n};\n\n@Component({\n  selector: 'sb-address-credit-card',\n  templateUrl: './address-credit-card.component.html',\n  styleUrls: ['./address-credit-card.component.scss']\n})\nexport default class AddressCreditCardComponent {\n  @Input() title: string;\n  @Input() content1: string;\n  @Input() content2: string;\n  @Input() isDefault: boolean = false;\n  @Input() type: CardTypes;\n  @Input() state: CardStates = CardStates.NEW;\n  @Input() creditCardBrand: CreditCardBrand = CreditCardBrand.MasterCard;\n\n  @Output() onClick = new EventEmitter<Event>();\n  @Output() onDefaultClick = new EventEmitter<Event>();\n\n  public get footerText() : string {\n    let text;\n    if(this.type === CardTypes.Address) {\n      text = this.isDefault ? 'Default address' : 'Make Favorite';\n      text = this.state === CardStates.NEW ? 'Add new address' : text;\n    } else {\n      text = this.isDefault ? 'Using this card' : 'Use this card';\n      text = this.state === CardStates.NEW ? 'Add payment method' : text;\n    }\n    return text;\n  }\n\n  constructor() { }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../assets/scss/colors';\n\n.address-credit-card {\n  width: 350px;\n  padding: 20px 0px 20px 20px;\n  display: flex;\n  min-height: 82px;\n  background: $gray-1;\n  border-radius: 10px;\n  flex-direction: column;\n  align-items: flex-start;\n  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);\n\n  .card-content {\n    color: $white;\n    font-size: 16px;\n    margin-right: 22%;\n    line-height: 21px;\n    font-style: normal;\n    font-weight: normal;\n    font-family: 'Red Hat Display';\n  }\n\n  .card-footer {\n    &-text {\n      color: $gray-3;\n      max-width: 165px;\n      vertical-align: middle;\n    }\n\n    .icon {\n      top: 5px;\n      right: -10px;\n      cursor: pointer;\n      position: absolute;\n      color: $gray-3;\n    }\n  }\n}",
+                    "data": "@import '../../assets/scss/colors';\n\n.address-credit-card {\n  width: 350px;\n  display: flex;\n  min-height: 82px;\n  background: $gray-1;\n  border-radius: 10px;\n  flex-direction: column;\n  align-items: flex-start;\n  padding: 20px 0px 20px 20px;\n  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);\n\n  .credit-card-logo {\n    top: 10px;\n    right: -30px;\n    position: absolute;\n  }\n\n  .card-content {\n    color: $white;\n    font-size: 16px;\n    margin-right: 22%;\n    line-height: 21px;\n    font-style: normal;\n    font-weight: normal;\n    font-family: 'Red Hat Display';\n  }\n\n  .card-footer {\n    &-text {\n      color: $gray-3;\n      max-width: 165px;\n      vertical-align: middle;\n    }\n\n    .icon {\n      top: 5px;\n      right: -10px;\n      color: $gray-3;\n      cursor: pointer;\n      position: absolute;\n    }\n  }\n}",
                     "styleUrl": "./address-credit-card.component.scss"
                 }
             ],
@@ -198,7 +199,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"address-credit-card\">\n  <div *ngIf=\"state !== 'NEW'\" class=\"card-content\">\n    <img *ngIf=\"type === 'Credit\" src=\"/assets/images/visa.svg\">\n    <h4 class=\"title txt-white\">{{title}}</h4>\n    <p class=\"card-content\">{{content1}}</p>\n    <p class=\"card-content\">{{content2}}</p>\n  </div>\n  <div class=\"card-footer p-0 row align-items-center\">\n    <sb-icon-button class=\"col-auto\"[isOutline]=\"true\" [label]=\"state\" (click)=\"onClick.emit($event)\"></sb-icon-button>\n    <div class=\"position-relative col-auto row\">\n      <label class=\"card-footer-text text-truncate\" [ngClass]=\"{'txt-gray-6': isDefault || state === 'NEW'}\">{{footerText}}</label>\n      <li *ngIf=\"state !== 'NEW'\" class=\"icon icon-start\" (click)=\"onDefaultClick.emit($event)\" [ngClass]=\"{'txt-yellow': isDefault}\"></li>\n    </div>\n  </div>\n</div>"
+            "templateData": "<div class=\"address-credit-card\">\n  <div *ngIf=\"state !== 'NEW'\" class=\"card-content position-relative\">\n    <img class=\"credit-card-logo\" *ngIf=\"type === 'credit'\" src=\"/assets/images/{{creditCardBrand}}.svg\">\n    <h4 class=\"title txt-white\">{{title}}</h4>\n    <p class=\"card-content\">{{content1}}</p>\n    <p class=\"card-content\">{{content2}}</p>\n  </div>\n  <div class=\"card-footer p-0 row align-items-center\">\n    <sb-icon-button class=\"col-auto\"[isOutline]=\"true\" [label]=\"state\" (click)=\"onClick.emit($event)\"></sb-icon-button>\n    <div class=\"position-relative col-auto row\">\n      <label class=\"card-footer-text text-truncate\" [ngClass]=\"{'txt-gray-6': isDefault || state === 'NEW'}\">{{footerText}}</label>\n      <li *ngIf=\"state !== 'NEW'\" class=\"icon icon-start\" (click)=\"onDefaultClick.emit($event)\" [ngClass]=\"{'txt-yellow': isDefault}\"></li>\n    </div>\n  </div>\n</div>"
         },
         {
             "name": "AppComponent",
@@ -291,7 +292,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<router-outlet></router-outlet>\n<div class=\"container p-3 bg-black\">\n  <button type=\"button\" class=\"btn btn-primary mr-2\">Primary</button>\n  <button type=\"button\" class=\"btn btn-secondary txt-gray-6 mr-2\">Secondary</button>\n  <button type=\"button\" class=\"btn bg-green-1 txt-gray-6 mr-2\">Green</button>\n  <button type=\"button\" class=\"btn btn-light txt-gray-4 mr-2\">Light</button>\n  <br><br>\n  <button type=\"button\" class=\"btn btn-outline-primary mr-2\">Primary</button>\n  <button type=\"button\" class=\"btn btn-outline-secondary mr-2\">Secondary</button>\n  <button type=\"button\" class=\"btn btn-outline-light mr-2\">Light</button>\n  <h3 class=\"txt-primary pt-1\">Primary Text</h3>\n  <h3 class=\"txt-secondary pt-1\">Secondary Text</h3>\n  <h3 class=\"txt-yellow pt-1\">Title Text</h3>\n  <h3 class=\"txt-white pt-1\">Title Text Secondary</h3>\n  <hr>\n  <h4 class=\"txt-green-1 pt-1\">From StoryBook:</h4>\n  <sb-button type=\"primary\" label=\"CUSTUMIZE YOUR OWN\"></sb-button>\n  <i class=\"icon-lock txt-green-1\"></i>\n  <span class=\"icon-lock txt-green-1\"></span>\n</div>\n<sb-dropdown [dropdownValues]=\"dropdownValues\" (itemSelected)=\"onItemSelected($event)\"></sb-dropdown>\n<sb-text-input state='success'></sb-text-input>\n"
+            "templateData": "<router-outlet></router-outlet>\n"
         },
         {
             "name": "ButtonComponent",
@@ -1836,16 +1837,6 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/chip/chip.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/dropdown/dropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1857,6 +1848,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/icon-button/icon-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/chip/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2015,16 +2016,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/chip/chip.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Chip>",
-                "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/dropdown/dropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2035,11 +2026,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/header/header.stories.ts",
+                "file": "src/stories/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                "type": "Story<IconButton>",
+                "defaultValue": "(args: IconButton) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Chip>",
+                "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2050,16 +2051,6 @@
                 "deprecationMessage": "",
                 "type": "Story<PizzaMenuCard>",
                 "defaultValue": "(args: PizzaMenuCard) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<IconButton>",
-                "defaultValue": "(args: IconButton) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2080,6 +2071,16 @@
                 "deprecationMessage": "",
                 "type": "Story<SearchInput>",
                 "defaultValue": "(args: SearchInput) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/header/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2226,13 +2227,13 @@
                         "name": "MasterCard",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "MasterCard"
+                        "value": "mastercard"
                     },
                     {
                         "name": "Visa",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "Visa"
+                        "value": "visa"
                     }
                 ],
                 "ctype": "miscellaneous",
@@ -2794,28 +2795,6 @@
                     "defaultValue": "(args: Button) => ({\n  props: args,\n})"
                 }
             ],
-            "src/stories/chip/chip.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/chip/chip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/chip/chip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Chip>",
-                    "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
-                }
-            ],
             "src/stories/dropdown/dropdown.stories.ts": [
                 {
                     "name": "Primary",
@@ -2868,6 +2847,28 @@
                     "deprecationMessage": "",
                     "type": "Story<IconButton>",
                     "defaultValue": "(args: IconButton) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/chip/chip.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Chip>",
+                    "defaultValue": "(args: Chip) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/promotion-card/promotion-card.stories.ts": [
@@ -3021,13 +3022,13 @@
                             "name": "MasterCard",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "MasterCard"
+                            "value": "mastercard"
                         },
                         {
                             "name": "Visa",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "Visa"
+                            "value": "visa"
                         }
                     ],
                     "ctype": "miscellaneous",

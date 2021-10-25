@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DropdownValue } from '../shared/general.model';
+import { DropdownValue } from './shared/general.model';
 
 @Component({
   selector: 'app-root',

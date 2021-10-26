@@ -3,3 +3,9 @@ export interface DropdownValue {
   text?: string;
   disabled?: boolean;
 };
+
+export interface MenuItem {
+  name: string;
+  url: string;
+  icon?: string;
+};

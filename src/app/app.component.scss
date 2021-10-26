@@ -1,0 +1,23 @@
+.main-nav {
+  display: flex;
+  height: 200px;
+
+  .logo {
+    top: 42px;
+    left: 87px;
+    position: absolute;
+  }
+
+  .menu-container {
+    top: 65px;
+    width: 57%;
+    right: 120px;
+    position: absolute;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .main-nav .logo {
+    display: none;
+  }
+}

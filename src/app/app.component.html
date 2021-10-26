@@ -1,2 +1,8 @@
+<div class="main-nav position-relative">
+  <img class="logo" src="assets/images/Logo.svg" width="121px" height="121px">
+  <div class="menu-container">
+    <sb-header [menuItems]="menuItems" [linkActive]="activePathUrl$ | async"></sb-header>
+  </div>
+</div>
 <router-outlet></router-outlet>
 <footer>Footer</footer>

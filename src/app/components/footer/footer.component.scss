@@ -1,0 +1,63 @@
+@import '../../../assets/scss/colors';
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+.footer {
+  height: 451px;
+  background-color: $orange;
+  border-radius: 0px 340px 0px 0px/0px 285px 0px 0px;
+  position: relative;
+
+  &-content {
+    top: 101px;
+    position: absolute;
+
+    .our-info {
+      padding: 0 3% 0 9%;
+
+      .media-icons {
+        width: 83%;
+        padding-top: 20px;
+
+        .icon {
+          padding: 0px;
+          color: $gray-1;
+          font-size: 35px;
+        }
+      }
+    }
+
+    .our-feed {
+      max-width: 22%;
+      padding-right: 15px;
+    }
+
+    .list-group li {
+      list-style-type: none;
+
+      a {
+        color: $gray-1;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .footer {
+    height: auto;
+    &-content {
+      background-color: $orange;
+      padding: 0px 15px;
+    }
+
+    .our-info .logo {
+      display: block;
+      margin: 15px auto;
+    }
+
+    .our-links, .our-feed {
+      padding: inherit;
+    }
+  }
+}

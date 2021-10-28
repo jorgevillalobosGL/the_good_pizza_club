@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Welcome / Login Page', () => {
+describe('Header', () => {
   beforeEach(() => {
     cy.visit('localhost:4200')
   })

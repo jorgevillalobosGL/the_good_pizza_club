@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
       },
       {
         name: 'Login / Sign up',
-        url: '/login',
+        url: '/auth',
       },
       {
         name: 'Help',

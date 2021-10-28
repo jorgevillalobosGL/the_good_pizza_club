@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { AuthRouterModule } from './auth.router.module';
 import { AuthComponent } from './auth.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-
+// Share
+import { SharedModule } from '../../app/shared/shared.module';
 
 @NgModule({
   declarations: [AuthComponent, WelcomeComponent],
   imports: [
     CommonModule,
+    SharedModule,
     AuthRouterModule
   ]
 })

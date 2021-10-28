@@ -1,10 +1,26 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
 .auth-main-container {
   position: relative;
   .comp-container {
-    top: 20%;
-    left: 8%;
+    top: 314px;
+    left: 9%;
     width: 600px;
     height: 500px;
     position: absolute;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .auth-main-container {
+    position: static;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .auth-main-container .comp-container {
+    left: 0;
   }
 }

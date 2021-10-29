@@ -4,10 +4,14 @@ import { AuthRouterModule } from './auth.router.module';
 import { AuthComponent } from './auth.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 // Share
+import { LoginComponent } from './login/login.component';
 import { SharedModule } from '../../app/shared/shared.module';
 
 @NgModule({
-  declarations: [AuthComponent, WelcomeComponent],
+  declarations: [
+    AuthComponent,
+    WelcomeComponent,
+    LoginComponent],
   imports: [
     CommonModule,
     SharedModule,

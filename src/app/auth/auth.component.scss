@@ -5,17 +5,16 @@
 .auth-main-container {
   position: relative;
   .comp-container {
-    top: 314px;
-    left: 9%;
-    width: 600px;
-    height: 500px;
-    position: absolute;
+    padding: 219px 110px 0 15%;
   }
 }
 
 @include media-breakpoint-down(lg) {
   .auth-main-container {
-    position: static;
+    position: absolute;
+  }
+  .img-container {
+     min-height: 62.5em;
   }
 }
 

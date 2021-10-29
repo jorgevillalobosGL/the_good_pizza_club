@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { distinctUntilChanged, filter, map, pluck } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, pluck, tap } from 'rxjs/operators';
 
 import { MenuItem } from './shared/general.model';
 
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
       filter((route: any) => !!route.url),
       pluck('url'),
       distinctUntilChanged(),
-      map<string, string>(url => url?.replace('/', '')),
+      map<string, string>(url => `/${url?.split('/')[1]}`),
     );
   }
 

@@ -13,6 +13,9 @@ import { environment } from '../environments/environment';
 import { FooterComponent } from './components/footer/footer.component';
 // Share
 import { SharedModule } from './shared/shared.module';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent],
@@ -26,6 +29,9 @@ import { SharedModule } from './shared/shared.module';
       maxAge: 25,
       logOnly: environment.production,
     }),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent],

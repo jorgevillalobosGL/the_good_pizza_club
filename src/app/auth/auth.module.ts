@@ -15,6 +15,7 @@ import { SharedModule } from '../../app/shared/shared.module';
 
 // Components
 import { AuthComponent } from './auth.component';
+import { LoginComponent } from './login/login.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
@@ -24,6 +25,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 // Components
 const COMPONENTS = [
   AuthComponent,
+  LoginComponent,
   SignInComponent,
   WelcomeComponent,
 ];

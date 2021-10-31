@@ -33,6 +33,14 @@ export class LoginComponent implements OnDestroy {
     );
   }
 
+  public facebookLogin() {
+    this.authService.facebookSignIn().subscribe(
+      ({ user }) => {
+        this.handleLogin(user);
+      }
+    );
+  }
+
   private handleLogin(user: firebase.default.User | null): void {
     if (!!user) {
       this.router.navigate(['/home']);

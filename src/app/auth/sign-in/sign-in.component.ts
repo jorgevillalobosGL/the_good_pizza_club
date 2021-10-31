@@ -24,11 +24,25 @@ export class SignInComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$)
       ).subscribe(
         ({user}) => {
-          if(!!user) {
-            this.router.navigate(['/home']);
-          }
+          this.handleSignUp(user);
         }
       );
+    }
+  }
+
+  onGoogleSignUp() {
+    this.authService.googleSignIn().pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(
+      ({ user }) => {
+        this.handleSignUp(user);
+      }
+    );
+  }
+
+  private handleSignUp(user: firebase.default.User | null): void {
+    if (!!user) {
+      this.router.navigate(['/home']);
     }
   }
 

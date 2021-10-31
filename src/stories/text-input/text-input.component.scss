@@ -1,11 +1,12 @@
 @import '../../assets/scss/colors';
 
 .input-icons {
+  position: relative;
   .icon {
-    position: relative;
+    position: absolute;
     font-size: 30px;
-    left: 35px;
-    top: 5px;
+    left: 30px;
+    top: 20px;
     color: $gray-4;
     min-width:39px;
     display: -webkit-inline-box;
@@ -24,8 +25,6 @@
     border-radius: 10px;
     &.type-password, &.type-email {
       padding-left: 84.5px;
-      margin-left: -25px;
-      width: calc(100% - 25px);
     }
 
     &.state{

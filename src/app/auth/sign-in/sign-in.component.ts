@@ -15,6 +15,7 @@ export class SignInComponent implements OnInit, OnDestroy {
   public signUpForm: FormGroup;
   public isEmailValid = false;
   public isPasswordValid = false;
+  public nameState: 'success' | 'danger' | null;
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
   onSignUp() {
@@ -27,6 +28,8 @@ export class SignInComponent implements OnInit, OnDestroy {
           this.handleSignUp(user);
         }
       );
+    } else {
+      this.nameState = this.name.invalid ? 'danger' : 'success';
     }
   }
 
@@ -50,14 +53,22 @@ export class SignInComponent implements OnInit, OnDestroy {
     );
   }
 
+  public get email(): FormControl {
+    return this.signUpForm.get('email') as FormControl;
+  }
+
+  public get password(): FormControl {
+    return this.signUpForm.get('password') as FormControl;
+  }
+
+  public get name(): FormControl {
+    return this.signUpForm.get('name') as FormControl;
+  }
+
   private handleSignUp(user: firebase.default.User | null): void {
     if (!!user) {
       this.router.navigate(['/home']);
     }
-  }
-
-  public get email(): FormControl {
-    return this.signUpForm.get('email') as FormControl;
   }
 
   ngOnInit() {

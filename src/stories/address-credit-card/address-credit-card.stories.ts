@@ -42,6 +42,7 @@ AddressEditNotDefault.args = {
 
 export const AddressAdd = Template.bind({});
 AddressAdd.args = {
+  state: CardStates.NEW,
   title: 'Work',
   isDefault: false,
   type: CardTypes.Address

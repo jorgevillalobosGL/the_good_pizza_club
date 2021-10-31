@@ -30,5 +30,10 @@ export class AuthService {
     return from(this.firebaseAuth.signInWithPopup(provider));
   }
 
+  public facebookSignIn(): Observable<firebase.auth.UserCredential> {
+    const provider = new firebase.auth.FacebookAuthProvider();
+    return from(this.firebaseAuth.signInWithPopup(provider));
+  }
+
   constructor(private firebaseAuth: AngularFireAuth) { }
 }

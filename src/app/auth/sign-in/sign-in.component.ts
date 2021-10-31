@@ -40,6 +40,16 @@ export class SignInComponent implements OnInit, OnDestroy {
     );
   }
 
+  onFaceBookSignUp() {
+    this.authService.facebookSignIn().pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(
+      ({ user }) => {
+        this.handleSignUp(user);
+      }
+    );
+  }
+
   private handleSignUp(user: firebase.default.User | null): void {
     if (!!user) {
       this.router.navigate(['/home']);

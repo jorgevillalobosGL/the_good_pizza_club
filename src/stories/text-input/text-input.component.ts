@@ -48,6 +48,8 @@ export default class TextInputComponent implements ControlValueAccessor {
   @Input() set state(state: 'success' | 'danger') {
     this._state = state || 'success';
   }
+  @Input() disableValidations= false;
+
   @Output() isValid = new EventEmitter<boolean>();
 
   public _state= 'success';
@@ -83,6 +85,10 @@ export default class TextInputComponent implements ControlValueAccessor {
     this.inputErrors$ = this.keyStreem$.pipe(
       debounceTime(500),
       switchMap((text) => {
+        if(this.disableValidations) {
+          return of({ hasErrors: false });
+        }
+
         if (this.type === 'email') {
           this.isValid.emit(EmailRegExp.test(String(text).toLowerCase()));
           return of({

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -8,18 +10,33 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnDestroy {
   public loginForm: FormGroup;
+  private destroy$: Subject<boolean> = new Subject<boolean>();
 
   public login() {
     const { email, password } = this.loginForm.getRawValue();
-    this.authService.login(email, password).subscribe(
+    this.authService.login(email, password).pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(
       ({ user }) => {
-        if (!!user) {
-          this.router.navigate(['/home']);
-        }
+        this.handleLogin(user);
       }
     );
+  }
+
+  public googleLogin() {
+    this.authService.googleSignIn().subscribe(
+      ({ user }) => {
+        this.handleLogin(user);
+      }
+    );
+  }
+
+  private handleLogin(user: firebase.default.User | null): void {
+    if (!!user) {
+      this.router.navigate(['/home']);
+    }
   }
 
   ngOnInit() {
@@ -27,6 +44,11 @@ export class LoginComponent {
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 
   constructor(

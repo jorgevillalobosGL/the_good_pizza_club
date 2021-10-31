@@ -8,7 +8,12 @@ import { reducer } from './store/app.reducer';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
+
+// Services
 import { AuthService } from './services/auth.service';
+
+// Guards
+import { AuthGuard } from './guards/auth.guard';
 
 // Firebase
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -39,7 +44,7 @@ import { AngularFireModule } from '@angular/fire/compat';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

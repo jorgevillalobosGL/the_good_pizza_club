@@ -8,14 +8,19 @@ import { reducer } from './store/app.reducer';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
+import { AuthService } from './services/auth.service';
 
-// Components
-import { FooterComponent } from './components/footer/footer.component';
-// Share
-import { SharedModule } from './shared/shared.module';
+// Firebase
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
+// Components
+import { FooterComponent } from './components/footer/footer.component';
+
+// Share
+import { SharedModule } from './shared/shared.module';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent],
@@ -29,11 +34,12 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
       maxAge: 25,
       logOnly: environment.production,
     }),
+    AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

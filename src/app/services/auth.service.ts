@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { map, tap } from 'rxjs/operators';
-import { from, Observable } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+import { EMPTY, from, Observable, throwError } from 'rxjs';
 import firebase from 'firebase/compat/app';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class AuthService {
@@ -25,23 +26,45 @@ export class AuthService {
         response?.user?.updateProfile({
           displayName: name
         });
+      }),
+      catchError((error) => {
+        this.toastr.error(error.message.replace('Firebase:', ''), 'Error');
+        return EMPTY;
       })
     );
   }
 
   public login(email: string, password: string): Observable<firebase.auth.UserCredential> {
-    return from(this.firebaseAuth.signInWithEmailAndPassword(email, password));
+    return from(this.firebaseAuth.signInWithEmailAndPassword(email, password)).pipe(
+      catchError((error) => {
+        this.toastr.error(error.message.replace('Firebase:', ''), 'Error');
+        return EMPTY;
+      })
+    );
   }
 
   public googleSignIn(): Observable<firebase.auth.UserCredential> {
     const provider = new firebase.auth.GoogleAuthProvider();
-    return from(this.firebaseAuth.signInWithPopup(provider));
+    return from(this.firebaseAuth.signInWithPopup(provider)).pipe(
+      catchError((error) => {
+        this.toastr.error(error.message.replace('Firebase:', ''), 'Error');
+        return EMPTY;
+      })
+    );
   }
 
   public facebookSignIn(): Observable<firebase.auth.UserCredential> {
     const provider = new firebase.auth.FacebookAuthProvider();
-    return from(this.firebaseAuth.signInWithPopup(provider));
+    return from(this.firebaseAuth.signInWithPopup(provider)).pipe(
+      catchError((error) => {
+        this.toastr.error(error.message.replace('Firebase:', ''), 'Error');
+        return EMPTY;
+      })
+    );
   }
 
-  constructor(private firebaseAuth: AngularFireAuth) { }
+  constructor(
+    private toastr: ToastrService,
+    private firebaseAuth: AngularFireAuth
+  ) { }
 }

@@ -3,6 +3,7 @@ import { StoreModule } from '@ngrx/store';
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { reducer } from './store/app.reducer';
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ import { AngularFireModule } from '@angular/fire/compat';
     SharedModule,
     BrowserModule,
     AppRoutingModule,
+    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     StoreModule.forRoot({ app: reducer }),
     StoreDevtoolsModule.instrument({

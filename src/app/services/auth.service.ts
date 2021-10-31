@@ -25,5 +25,10 @@ export class AuthService {
     return from(this.firebaseAuth.authState);
   }
 
+  public googleSignIn(): Observable<firebase.auth.UserCredential> {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    return from(this.firebaseAuth.signInWithPopup(provider));
+  }
+
   constructor(private firebaseAuth: AngularFireAuth) { }
 }

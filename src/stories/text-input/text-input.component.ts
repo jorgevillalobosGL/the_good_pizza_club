@@ -45,20 +45,17 @@ export default class TextInputComponent implements ControlValueAccessor {
   @Input() placeholder: string = '';
   @Input() disabled: boolean = false;
   @Input() type: 'text' | 'password' | 'email' = 'text';
-  @Input() set state(state: 'success' | 'danger') {
-    this._state = state || 'success';
-  }
-  @Input() disableValidations= false;
-
+  @Input() state: 'success' | 'danger' | null = null;
+  @Input() disableValidations = false;
+  @Input() customErrorMessage: string | null;
   @Output() isValid = new EventEmitter<boolean>();
-
-  public _state= 'success';
+  public _state = this.state;
   public keyStreem$: Subject<string> = new Subject();
   public inputErrors$: Observable<any> = new Observable();
 
   @ViewChild('input') inputRef: ElementRef;
   get classes() {
-    return [`type-${this.type}`, `state-${this._state}`];
+    return [`type-${this.type}`, `state-${this.state || this._state}`];
   }
 
   get iconClass() {
@@ -102,7 +99,8 @@ export default class TextInputComponent implements ControlValueAccessor {
         return of({ hasErrors: false });
       }),
       tap(inputError => {
-        this._state = inputError.hasErrors ? 'danger' : 'success';
+        const tempStatus = inputError.hasErrors ? 'danger' : 'success';
+        this._state = this.state || tempStatus;
       })
     );
   }

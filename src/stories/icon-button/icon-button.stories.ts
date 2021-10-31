@@ -17,9 +17,19 @@ export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/angular/writing-stories/args
 Primary.args = {
   label: 'ADD TO CART',
+  showIcon: true
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'ADD TO CART',
+  type: 'secondary',
+  showIcon: true
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  label: 'ADD TO CART',
+  type: 'success',
+  showIcon: true
 };

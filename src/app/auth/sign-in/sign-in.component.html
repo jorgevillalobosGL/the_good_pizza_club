@@ -6,7 +6,7 @@
     <label class="txt-gray-6 pt-5">Password</label>
     <sb-text-input formControlName="password" type="password" (isValid)="isPasswordValid = $event"></sb-text-input>
     <label class="txt-gray-6 pt-5">Name</label>
-    <sb-text-input formControlName="name" type="text"></sb-text-input>
+    <sb-text-input formControlName="name" type="text" [state]="nameState" customErrorMessage="Name is required"></sb-text-input>
     <label class="txt-gray-6 pt-5">Phone Number</label>
     <sb-text-input type="text"></sb-text-input>
   </form>

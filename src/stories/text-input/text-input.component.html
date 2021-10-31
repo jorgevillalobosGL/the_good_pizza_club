@@ -11,4 +11,5 @@
   <ng-container *ngIf="(inputErrors$ | async) as inputErrors">
     <p *ngIf="inputErrors.hasErrors" class="txt-red py-2 px-4">{{inputErrors.message}}</p>
   </ng-container>
+  <p *ngIf="!!customErrorMessage && state === 'danger'" class="txt-red py-2 px-4">{{customErrorMessage}}</p>
 </div>

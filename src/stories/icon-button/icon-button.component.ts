@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export default class IconButtonComponent {
   @Input() type?: 'primary' | 'secondary' | 'success' = 'primary';
   @Input() label = 'Button';
+  @Input() width: string;
   @Input() isOutline = false;
   @Input() hasShadow = false;
   @Input() isDisabled = false;

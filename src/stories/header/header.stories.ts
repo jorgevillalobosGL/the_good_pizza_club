@@ -22,10 +22,34 @@ const Template: Story<Header> = (args: Header) => ({
   props: args,
 });
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  user: {},
+export const header = Template.bind({});
+header.args = {
+  menuItems: [
+    {
+      name: 'Menu',
+      url: 'home',
+    },
+    {
+      name: 'About Us',
+      url: 'about-us',
+    },
+    {
+      name: 'Contact',
+      url: '/contact',
+    },
+    {
+      name: 'Login / Sign up',
+      url: '/auth',
+    },
+    {
+      name: 'Help',
+      url: '/help',
+    },
+    {
+      name: '',
+      url: '/shopping',
+      icon: 'icon-shopping',
+    },
+  ],
+  linkActive: 'home'
 };
-
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {};

@@ -1,4 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { MenuItem } from '../../app/shared/general.model';
 
 @Component({
   selector: 'sb-header',
@@ -6,37 +8,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.scss'],
 })
 export default class HeaderComponent {
-  @Input() user: unknown = null;
+  @Input() menuItems: MenuItem[];
+  @Input() linkActive: string;
 
-  @Output() onLogin = new EventEmitter<Event>();
-  @Output() onLogout = new EventEmitter<Event>();
-  @Output() onCreateAccount = new EventEmitter<Event>();
+  redirectTo(link: string) {
+    this.router.navigate([link]);
+  }
 
-  public menuItems = [
-    {
-      name: 'Menu',
-      url: '/',
-    },
-    {
-      name: 'About Us',
-      url: 'about-us',
-    },
-    {
-      name: 'Contact',
-      url: '/contact',
-    },
-    {
-      name: 'Login / Sign up',
-      url: '/login',
-    },
-    {
-      name: 'Help',
-      url: '/help',
-    },
-    {
-      name: '',
-      url: '/shopping',
-      icon: 'icon-shopping'
-    }
-  ];
+  constructor(
+    private router: Router,
+  ) {}
 }

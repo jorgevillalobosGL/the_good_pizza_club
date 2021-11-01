@@ -22,4 +22,11 @@ Primary.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'CUSTOMIZE YOUR OWN',
+  type: 'secondary',
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  label: 'CUSTOMIZE YOUR OWN',
+  type: 'success',
 };

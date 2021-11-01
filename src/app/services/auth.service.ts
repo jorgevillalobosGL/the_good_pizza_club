@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { catchError, map, tap } from 'rxjs/operators';
-import { EMPTY, from, Observable, throwError } from 'rxjs';
+import { EMPTY, from, Observable } from 'rxjs';
 import firebase from 'firebase/compat/app';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ToastrService } from 'ngx-toastr';

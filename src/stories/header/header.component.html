@@ -1,7 +1,7 @@
 <header>
   <nav class="desktop-menu nav d-flex justify-content-between">
-    <a *ngFor="let menuItem of menuItems" class="nav-link" [ngClass]="{'active': linkActive === menuItem?.url}"
-      [href]="menuItem.url">
+    <a *ngFor="let menuItem of menuItems" class="nav-link cursor-pointer" [ngClass]="{'active': linkActive === menuItem?.url}"
+      (click)="redirectTo(menuItem.url)">
       {{ menuItem.name }} <span *ngIf="menuItem.icon" class="icon" [ngClass]="menuItem.icon"></span>
     </a>
   </nav>

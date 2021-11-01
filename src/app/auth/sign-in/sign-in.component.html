@@ -1,0 +1,18 @@
+<div class="sign-section">
+  <h3 class="txt-yellow pb-4 pl-3">Happy to have you!</h3>
+  <form [formGroup]="signUpForm">
+    <label class="txt-gray-6">Email</label>
+    <sb-text-input formControlName="email" type="email" (isValid)="isEmailValid = $event"></sb-text-input>
+    <label class="txt-gray-6 pt-5">Password</label>
+    <sb-text-input formControlName="password" type="password" (isValid)="isPasswordValid = $event"></sb-text-input>
+    <label class="txt-gray-6 pt-5">Name</label>
+    <sb-text-input formControlName="name" type="text" [state]="nameState" customErrorMessage="Name is required"></sb-text-input>
+    <label class="txt-gray-6 pt-5">Phone Number</label>
+    <sb-text-input type="text"></sb-text-input>
+  </form>
+  <div class="">
+    <div class="btn-sign"><sb-icon-button label="SIGN UP" type="success" width="345px" (click)="onSignUp()" [isDisabled]="!isEmailValid || !isPasswordValid"></sb-icon-button></div>
+    <div class="btn-google"><sb-icon-button label="SIGN UP WITH GOOGLE" [isOutline]="true" width="345px" (click)="onGoogleSignUp()"></sb-icon-button></div>
+    <div class="btn-facebook"><sb-icon-button label="SIGN UP WITH FACEBOOK" [isOutline]="true" width="345px" (click)="onFaceBookSignUp()"></sb-icon-button></div>
+  </div>
+</div>

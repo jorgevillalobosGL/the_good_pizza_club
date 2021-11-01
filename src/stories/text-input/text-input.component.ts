@@ -1,4 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  forwardRef,
+  ViewEncapsulation,
+  ViewChild,
+  ElementRef,
+  Output,
+  EventEmitter,
+} from '@angular/core';
+import {
+  NG_VALUE_ACCESSOR,
+  ControlValueAccessor
+} from '@angular/forms';
 import { Observable, of, Subject } from 'rxjs';
 import { debounceTime, switchMap, tap } from 'rxjs/operators';
 
@@ -14,25 +27,35 @@ const HasIndicatedLengthErrorMessage = 'Must be at least 7 characters long.';
 const IncludeNumbersErrorMessage = 'Must include a number.';
 const IncludeUpperLetterMessage = 'Must include at least one upper lettter case.';
 
+export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
+  provide: NG_VALUE_ACCESSOR,
+  // eslint-disable-next-line no-use-before-define
+  useExisting: forwardRef(() => TextInputComponent),
+  multi: true,
+};
 @Component({
   selector: 'sb-text-input',
   templateUrl: './text-input.component.html',
   styleUrls: ['./text-input.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
 })
-export default class TextInputComponent implements OnInit {
+export default class TextInputComponent implements ControlValueAccessor {
+
   @Input() placeholder: string = '';
   @Input() disabled: boolean = false;
   @Input() type: 'text' | 'password' | 'email' = 'text';
-  @Input() set state(state: 'success' | 'danger') {
-    this._state = state || 'success';
-  }
-
-  public _state= 'success';
+  @Input() state: 'success' | 'danger' | null = null;
+  @Input() disableValidations = false;
+  @Input() customErrorMessage: string | null;
+  @Output() isValid = new EventEmitter<boolean>();
+  public _state = this.state;
   public keyStreem$: Subject<string> = new Subject();
   public inputErrors$: Observable<any> = new Observable();
 
+  @ViewChild('input') inputRef: ElementRef;
   get classes() {
-    return [`type-${this.type}`, `state-${this._state}`];
+    return [`type-${this.type}`, `state-${this.state || this._state}`];
   }
 
   get iconClass() {
@@ -59,7 +82,12 @@ export default class TextInputComponent implements OnInit {
     this.inputErrors$ = this.keyStreem$.pipe(
       debounceTime(500),
       switchMap((text) => {
+        if(this.disableValidations) {
+          return of({ hasErrors: false });
+        }
+
         if (this.type === 'email') {
+          this.isValid.emit(EmailRegExp.test(String(text).toLowerCase()));
           return of({
             hasErrors: !EmailRegExp.test(String(text).toLowerCase()),
             message: EmailErrorMessage,
@@ -67,10 +95,12 @@ export default class TextInputComponent implements OnInit {
         } else if (this.type === 'password') {
           return of(this.checkPassword(text));
         }
+        this.isValid.emit(true);
         return of({ hasErrors: false });
       }),
       tap(inputError => {
-        this._state = inputError.hasErrors ? 'danger' : 'success';
+        const tempStatus = inputError.hasErrors ? 'danger' : 'success';
+        this._state = this.state || tempStatus;
       })
     );
   }
@@ -80,13 +110,13 @@ export default class TextInputComponent implements OnInit {
     const hasIndicatedLength = PasswordLength.test(password);
     const includeNumbers = PasswordHasNumber.test(password);
     const includeUpperLetter = PasswordHasUppercase.test(password);
-
-    return {
-      hasErrors:
-        includeSpaces ||
+    const hasErrors = includeSpaces ||
         !hasIndicatedLength ||
         !includeNumbers ||
-        !includeUpperLetter,
+        !includeUpperLetter;
+    this.isValid.emit(!hasErrors);
+    return {
+      hasErrors,
       message: `Password ${includeSpaces ? IncludeSpacesErrorMessage : ''} 
                 ${!hasIndicatedLength ? HasIndicatedLengthErrorMessage : ''}
                 ${!includeNumbers ? IncludeNumbersErrorMessage : ''}
@@ -100,4 +130,34 @@ export default class TextInputComponent implements OnInit {
   }
 
   constructor() {}
+
+  // ControlValueAccessor
+  private innerValue: any = '';
+
+  onChange(e: Event, value: any) {
+    this.innerValue = value;
+    this.propagateChange(this.innerValue);
+  }
+
+  get value(): any {
+    return this.innerValue;
+  }
+
+  set value(v: any) {
+    if (v !== this.innerValue) {
+      this.innerValue = v;
+    }
+  }
+
+  propagateChange = (_: any) => {};
+
+  writeValue(value: any) {
+    this.innerValue = value;
+  }
+
+  registerOnChange(fn: any) {
+    this.propagateChange = fn;
+  }
+
+  registerOnTouched(fn: any) {}
 }

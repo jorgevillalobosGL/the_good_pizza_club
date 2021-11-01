@@ -1,0 +1,17 @@
+<div class="welcome-section">
+  <h2 class="txt-yellow mb-0 pl-3">WELCOME!</h2>
+  <h3 class="txt-yellow pl-3">Make yourself at home</h3>
+  <div class="btn-content">
+    <sb-icon-button
+      class="btn-login"
+      label="LOG IN"
+      [isOutline]="true"
+      (click)="redirectTo('auth/login')"
+      width="224px"></sb-icon-button>
+    <sb-icon-button
+      class="btn-sign-in"
+      label="SIGN UP"
+      (click)="redirectTo('auth/sign-up')"
+      width="224px"></sb-icon-button>
+  </div>
+</div>

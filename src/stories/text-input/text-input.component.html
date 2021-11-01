@@ -1,13 +1,15 @@
 <div class="input-icons">
   <i class="icon" [ngClass]="iconClass" *ngIf="type === 'email' || type === 'password'"></i>
-  <input
+  <input #input
     class="input-field" 
     [type]="type" 
     [placeholder]="placeholder" 
     [ngClass]="classes" 
+    [disabled]="disabled"
     (keyup)="onKey($event)"
-    [disabled]="disabled">
+    (blur)="onChange($event, input.value)">
   <ng-container *ngIf="(inputErrors$ | async) as inputErrors">
     <p *ngIf="inputErrors.hasErrors" class="txt-red py-2 px-4">{{inputErrors.message}}</p>
   </ng-container>
+  <p *ngIf="!!customErrorMessage && state === 'danger'" class="txt-red py-2 px-4">{{customErrorMessage}}</p>
 </div>

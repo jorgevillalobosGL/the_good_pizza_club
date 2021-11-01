@@ -15,10 +15,10 @@ describe('Text-Input Story', () => {
     }).compileComponents();
   });
 
-  it('should be type "text", state "success" and no icon as default', () => {
+  it('should be type "text" and no icon as default', () => {
     const fixture = TestBed.createComponent(TextInputComponent);
     const app = fixture.componentInstance;
-    expect(app.classes).toEqual(['type-text', 'state-success']);
+    expect(app.classes[0]).toEqual('type-text');
     expect(app.iconClass).toEqual(['']);
   });
 
@@ -27,6 +27,7 @@ describe('Text-Input Story', () => {
       const fixture = TestBed.createComponent(TextInputComponent);
       const app = fixture.componentInstance;
       app.type = 'email';
+      app.state= 'success';
       expect(app.classes).toEqual(['type-email', 'state-success']);
       expect(app.iconClass).toEqual(['icon-mail']);
     });
@@ -54,6 +55,7 @@ describe('Text-Input Story', () => {
       const fixture = TestBed.createComponent(TextInputComponent);
       const app = fixture.componentInstance;
       app.type = 'password';
+      app.state= 'success';
       expect(app.classes).toEqual(['type-password', 'state-success']);
       expect(app.iconClass).toEqual(['icon-lock']);
     });

@@ -1,0 +1,25 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+.auth-main-container {
+  position: relative;
+  .comp-container {
+    padding: 219px 110px 0 15%;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .auth-main-container {
+    position: absolute;
+  }
+  .img-container {
+     min-height: 75em;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .auth-main-container .comp-container {
+    left: 0;
+  }
+}

@@ -12,50 +12,42 @@ body {
 h1 {
   font-family: 'Rowdies';
   font-style: normal;
-  font-weight: bold !important;
-  font-size: 120px !important;
-  line-height: 149px !important;
+  font-weight: bold;
+  font-size: 120px;
+  line-height: 149px;
 }
 
 h2 {
   font-family: 'Rowdies';
   font-style: normal;
-  font-weight: normal !important;
-  font-size: 80px !important;
-  line-height: 99px !important;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 99px;
 }
 
 
 h3 {
   font-family: 'Rowdies';
   font-style: normal;
-  font-weight: bold !important;
-  font-size: 40px !important;
-  line-height: 50px !important;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
 }
 
 h4 {
   font-family: 'Rowdies';
   font-style: normal;
-  font-weight: bold !important;
-  font-size: 24px !important;
-  line-height: 30px !important;
-}
-
-caption {
-  font-family: 'Red Hat Display';
-  font-style: normal;
-  font-weight: 500 !important;
-  font-size: 12px !important;
-  line-height: 16px !important;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .btn {
   font-family: 'Rowdies';
   font-style: normal;
-  font-weight: 400 !important;
-  letter-spacing: 0em !important;
-  text-align: center !important;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: center;
 
   &_big { //Button/30
     font-size: 30px;
@@ -66,8 +58,4 @@ caption {
     font-size: 20px;
     line-height: 25px;
   }
-}
-
-.icon {
-  list-style-type: none;
 }

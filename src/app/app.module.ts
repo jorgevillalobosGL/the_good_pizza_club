@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 
 // Services
-import { AuthService } from './services/auth.service';
+import { AuthService } from '@app-services/auth.service';
 
 // Guards
 import { AuthGuard } from './guards/auth.guard';
@@ -25,7 +25,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FooterComponent } from './components/footer/footer.component';
 
 // Share
-import { SharedModule } from './shared/shared.module';
+import { SharedModule } from '@app-shared/shared.module';
 import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({

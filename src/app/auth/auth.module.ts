@@ -4,14 +4,14 @@ import { environment } from '../../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthRouterModule } from './auth.router.module';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '@app-services/auth.service';
 
 // Store
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/auth.reducer';
 
 // Share
-import { SharedModule } from '../../app/shared/shared.module';
+import { SharedModule } from '@app-shared/shared.module';
 
 // Components
 import { AuthComponent } from './auth.component';

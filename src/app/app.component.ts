@@ -3,12 +3,12 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { distinctUntilChanged, filter, map, pluck } from 'rxjs/operators';
 
-import { MenuItem } from './shared/general.model';
-import { AuthService } from './services/auth.service';
+import { MenuItem } from '@app-shared/general.model';
+import { AuthService } from '@app-services/auth.service';
 
-import { AuthState } from './auth/store/auth.reducer';
+import { AuthState } from '@app-auth/store/auth.reducer';
 import { Store } from '@ngrx/store';
-import * as AuthActions from './auth/store/auth.actions';
+import * as AuthActions from '@app-auth/store/auth.actions';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

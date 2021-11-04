@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { User } from '../../shared/general.model';
+import { User } from '@app-shared/general.model';
 
 export enum Types {
   SAVE_USER = '[auth] save user',

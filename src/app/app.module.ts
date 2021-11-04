@@ -8,7 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { reducer } from './store/app.reducer';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { environment } from '../environments/environment';
+import { environment } from '@app-environment';
 
 // Services
 import { AuthService } from '@app-services/auth.service';

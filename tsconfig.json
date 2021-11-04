@@ -8,6 +8,7 @@
       "@app-shared/*": ["src/app/shared/*"],
       "@app-auth/*": ["src/app/auth/*"],
       "@app-services/*": ["src/app/services/*"],
+      "@app-environment": ["src/environments/environment"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

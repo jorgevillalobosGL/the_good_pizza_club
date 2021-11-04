@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { environment } from '../../environments/environment';
+import { environment } from '@app-environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthRouterModule } from './auth.router.module';

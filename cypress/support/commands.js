@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/database';
+import 'firebase/compat/firestore';
+import { attachCustomCommands } from 'cypress-firebase';
+
+const fireBaseConfig = {
+    projectId: 'the-good-pizza-club',
+    appId: '1:705243269757:web:eac1dea0e1c7a1a690bf14',
+    storageBucket: 'the-good-pizza-club.appspot.com',
+    locationId: 'us-east1',
+    apiKey: 'AIzaSyCcAC85Z1L19XUe3o3UgR_NfAH5ST88IAE',
+    authDomain: 'the-good-pizza-club.firebaseapp.com',
+    messagingSenderId: '705243269757',
+  };
+
+firebase.initializeApp(fireBaseConfig);
+attachCustomCommands({ Cypress, cy, firebase });

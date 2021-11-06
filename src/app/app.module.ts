@@ -8,10 +8,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { reducer } from './store/app.reducer';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { environment } from '../environments/environment';
+import { environment } from '@app-environment';
 
 // Services
-import { AuthService } from './services/auth.service';
+import { AuthService } from '@app-services/auth.service';
 
 // Guards
 import { AuthGuard } from './guards/auth.guard';
@@ -20,16 +20,21 @@ import { AuthGuard } from './guards/auth.guard';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
 
 // Components
 import { FooterComponent } from './components/footer/footer.component';
+import { LayoutComponent } from './layout/layout.component';
 
 // Share
-import { SharedModule } from './shared/shared.module';
-import { AngularFireModule } from '@angular/fire/compat';
+import { SharedModule } from '@app-shared/shared.module';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    LayoutComponent,
+    FooterComponent
+  ],
   imports: [
     SharedModule,
     BrowserModule,

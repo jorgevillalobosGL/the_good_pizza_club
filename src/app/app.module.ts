@@ -20,16 +20,21 @@ import { AuthGuard } from './guards/auth.guard';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
 
 // Components
 import { FooterComponent } from './components/footer/footer.component';
+import { LayoutComponent } from './layout/layout.component';
 
 // Share
 import { SharedModule } from '@app-shared/shared.module';
-import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    LayoutComponent,
+    FooterComponent
+  ],
   imports: [
     SharedModule,
     BrowserModule,

@@ -1,11 +1,21 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
 .header-content {
   text-align: center;
   top: 250px;
-  left: 587px;
+  left: 35%;
   h2 {
     line-height: 33px !important;
   }
   .customize-btn {
     margin-top: 105px;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .header-content {
+    left: 20%;
   }
 }

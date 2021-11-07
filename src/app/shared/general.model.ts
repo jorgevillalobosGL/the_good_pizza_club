@@ -14,3 +14,14 @@ export interface User {
   name: string;
   email: string;
 }
+
+export interface PizzaMenuCardContent {
+  bgColorGradientFrom: string,
+  bgColorGradientTo: string,
+  title: string,
+  numOfGrams: number,
+  numOfCalories: number,
+  description: string,
+  price: number,
+  cardBackgroundUrl: string
+}

@@ -12,4 +12,20 @@ describe('Home', () => {
     cy.get('#home-section .home-header .customize-btn').should('be.visible');
   })
 
+  it('display home pizza carousel', () => {
+    cy.get('#pizza-carousel-section h3').contains('You can also try one of our greatest hits');
+    cy.get('#pizza-carousel-section carousel').should('be.visible');
+  })
+
+  it('carousel controls should work', () => {
+    cy.get('#pizza-carousel-section .slide-0').should('be.visible');
+    cy.get('#pizza-carousel-section .slide-1').should('not.be.visible');
+    cy.get('#pizza-carousel-section .slide-2').should('not.be.visible');
+    cy.get('#pizza-carousel-section .carousel .right').click();
+    cy.get('#pizza-carousel-section .slide-0').should('not.be.visible');
+    cy.get('#pizza-carousel-section .slide-1').should('be.visible');
+    cy.get('#pizza-carousel-section .slide-2').should('not.be.visible');
+
+  })
+
 })

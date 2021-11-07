@@ -1,6 +1,6 @@
 <div id="home-section">
   <div>
-    <app-home-header></app-home-header>
+    <app-home-header (click)="openModal(customPizzaModal)"></app-home-header>
   </div>
   <div class="home-main-container">
     <app-day-promos-section></app-day-promos-section>
@@ -21,6 +21,8 @@
         </sb-button>
       </div>
     </div>
-    <div class="sub-section"></div>
   </div>
 </div>
+<ng-template #customPizzaModal>
+  <app-customize-pizza-form></app-customize-pizza-form>
+</ng-template>

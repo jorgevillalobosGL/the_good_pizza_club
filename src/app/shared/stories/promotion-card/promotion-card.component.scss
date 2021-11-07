@@ -1,6 +1,7 @@
 @import '../../../../assets/scss/colors';
 
 .promotion-card {
+  z-index: 1;
   width: 588px;
   height: 369px;
   padding: 18px;
@@ -29,8 +30,8 @@
   }
 
   .second-title {
-    margin-left: 75px;
-    margin-right: 75px;
+    margin-left: 60px;
+    margin-right: 60px;
   }
 
   .description {

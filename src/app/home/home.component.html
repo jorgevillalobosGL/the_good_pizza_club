@@ -5,5 +5,22 @@
   <div class="home-main-container">
     <app-day-promos-section></app-day-promos-section>
     <app-pizza-carousel-section></app-pizza-carousel-section>
+    <div id="bottom-section">
+      <div class="section-container d-flex justify-content-center">
+        <div>
+          <h4 class="txt-white">Can’t find what you’re looking for?</h4>
+          <h3>Check the rest of the menu</h3>
+        </div>
+        <sb-button
+          type="white"
+          label="GO TO THE MENU"
+          [isOutline]="true"
+          width="360px"
+          height="100px"
+          (click)="onGoToMenu()">
+        </sb-button>
+      </div>
+    </div>
+    <div class="sub-section"></div>
   </div>
 </div>

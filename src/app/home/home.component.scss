@@ -1,0 +1,18 @@
+@import '../../assets/scss/colors';
+
+#bottom-section {
+  height: 700px;
+  bottom: -300px;
+  margin-top: -260px;
+  position: relative;
+  background-color: $green-2;
+  border-radius: 312px 0px 0px 0px;
+
+  .section-container {
+    top: 104px;
+    position: relative;
+    sb-button{
+      padding-left: 70px;
+    }
+  }
+}

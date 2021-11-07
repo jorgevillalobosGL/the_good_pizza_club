@@ -11,6 +11,8 @@ export default class ButtonComponent {
   @Input() isOutline = false;
   @Input() hasShadow = false;
   @Input() isDisabled = false;
+  @Input() width: string;
+  @Input() height: string;
 
   @Output() onClick = new EventEmitter<Event>();
 

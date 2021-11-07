@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./button.scss'],
 })
 export default class ButtonComponent {
-  @Input() type?: 'primary' | 'secondary' | 'success' = 'primary';
+  @Input() type?: 'primary' | 'secondary' | 'success' | 'white' = 'primary';
   @Input() label = 'Button';
   @Input() isOutline = false;
   @Input() hasShadow = false;

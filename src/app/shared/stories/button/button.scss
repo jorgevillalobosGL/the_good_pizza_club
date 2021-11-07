@@ -24,4 +24,12 @@
   &-shadow {
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
   }
+  &.btn-outline-white {
+    border-color: $white;
+    color: $white;
+    &:hover {
+      color: $gray-5;
+      border-color: $gray-5;
+    }
+  }
 }

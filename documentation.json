@@ -49,12 +49,12 @@
         },
         {
             "name": "DropdownValue",
-            "id": "interface-DropdownValue-a9f30b537bdf16afa3d7c126e22cf7d2",
+            "id": "interface-DropdownValue-5b6bd69d595a4865b4db86a76be7ce11",
             "file": "src/app/shared/general.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DropdownValue {\n  value: string | number;\n  text?: string;\n  disabled?: boolean;\n}\n\nexport interface MenuItem {\n  name: string;\n  url: string;\n  icon?: string;\n}\n\nexport interface User {\n  name: string;\n  email: string;\n}\n",
+            "sourceCode": "export interface DropdownValue {\n  value: string | number;\n  text?: string;\n  disabled?: boolean;\n}\n\nexport interface MenuItem {\n  name: string;\n  url: string;\n  icon?: string;\n}\n\nexport interface User {\n  name: string;\n  email: string;\n}\n\nexport interface PizzaMenuCardContent {\n  bgColorGradientFrom: string,\n  bgColorGradientTo: string,\n  title: string,\n  numOfGrams: number,\n  numOfCalories: number,\n  description: string,\n  price: number,\n  cardBackgroundUrl: string\n}\n",
             "properties": [
                 {
                     "name": "disabled",
@@ -90,12 +90,12 @@
         },
         {
             "name": "MenuItem",
-            "id": "interface-MenuItem-a9f30b537bdf16afa3d7c126e22cf7d2",
+            "id": "interface-MenuItem-5b6bd69d595a4865b4db86a76be7ce11",
             "file": "src/app/shared/general.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DropdownValue {\n  value: string | number;\n  text?: string;\n  disabled?: boolean;\n}\n\nexport interface MenuItem {\n  name: string;\n  url: string;\n  icon?: string;\n}\n\nexport interface User {\n  name: string;\n  email: string;\n}\n",
+            "sourceCode": "export interface DropdownValue {\n  value: string | number;\n  text?: string;\n  disabled?: boolean;\n}\n\nexport interface MenuItem {\n  name: string;\n  url: string;\n  icon?: string;\n}\n\nexport interface User {\n  name: string;\n  email: string;\n}\n\nexport interface PizzaMenuCardContent {\n  bgColorGradientFrom: string,\n  bgColorGradientTo: string,\n  title: string,\n  numOfGrams: number,\n  numOfCalories: number,\n  description: string,\n  price: number,\n  cardBackgroundUrl: string\n}\n",
             "properties": [
                 {
                     "name": "icon",
@@ -130,13 +130,99 @@
             "methods": []
         },
         {
-            "name": "User",
-            "id": "interface-User-a9f30b537bdf16afa3d7c126e22cf7d2",
+            "name": "PizzaMenuCardContent",
+            "id": "interface-PizzaMenuCardContent-5b6bd69d595a4865b4db86a76be7ce11",
             "file": "src/app/shared/general.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DropdownValue {\n  value: string | number;\n  text?: string;\n  disabled?: boolean;\n}\n\nexport interface MenuItem {\n  name: string;\n  url: string;\n  icon?: string;\n}\n\nexport interface User {\n  name: string;\n  email: string;\n}\n",
+            "sourceCode": "export interface DropdownValue {\n  value: string | number;\n  text?: string;\n  disabled?: boolean;\n}\n\nexport interface MenuItem {\n  name: string;\n  url: string;\n  icon?: string;\n}\n\nexport interface User {\n  name: string;\n  email: string;\n}\n\nexport interface PizzaMenuCardContent {\n  bgColorGradientFrom: string,\n  bgColorGradientTo: string,\n  title: string,\n  numOfGrams: number,\n  numOfCalories: number,\n  description: string,\n  price: number,\n  cardBackgroundUrl: string\n}\n",
+            "properties": [
+                {
+                    "name": "bgColorGradientFrom",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "bgColorGradientTo",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "cardBackgroundUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "numOfCalories",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "numOfGrams",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "price",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 164,
+            "methods": []
+        },
+        {
+            "name": "User",
+            "id": "interface-User-5b6bd69d595a4865b4db86a76be7ce11",
+            "file": "src/app/shared/general.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface DropdownValue {\n  value: string | number;\n  text?: string;\n  disabled?: boolean;\n}\n\nexport interface MenuItem {\n  name: string;\n  url: string;\n  icon?: string;\n}\n\nexport interface User {\n  name: string;\n  email: string;\n}\n\nexport interface PizzaMenuCardContent {\n  bgColorGradientFrom: string,\n  bgColorGradientTo: string,\n  title: string,\n  numOfGrams: number,\n  numOfCalories: number,\n  description: string,\n  price: number,\n  cardBackgroundUrl: string\n}\n",
             "properties": [
                 {
                     "name": "email",
@@ -595,7 +681,7 @@
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-f65ec1faa1163e34219601567d0e2066",
+            "id": "component-AppComponent-4a1c25782dcccee6ce4be0d7b2ef3e05",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -603,9 +689,7 @@
             "outputs": [],
             "providers": [],
             "selector": "app-root",
-            "styleUrls": [
-                "./app.component.scss"
-            ],
+            "styleUrls": [],
             "styles": [],
             "templateUrl": [
                 "./app.component.html"
@@ -613,83 +697,8 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "activePathUrl$",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Observable<any>",
-                    "optional": false,
-                    "description": "",
-                    "line": 18,
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "menuItems",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "MenuItem[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 19,
-                    "modifierKind": [
-                        123
-                    ]
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "activePathUrlSubscription",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 21,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "initUserStateListener",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 65,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        121
-                    ]
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 60,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "setMenuItems",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 30,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
-                }
-            ],
+            "propertiesClass": [],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -697,75 +706,19 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { Router } from '@angular/router';\nimport { distinctUntilChanged, filter, map, pluck } from 'rxjs/operators';\n\nimport { MenuItem } from '@app-shared/general.model';\nimport { AuthService } from '@app-services/auth.service';\n\nimport { AuthState } from '@app-auth/store/auth.reducer';\nimport { Store } from '@ngrx/store';\nimport * as AuthActions from '@app-auth/store/auth.actions';\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent implements OnInit {\n  public activePathUrl$: Observable<any>;\n  public menuItems: MenuItem[];\n\n  public activePathUrlSubscription() {\n    this.activePathUrl$ = this.router.events.pipe(\n      filter((route: any) => !!route.url),\n      pluck('url'),\n      distinctUntilChanged(),\n      map<string, string>(url => `/${url?.split('/')[1]}`),\n    );\n  }\n\n  public setMenuItems() {\n    this.menuItems = [\n      {\n        name: 'Menu',\n        url: 'home',\n      },\n      {\n        name: 'About Us',\n        url: 'about-us',\n      },\n      {\n        name: 'Contact',\n        url: '/contact',\n      },\n      {\n        name: 'Login / Sign up',\n        url: '/auth',\n      },\n      {\n        name: 'Help',\n        url: '/help',\n      },\n      {\n        name: '',\n        url: '/shopping',\n        icon: 'icon-shopping',\n      },\n    ];\n  }\n\n  ngOnInit(): void {\n    this.setMenuItems();\n    this.activePathUrlSubscription();\n    this.initUserStateListener();\n  }\n  private initUserStateListener(): void {\n    this.authService.initUserStateListener().subscribe(\n      user => {\n        if (!!user) {\n          this.authStore.dispatch(\n            AuthActions.authorizeUser({\n              payload: {\n                name: user?.displayName || '',\n                email: user?.email || '',\n              }\n            })\n          );\n        }\n      }\n    );\n  }\n\n  constructor(\n    private router: Router,\n    private authService: AuthService,\n    private authStore: Store<AuthState>\n  ) { }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html'\n})\nexport class AppComponent {\n\n  constructor() { }\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".main-nav {\n  display: flex;\n  z-index: 100;\n\n  .logo {\n    top: 42px;\n    left: 102px;\n    position: absolute;\n  }\n\n  .menu-container {\n    top: 62px;\n    width: 56%;\n    right: 132px;\n    position: absolute;\n  }\n}\n\n@media (max-width: 991.98px) {\n  .main-nav .logo {\n    display: none;\n  }\n}",
-                    "styleUrl": "./app.component.scss"
-                }
-            ],
+            "styleUrlsData": "",
             "stylesData": "",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "router",
-                        "type": "Router",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "authService",
-                        "type": "AuthService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "authStore",
-                        "type": "Store<AuthState>",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 80,
-                "jsdoctags": [
-                    {
-                        "name": "router",
-                        "type": "Router",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "authService",
-                        "type": "AuthService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "authStore",
-                        "type": "Store<AuthState>",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
+                "args": [],
+                "line": 7
             },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div class=\"main-nav position-relative\">\n  <img class=\"logo\" src=\"assets/images/Logo.svg\" width=\"121px\" height=\"121px\">\n  <div class=\"menu-container\">\n    <sb-header [menuItems]=\"menuItems\" [linkActive]=\"activePathUrl$ | async\"></sb-header>\n  </div>\n</div>\n<router-outlet></router-outlet>\n<app-footer></app-footer>\n"
+            "templateData": "<router-outlet></router-outlet>\n"
         },
         {
             "name": "AuthComponent",
@@ -813,11 +766,11 @@
                 "args": [],
                 "line": 8
             },
-            "templateData": "<div class=\"d-flex\">\n  <div class=\"img-container\">\n    <img src=\"/assets/images/welcome_main.png\" alt=\"main-welcome\" class=\"logo\">\n  </div>\n  <div class=\"auth-main-container w-100\">\n    <div class=\"comp-container\">\n      <router-outlet></router-outlet>\n    </div>\n  </div>\n</div>"
+            "templateData": "<div class=\"d-flex\">\n  <div class=\"img-container\">\n    <img src=\"assets/images/welcome_main.png\" alt=\"main-welcome\" class=\"logo\">\n  </div>\n  <div class=\"auth-main-container w-100\">\n    <div class=\"comp-container\">\n      <router-outlet></router-outlet>\n    </div>\n  </div>\n</div>"
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-21698c41ee19ae4928dfdc8ec8dd523e",
+            "id": "component-ButtonComponent-543d36202365858a612e7212e247ba55",
             "file": "src/app/shared/stories/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -841,6 +794,13 @@
                     "deprecationMessage": "",
                     "line": 12,
                     "type": "boolean"
+                },
+                {
+                    "name": "height",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string"
                 },
                 {
                     "name": "isDisabled",
@@ -872,7 +832,14 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 9,
-                    "type": "\"primary\" | \"secondary\" | \"success\""
+                    "type": "\"primary\" | \"secondary\" | \"success\" | \"white\""
+                },
+                {
+                    "name": "width",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string"
                 }
             ],
             "outputsClass": [
@@ -881,7 +848,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 17,
                     "type": "EventEmitter"
                 }
             ],
@@ -894,11 +861,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'sb-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.scss'],\n})\nexport default class ButtonComponent {\n  @Input() type?: 'primary' | 'secondary' | 'success' = 'primary';\n  @Input() label = 'Button';\n  @Input() isOutline = false;\n  @Input() hasShadow = false;\n  @Input() isDisabled = false;\n\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const btnType = !this.isDisabled? this.type : 'light';\n    const classes = ['btn', `btn-${this.isOutline? 'outline-' : ''}${btnType}`];\n    if (this.hasShadow) {\n      classes.push('btn-shadow');\n    }\n    return classes;\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'sb-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.scss'],\n})\nexport default class ButtonComponent {\n  @Input() type?: 'primary' | 'secondary' | 'success' | 'white' = 'primary';\n  @Input() label = 'Button';\n  @Input() isOutline = false;\n  @Input() hasShadow = false;\n  @Input() isDisabled = false;\n  @Input() width: string;\n  @Input() height: string;\n\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const btnType = !this.isDisabled? this.type : 'light';\n    const classes = ['btn', `btn-${this.isOutline? 'outline-' : ''}${btnType}`];\n    if (this.hasShadow) {\n      classes.push('btn-shadow');\n    }\n    return classes;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../assets/scss/colors';\n\n.btn {\n  color: red;\n  top: 20px;\n  left: 20px;\n  padding: 15.5px 41.5px;\n  font-size: 30px;\n  line-height: 37px;\n  text-align: center;\n  font-style: normal;\n  align-items: center;\n  font-family: Rowdies;\n  border-radius: 200px;\n  justify-content: center;\n  &-primary,\n  &-secondary {\n    color: $gray-6;\n  }\n  &-light {\n    opacity: 1;\n    color: $gray-4;\n  }\n  &-shadow {\n    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);\n  }\n}\n",
+                    "data": "@import '../../../../assets/scss/colors';\n\n.btn {\n  top: 20px;\n  left: 20px;\n  padding: 15.5px 41.5px;\n  font-size: 30px;\n  line-height: 37px;\n  text-align: center;\n  font-style: normal;\n  align-items: center;\n  font-family: Rowdies;\n  border-radius: 200px;\n  justify-content: center;\n  &-primary,\n  &-secondary {\n    color: $gray-6;\n  }\n  &-light {\n    opacity: 1;\n    color: $gray-4;\n  }\n  &-shadow {\n    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);\n  }\n  &.btn-outline-white {\n    border-color: $white;\n    color: $white;\n    &:hover {\n      color: $gray-5;\n      border-color: $gray-5;\n    }\n  }\n}\n",
                     "styleUrl": "./button.scss"
                 }
             ],
@@ -910,11 +877,11 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 17
+                        "line": 19
                     }
                 }
             },
-            "templateData": "<button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\" [disabled]=\"isDisabled\">\n    {{ label }}\n</button>"
+            "templateData": "<button\n    type=\"button\"\n    [ngStyle]=\"{'width': width, 'height': height}\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\" [disabled]=\"isDisabled\">\n    {{ label }}\n</button>"
         },
         {
             "name": "ChipComponent",
@@ -1002,8 +969,302 @@
             "templateData": "<span [ngClass]=\"classes\">\n  {{ label }}\n  <li class=\"icon icon-x\" (click)=\"onClick.emit($event)\"></li>\n</span>"
         },
         {
+            "name": "CustomizePizzaFormComponent",
+            "id": "component-CustomizePizzaFormComponent-8c9ebe3708fd1297c37b7595170efa57",
+            "file": "src/app/components/customize-pizza-form/customize-pizza-form.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-customize-pizza-form",
+            "styleUrls": [
+                "./customize-pizza-form.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./customize-pizza-form.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "customPizzaForm",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "products",
+                    "defaultValue": "{\n    sauce: [\n      {\n        id: 1,\n        name: 'Tomato',\n        price: 0.5\n      },\n      {\n        id: 2,\n        name: 'Alfredo',\n        price: 0.5\n      },\n      {\n        id: 3,\n        name: 'Spicy Tomato',\n        price: 0.5\n      },\n    ],\n    cheese: [\n      {\n        id: 4,\n        name: 'Mozarella',\n        price: 0.5\n      },\n      {\n        id: 5,\n        name: 'L-F Mozarella',\n        price: 0.5\n      },\n      {\n        id: 6,\n        name: 'Vegan',\n        price: 0.5\n      },\n      {\n        id: 7,\n        name: 'Ricotta',\n        price: 0.5\n      },\n      {\n        id: 8,\n        name: 'Burrata',\n        price: 0.5\n      }\n    ],\n    toppings: [\n      {\n        id: 9,\n        name: 'Ground Beef',\n        price: 0.5\n      },\n      {\n        id: 10,\n        name: 'Pepperoni',\n        price: 0.5\n      },\n      {\n        id: 11,\n        name: 'Salami',\n        price: 0.5\n      },\n      {\n        id: 12,\n        name: 'Prosciutto',\n        price: 0.5\n      },\n      {\n        id: 13,\n        name: 'Mushrooms',\n        price: 0.5\n      },\n    ],\n    drinks: [\n      {\n        id: 14,\n        name: 'Coke',\n        price: 0.5\n      },\n      {\n        id: 15,\n        name: 'Lemon',\n        price: 0.5\n      },\n    ],\n    salads: [\n      {\n        id: 16,\n        name: 'Green',\n        price: 0.5\n      },\n      {\n        id: 17,\n        name: 'Cessar',\n        price: 0.5\n      },\n    ],\n    appetizers: [\n      {\n        id: 18,\n        name: 'Small Onion Rings',\n        price: 0.5\n      },\n      {\n        id: 19,\n        name: 'Big Onion Rings',\n        price: 0.5\n      },\n    ],\n    desserts: [\n      {\n        id: 20,\n        name: 'Dessert 1',\n        price: 0.5\n      },\n      {\n        id: 21,\n        name: 'Dessert 2',\n        price: 0.5\n      },\n    ]\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getDdnumber",
+                    "args": [
+                        {
+                            "name": "quantity",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "DropdownValue[]",
+                    "typeParameters": [],
+                    "line": 165,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "quantity",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getDdValues",
+                    "args": [
+                        {
+                            "name": "productList",
+                            "type": "any[]",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "DropdownValue[]",
+                    "typeParameters": [],
+                    "line": 157,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "productList",
+                            "type": "any[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 181,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "onSelectProduct",
+                    "args": [
+                        {
+                            "name": "category",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "product",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 177,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "category",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "product",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { FormBuilder, FormControl, FormGroup } from '@angular/forms';\nimport { DropdownValue } from '../../shared/general.model';\n\nenum Products {\n  sauce = 'sauce',\n  cheese = 'cheese',\n  toppings = 'toppings',\n  drinks = 'drinks',\n  salads = 'salads',\n  appetizers = 'appetizers',\n  desserts = 'desserts',\n}\n@Component({\n  selector: 'app-customize-pizza-form',\n  templateUrl: './customize-pizza-form.component.html',\n  styleUrls: ['./customize-pizza-form.component.scss']\n})\nexport class CustomizePizzaFormComponent implements OnInit{\n\n  public customPizzaForm: FormGroup;\n\n  public products = {\n    sauce: [\n      {\n        id: 1,\n        name: 'Tomato',\n        price: 0.5\n      },\n      {\n        id: 2,\n        name: 'Alfredo',\n        price: 0.5\n      },\n      {\n        id: 3,\n        name: 'Spicy Tomato',\n        price: 0.5\n      },\n    ],\n    cheese: [\n      {\n        id: 4,\n        name: 'Mozarella',\n        price: 0.5\n      },\n      {\n        id: 5,\n        name: 'L-F Mozarella',\n        price: 0.5\n      },\n      {\n        id: 6,\n        name: 'Vegan',\n        price: 0.5\n      },\n      {\n        id: 7,\n        name: 'Ricotta',\n        price: 0.5\n      },\n      {\n        id: 8,\n        name: 'Burrata',\n        price: 0.5\n      }\n    ],\n    toppings: [\n      {\n        id: 9,\n        name: 'Ground Beef',\n        price: 0.5\n      },\n      {\n        id: 10,\n        name: 'Pepperoni',\n        price: 0.5\n      },\n      {\n        id: 11,\n        name: 'Salami',\n        price: 0.5\n      },\n      {\n        id: 12,\n        name: 'Prosciutto',\n        price: 0.5\n      },\n      {\n        id: 13,\n        name: 'Mushrooms',\n        price: 0.5\n      },\n    ],\n    drinks: [\n      {\n        id: 14,\n        name: 'Coke',\n        price: 0.5\n      },\n      {\n        id: 15,\n        name: 'Lemon',\n        price: 0.5\n      },\n    ],\n    salads: [\n      {\n        id: 16,\n        name: 'Green',\n        price: 0.5\n      },\n      {\n        id: 17,\n        name: 'Cessar',\n        price: 0.5\n      },\n    ],\n    appetizers: [\n      {\n        id: 18,\n        name: 'Small Onion Rings',\n        price: 0.5\n      },\n      {\n        id: 19,\n        name: 'Big Onion Rings',\n        price: 0.5\n      },\n    ],\n    desserts: [\n      {\n        id: 20,\n        name: 'Dessert 1',\n        price: 0.5\n      },\n      {\n        id: 21,\n        name: 'Dessert 2',\n        price: 0.5\n      },\n    ]\n  };\n\n  public get sauceField(): FormControl {\n    return this.customPizzaForm.get('sauce') as FormControl;\n  }\n\n  public get cheeseField(): FormControl {\n    return this.customPizzaForm.get('cheese') as FormControl;\n  }\n\n  public get toppingField(): FormControl {\n    return this.customPizzaForm.get('topping') as FormControl;\n  }\n\n  public getDdValues(productList: any[]): DropdownValue[] {\n    return productList.map(product => ({\n      value: product.id,\n      text: product.name,\n      disabled: false\n    }));\n  }\n\n  public getDdnumber(quantity: number): DropdownValue[] {\n    const ddValues: DropdownValue[] = [];\n    for (let i = 0; i < quantity; i++) {\n      ddValues.push({\n        value: i + 1,\n        text: `${i + 1}`,\n        disabled: false\n      });\n    }\n    return ddValues;\n  }\n\n  public onSelectProduct(category: string, product: any) {\n    this.customPizzaForm.get(category)?.setValue(product.id);\n  }\n\n  public ngOnInit() {\n    this.customPizzaForm = this.formBuilder.group({\n      sauce: [],\n      cheese: [],\n      topping: [],\n      drink: [],\n      salad: [],\n      appetizer: [],\n      dessert: []\n    });\n  };\n\n  constructor(\n    private formBuilder: FormBuilder,\n  ) { }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../assets/scss/colors';\n\n#customize-pizza-form {\n  padding-top: 138px;\n  border-radius: 10px 200px 10px 10px;\n\n  .modal-title {\n    padding-bottom: 125px;\n  }\n\n  .pizza-size-container {\n    padding-top: 60px;\n\n    .pizza-size {\n      border: 3px solid;\n      border-radius: 100%;\n      display: block;\n\n      &-sm {\n        width: 155px;\n        height: 155px;\n        border-color: $red;\n      }\n\n      &-md {\n        width: 174px;\n        height: 174px;\n        border-color: $red;\n      }\n\n      &-lg {\n        width: 198px;\n        height: 198px;\n        background-color: $green-1;\n      }\n    }\n  }\n\n  .container {\n    padding-left: 60px;\n    padding-right: 60px;\n\n\n    .btn-content {\n      padding-left: 30px;\n      padding-right: 30px;\n    }\n\n    .main-dropdown {\n      width: 100%;\n    }\n  }\n}\n\n::ng-deep {\n  .modal-xl {\n    max-width: 73%;\n  }\n\n  .modal-content {\n    border-radius: 10px 200px 10px 10px;\n    background-color: $gray-1;\n  }\n}",
+                    "styleUrl": "./customize-pizza-form.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 191,
+                "jsdoctags": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "sauceField": {
+                    "name": "sauceField",
+                    "getSignature": {
+                        "name": "sauceField",
+                        "type": "",
+                        "returnType": "FormControl",
+                        "line": 145
+                    }
+                },
+                "cheeseField": {
+                    "name": "cheeseField",
+                    "getSignature": {
+                        "name": "cheeseField",
+                        "type": "",
+                        "returnType": "FormControl",
+                        "line": 149
+                    }
+                },
+                "toppingField": {
+                    "name": "toppingField",
+                    "getSignature": {
+                        "name": "toppingField",
+                        "type": "",
+                        "returnType": "FormControl",
+                        "line": 153
+                    }
+                }
+            },
+            "templateData": "<div id=\"customize-pizza-form\" class=\"bg-gray-1\">\n  <div class=\"txt-white\">\n{{customPizzaForm.value| json}}\n</div>\n<div class=\"text-center\">\n  <h2 class=\"txt-yellow modal-title\">Make it your own way</h2>\n  <h3 class=\"txt-white\">Choose your size</h3>\n  <div class=\"pizza-size-container d-flex align-items-baseline justify-content-center\">\n    <div>\n      <span class=\"pizza-size pizza-size-sm mx-5 cursor-pointer mb-4\"></span>\n      <span class=\"pizza-size_text\">\n      <h4 class=\"txt-white\">Small</h4>\n      <h4 class=\"txt-white\">7”</h4>\n    </span>\n    </div>\n    <div>\n      <span class=\"pizza-size pizza-size-md mx-5 cursor-pointer mb-4\"></span>\n      <span class=\"pizza-size_text\">\n      <h4 class=\"txt-white\">Medium</h4>\n      <h4 class=\"txt-white\">10”</h4>\n    </span>\n    </div>\n    <div>\n      <span class=\"pizza-size pizza-size-lg mx-5 cursor-pointer mb-4\"></span>\n      <span class=\"pizza-size_text\">\n      <h4 class=\"txt-white\">Large</h4>\n      <h4 class=\"txt-white\">13”</h4>\n    </span>\n    </div>\n  </div>\n</div>\n<div class=\"container\">\n  <div>\n    <h3 class=\"txt-white text-center pt-5\">Choose your toppings</h3>\n    <h4 class=\"txt-white pt-5\">Sauce</h4>\n    <div class=\"btn-content d-flex justify-content-between flex-wrap pt-5\">\n      <sb-button \n        *ngFor=\"let sauce of products.sauce\"\n        [label]=\"sauce.name\"\n        [isOutline]=\"sauceField.value !== sauce.id\"\n        width=\"300px\"\n        height=\"90px\"\n        (click)=\"onSelectProduct('sauce', sauce)\">\n      </sb-button>\n    </div>\n    <h4 class=\"txt-white text-center pt-5\">No sauce?</h4>\n  </div>\n  <div>\n    <h4 class=\"txt-white pt-5\">Cheese</h4>\n    <div class=\"d-flex justify-content-between flex-wrap py-5\">\n      <sb-button \n        *ngFor=\"let cheese of products.cheese\"\n        class=\"p-3\"\n        [label]=\"cheese.name\" \n        [isOutline]=\"true\"\n        [isOutline]=\"cheeseField.value !== cheese.id\"\n        width=\"300px\"\n        height=\"90px\"\n        (click)=\"onSelectProduct('cheese', cheese)\">\n      </sb-button>\n    </div>\n    <h4 class=\"txt-white text-center pt-5\">No cheese?</h4>\n  </div>\n  <div>\n    <h4 class=\"txt-white pt-5\">Toppings</h4>\n    <div class=\"d-flex justify-content-between flex-wrap py-5\">\n      <sb-button\n        *ngFor=\"let topping of products.toppings\"\n        class=\"p-3\"\n        [label]=\"topping.name\"\n        [isOutline]=\"true\"\n        [isOutline]=\"toppingField.value !== topping.id\"\n        width=\"300px\"\n        height=\"90px\"\n        (click)=\"onSelectProduct('topping', topping)\"></sb-button>\n    </div>\n    <h4 class=\"txt-white text-center pt-5\">Extra Something?</h4>\n  </div>\n  <div>\n    <h3 class=\"txt-white text-center pt-5\">Need anything else?</h3>\n    <div class=\"row py-5\">\n      <div class=\"col-6\">\n        <h4 class=\"txt-white pt-5 pb-3\">Drinks</h4>\n        <sb-dropdown [dropdownValues]=\"getDdValues(products.drinks)\" class=\"main-dropdown pt-5\"></sb-dropdown>\n        <div class=\"quantity-container row py-3\">\n          <sb-dropdown [dropdownValues]=\"getDdnumber(9)\" class=\"col-6\"></sb-dropdown>\n          <sb-button class=\"col-6 text-right\" label=\"ADD\"></sb-button>\n        </div>\n      \n        <h4 class=\"txt-white pt-5 pb-3\">Appetizers</h4>\n        <sb-dropdown [dropdownValues]=\"getDdValues(products.appetizers)\" class=\"main-dropdown pt-5\"></sb-dropdown>\n        <div class=\"quantity-container row py-3\">\n          <sb-dropdown [dropdownValues]=\"getDdnumber(9)\" class=\"col-6\"></sb-dropdown>\n          <sb-button class=\"col-6 text-right\" label=\"ADD\"></sb-button>\n        </div>\n      </div>\n      <div class=\"col-6\">\n        <h4 class=\"txt-white pt-5 pb-3\">Salads</h4>\n        <sb-dropdown [dropdownValues]=\"getDdnumber(9)\" [dropdownValues]=\"getDdValues(products.salads)\" class=\"main-dropdown pt-5\"></sb-dropdown>\n        <div class=\"quantity-container row py-3\">\n          <sb-dropdown [dropdownValues]=\"getDdnumber(9)\" class=\"col-6\"></sb-dropdown>\n          <sb-button class=\"col-6 text-right\" label=\"ADD\"></sb-button>\n        </div>\n\n        <h4 class=\"txt-white pt-5 pb-3\">Desserts</h4>\n        <sb-dropdown [dropdownValues]=\"getDdValues(products.desserts)\" class=\"main-dropdown\"></sb-dropdown>\n        <div class=\"quantity-container row py-3\">\n          <sb-dropdown [dropdownValues]=\"getDdnumber(9)\" class=\"col-6\"></sb-dropdown>\n          <sb-button class=\"col-6 text-right\" label=\"ADD\"></sb-button>\n        </div>\n      </div>\n    </div>\n    <div class=\"d-flex justify-content-center py-5\">\n      <sb-button class=\"px-5\" label=\"RESTART\" width=\"420px\" height=\"120px\"></sb-button>\n      <sb-button class=\"px-5\" label=\"ADD TO CARD\" width=\"420px\" height=\"120px\"></sb-button>\n    </div>\n  </div>\n</div>\n</div>"
+        },
+        {
+            "name": "DayPromosSectionComponent",
+            "id": "component-DayPromosSectionComponent-6145476fdcc37ee0a99b773d0c56710d",
+            "file": "src/app/home/day-promos-section/day-promos-section.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-day-promos-section",
+            "styleUrls": [
+                "./day-promos-section.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./day-promos-section.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-day-promos-section',\n  templateUrl: './day-promos-section.component.html',\n  styleUrls: ['./day-promos-section.component.scss']\n})\nexport class DayPromosSectionComponent {\n\n  constructor() { }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "#day-promos-section {\n  padding-top: 110px;\n  padding-bottom: 50px;\n\n  .promo-1 {\n    padding-top: 100px;\n\n    img {\n      left: 225px;\n    }\n\n    sb-promotion-card {\n      opacity: 0.9;\n    }\n  }\n\n  .promo-2 {\n    padding-top: 85px;\n\n    sb-promotion-card {\n      z-index: 1;\n      left: 220px;\n      opacity: 0.9;\n    }\n  }\n}",
+                    "styleUrl": "./day-promos-section.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "templateData": "<div id=\"day-promos-section\" class=\"text-center\">\n  <h3 class=\"txt-white\">Promos of the day</h3>\n  <div class=\"promo-1 d-flex align-items-center\">\n    <img class=\"position-relative\" src=\"assets/images/promo-bg1.png\" alt=\"Promo 1\">\n    <sb-promotion-card\n      class=\"position-relative\"\n      bgColor=\"#380A48\"\n      [showDecorators]=\"true\"\n      mainTitle=\"2 x 1 Fridays\"\n      secondTitle=\"‘LIVES & ‘SHROOMS\"\n      description=\"On medium size pizzas with no additional toppings.\">\n    </sb-promotion-card>\n  </div>\n  <div class=\"promo-2 d-flex align-items-center\">\n    <sb-promotion-card\n      class=\"position-relative\"\n      bgColor=\"#284B56\"\n      mainTitle=\"33% OFF\"\n      secondTitle=\"SALAME & MUSHROOMS\">\n    </sb-promotion-card>\n    <img class=\"position-relative\" src=\"assets/images/promo-bg2.png\" alt=\"Promo 2\">\n  </div>\n</div>"
+        },
+        {
             "name": "DropdownComponent",
-            "id": "component-DropdownComponent-494111a5c81ccbc849f613ca5fdd8567",
+            "id": "component-DropdownComponent-2902a6a218beb132c6a19f74a63ab9a7",
             "file": "src/app/shared/stories/dropdown/dropdown.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1047,7 +1308,18 @@
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "jvs",
+                    "defaultValue": "'holis'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "onItemClick",
@@ -1062,7 +1334,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 13,
+                    "line": 14,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1085,11 +1357,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { DropdownValue } from '@app-shared/general.model';\n\n@Component({\n  selector: 'sb-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss']\n})\nexport default class DropdownComponent {\n  @Input() dropdownValues: DropdownValue[] = [];\n  @Input() label = 'Select an Item';\n  @Output() itemSelected = new EventEmitter<DropdownValue>();\n  onItemClick(value: DropdownValue) {\n    this.itemSelected.emit(value);\n  }\n  constructor() { }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { DropdownValue } from '@app-shared/general.model';\n\n@Component({\n  selector: 'sb-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss']\n})\nexport default class DropdownComponent {\n  @Input() dropdownValues: DropdownValue[] = [];\n  @Input() label = 'Select an Item';\n  @Output() itemSelected = new EventEmitter<DropdownValue>();\n  jvs = 'holis';\n  onItemClick(value: DropdownValue) {\n    console.log('jvs->', value);\n    this.jvs = <string>value.text;\n    this.itemSelected.emit(value);\n  }\n\n  constructor() { }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../assets/scss/colors';\n\n.dropdown {\n\t&.show {\n\t\t.dropdown-toggle {\n\t\t\t&::before {\n\t\t\t\tpadding-left: 0px;\n\t\t\t\tpadding-right: 10px;\n\t\t\t\ttransform: rotate(180deg);\n\t\t\t}\n\t\t}\n\t}\n}\n.dropdown-toggle {\n\tcolor: $white;\n\tpadding: 25px;\n\tfont-size: 20px;\n\tmin-width: 230px;\n\tmargin-left: 5px;\n\tline-height: 26px;\n\tbackground: $gray-2;\n\tborder-radius: 10px;\n\tfont-style: normal;\n\tfont-weight: normal;\n\ttext-decoration: none;\n\tdisplay: inline-block;\n\tfont-family: 'Red Hat Display';\n\tbox-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);\n\t&::after {\n\t\tdisplay: none;\n\t}\n\t&::before {\n\t\tfloat: right;\n\t\tfont-size: 30px;\n\t\tpadding-left: 10px;\n\t}\n}\n.dropdown-menu {\n\tmargin: 0px;\n\tmin-width: 230px;\n\tbackground: $gray-2;\n\ttop: -10px !important;\n\t.dropdown-item {\n\t\tcolor: $white;\n\t\tfont-size: 20px;\n\t\tline-height: 26px;\n\t\tfont-style: normal;\n\t\tfont-weight: normal;\n\t\tfont-family: 'Red Hat Display';\n\t\t&.disabled {\n\t\t\tcolor: $gray-3;\n\t\t}\n\t\t&:hover {\n\t\t\tborder-radius: 50px;\n\t\t\ttext-decoration: none;\n\t\t\tbackground-color: $green-2;\n\t\t}\n\t}\n}\n",
+                    "data": "@import '../../../../assets/scss/colors';\n\n.dropdown {\n  list-style-type: none;\n\t&.show {\n\t\t.dropdown-toggle {\n\t\t\t&::before {\n\t\t\t\tpadding-left: 0px;\n\t\t\t\tpadding-right: 10px;\n\t\t\t\ttransform: rotate(180deg);\n\t\t\t}\n\t\t}\n\t}\n}\n.dropdown-toggle {\n  width: 100%;\n\tcolor: $white;\n\tpadding: 25px;\n\tfont-size: 20px;\n\tmin-width: 230px;\n\tmargin-left: 5px;\n\tline-height: 26px;\n\tbackground: $gray-2;\n\tborder-radius: 10px;\n\tfont-style: normal;\n\tfont-weight: normal;\n\ttext-decoration: none;\n\tdisplay: inline-block;\n\tfont-family: 'Red Hat Display';\n\tbox-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);\n\t&::after {\n\t\tdisplay: none;\n\t}\n\t&::before {\n\t\tfloat: right;\n\t\tfont-size: 30px;\n\t\tpadding-left: 10px;\n\t}\n}\n.dropdown-menu {\n  width: 100%;\n\tmargin: 0px;\n\tmin-width: 230px;\n\tbackground: $gray-2;\n\ttop: -10px !important;\n\t.dropdown-item {\n\t\tcolor: $white;\n\t\tfont-size: 20px;\n\t\tline-height: 26px;\n\t\tfont-style: normal;\n\t\tfont-weight: normal;\n\t\tfont-family: 'Red Hat Display';\n\t\t&.disabled {\n\t\t\tcolor: $gray-3;\n\t\t}\n\t\t&:hover {\n\t\t\tborder-radius: 50px;\n\t\t\ttext-decoration: none;\n\t\t\tbackground-color: $green-2;\n\t\t}\n\t}\n}\n",
                     "styleUrl": "./dropdown.component.scss"
                 }
             ],
@@ -1100,9 +1372,9 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 15
+                "line": 18
             },
-            "templateData": "<li class=\"dropdown\">\n  <a class=\"dropdown-toggle icon-menu-arrow\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\"\n    aria-expanded=\"false\">{{label}}</a>\n  <div class=\"dropdown-menu\">\n    <a \n      *ngFor=\"let dropdownValue of dropdownValues\"\n      [ngClass]=\"{'disabled': dropdownValue.disabled}\"\n      (click)=\"onItemClick(dropdownValue)\"\n      class=\"dropdown-item\">\n      {{dropdownValue.text || dropdownValue.value}}\n    </a> \n  </div>\n</li>"
+            "templateData": "<div class=\"btn-group\" dropdown>\n  <button id=\"button-basic\" dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle\"\n          aria-controls=\"dropdown-basic\">\n    Button dropdown <span class=\"caret\"></span>\n  </button>\n  <ul id=\"dropdown-basic\" *dropdownMenu class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"button-basic\">\n    <li *ngFor=\"let dropdownValue of dropdownValues\" (click)=\"onItemClick(dropdownValue)\" role=\"menuitem\"><a class=\"dropdown-item\">{{dropdownValue.text}}</a></li>\n  </ul>\n</div>"
         },
         {
             "name": "FooterComponent",
@@ -1264,7 +1536,7 @@
         },
         {
             "name": "HomeComponent",
-            "id": "component-HomeComponent-b412a4644af8bf760458899b6e5e5ea6",
+            "id": "component-HomeComponent-113feee9f41a1ba712bb817d9ca88d03",
             "file": "src/app/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1282,8 +1554,66 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "modalRef",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "BsModalRef",
+                    "optional": true,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onGoToMenu",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "openModal",
+                    "args": [
+                        {
+                            "name": "template",
+                            "type": "TemplateRef<any>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "template",
+                            "type": "TemplateRef<any>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -1291,11 +1621,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.scss']\n})\nexport class HomeComponent {\n\n  constructor() { }\n\n}\n",
+            "sourceCode": "import { Component, TemplateRef } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.scss']\n})\nexport class HomeComponent {\n  private modalRef?: BsModalRef;\n\n  public onGoToMenu() {\n    this.router.navigate(['/menu']);\n  }\n\n  public openModal(template: TemplateRef<any>) {\n    this.modalRef = this.modalService.show(template, { id: 1, class: 'modal-xl' });\n  }\n\n  constructor(\n    private router: Router,\n    private modalService: BsModalService\n  ) { }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "@import '../../assets/scss/colors';\n\n#bottom-section {\n  height: 700px;\n  bottom: -300px;\n  margin-top: -260px;\n  position: relative;\n  background-color: $green-2;\n  border-radius: 312px 0px 0px 0px;\n\n  .section-container {\n    top: 104px;\n    position: relative;\n    sb-button{\n      padding-left: 70px;\n    }\n  }\n}\n",
                     "styleUrl": "./home.component.scss"
                 }
             ],
@@ -1305,10 +1635,100 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 8
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "modalService",
+                        "type": "BsModalService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 19,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "modalService",
+                        "type": "BsModalService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
-            "templateData": "<div class=\"home-main-container txt-white pt-5\">\n  home works!\n</div>\n\n"
+            "templateData": "<div id=\"home-section\">\n  <div>\n    <app-home-header (click)=\"openModal(customPizzaModal)\"></app-home-header>\n  </div>\n  <div class=\"home-main-container\">\n    <app-day-promos-section></app-day-promos-section>\n    <app-pizza-carousel-section></app-pizza-carousel-section>\n    <div id=\"bottom-section\">\n      <div class=\"section-container d-flex justify-content-center\">\n        <div>\n          <h4 class=\"txt-white\">Can’t find what you’re looking for?</h4>\n          <h3>Check the rest of the menu</h3>\n        </div>\n        <sb-button\n          type=\"white\"\n          label=\"GO TO THE MENU\"\n          [isOutline]=\"true\"\n          width=\"360px\"\n          height=\"100px\"\n          (click)=\"onGoToMenu()\">\n        </sb-button>\n      </div>\n    </div>\n  </div>\n</div>\n<ng-template #customPizzaModal>\n  <app-customize-pizza-form></app-customize-pizza-form>\n</ng-template>"
+        },
+        {
+            "name": "HomeHeaderComponent",
+            "id": "component-HomeHeaderComponent-610c8ebbe8af6d67450ecbe22db439a3",
+            "file": "src/app/home/home-header/home-header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home-header",
+            "styleUrls": [
+                "./home-header.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./home-header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-home-header',\n  templateUrl: './home-header.component.html',\n  styleUrls: ['./home-header.component.scss']\n})\nexport class HomeHeaderComponent {\n  @Output() onClick = new EventEmitter<Event>();\n\n  constructor() { }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"~bootstrap/scss/_functions.scss\";\n@import \"~bootstrap/scss/_variables.scss\";\n@import \"~bootstrap/scss/mixins/_breakpoints.scss\";\n\n.header-content {\n  text-align: center;\n  top: 250px;\n  left: 35%;\n\n  h2 {\n    line-height: 33px !important;\n  }\n\n  .customize-btn {\n    margin-top: 105px;\n  }\n}\n\n@include media-breakpoint-down(md) {\n  .header-content {\n    left: 20%;\n  }\n}",
+                    "styleUrl": "./home-header.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "templateData": "<div class=\"home-header\">\n  <div class=\"img-container position-relative\">\n    <img src=\"assets/images/home.png\" alt=\"home\">\n  </div>\n  <div class=\"header-content position-absolute\">\n    <h1 class=\"txt-yellow\">PIZZA?</h1>\n    <h2 class=\"txt-yellow\">Gotcha!</h2>\n    <div class=\"customize-btn\">\n      <sb-button\n        label=\"CUSTOMIZE YOUR OWN\"\n        width=\"505px\"\n        height=\"117px\"\n        (click)=\"onClick.emit($event)\">\n      </sb-button>\n    </div>\n  </div>\n</div>"
         },
         {
             "name": "IconButtonComponent",
@@ -1435,8 +1855,182 @@
             "templateData": "<button\n    type=\"button\"\n    [ngStyle]=\"{'width': width}\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\" [disabled]=\"isDisabled\">\n    <li *ngIf=\"showIcon\" class=\"icon icon-pizza\"></li>\n    {{ label }}\n</button>"
         },
         {
+            "name": "LayoutComponent",
+            "id": "component-LayoutComponent-f9fc3b1af19dca3b4fc70ff9877b9855",
+            "file": "src/app/layout/layout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-layout",
+            "styleUrls": [
+                "./layout.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./layout.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "activePathUrl$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "menuItems",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MenuItem[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "activePathUrlSubscription",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "initUserStateListener",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 61,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "setMenuItems",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { Router } from '@angular/router';\nimport { distinctUntilChanged, filter, map, pluck } from 'rxjs/operators';\n\nimport { MenuItem } from '@app-shared/general.model';\nimport { AuthService } from '@app-services/auth.service';\n\nimport { AuthState } from '@app-auth/store/auth.reducer';\nimport { Store } from '@ngrx/store';\nimport * as AuthActions from '@app-auth/store/auth.actions';\n\n@Component({\n  selector: 'app-layout',\n  templateUrl: './layout.component.html',\n  styleUrls: ['./layout.component.scss']\n})\nexport class LayoutComponent implements OnInit {\npublic activePathUrl$: Observable<any>;\n  public menuItems: MenuItem[];\n\n  public activePathUrlSubscription() {\n    this.activePathUrl$ = this.router.events.pipe(\n      filter((route: any) => !!route.url),\n      pluck('url'),\n      distinctUntilChanged(),\n      map<string, string>(url => `/${url?.split('/')[1]}`),\n    );\n  }\n\n  public setMenuItems() {\n    this.menuItems = [\n      {\n        name: 'Menu',\n        url: 'home',\n      },\n      {\n        name: 'About Us',\n        url: 'about-us',\n      },\n      {\n        name: 'Contact',\n        url: '/contact',\n      },\n      {\n        name: 'Login / Sign up',\n        url: '/auth',\n      },\n      {\n        name: 'Help',\n        url: '/help',\n      },\n      {\n        name: '',\n        url: '/shopping',\n        icon: 'icon-shopping',\n      },\n    ];\n  }\n\n  ngOnInit(): void {\n    this.setMenuItems();\n    this.activePathUrlSubscription();\n    this.initUserStateListener();\n  }\n  private initUserStateListener(): void {\n    this.authService.initUserStateListener().subscribe(\n      user => {\n        if (!!user) {\n          this.authStore.dispatch(\n            AuthActions.authorizeUser({\n              payload: {\n                name: user?.displayName || '',\n                email: user?.email || '',\n              }\n            })\n          );\n        }\n      }\n    );\n  }\n\n  constructor(\n    private router: Router,\n    private authService: AuthService,\n    private authStore: Store<AuthState>\n  ) { }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".main-nav {\n  display: flex;\n  z-index: 100;\n\n  .logo {\n    top: 42px;\n    left: 102px;\n    position: absolute;\n  }\n\n  .menu-container {\n    top: 62px;\n    width: 56%;\n    right: 132px;\n    position: absolute;\n  }\n}\n\n@media (max-width: 991.98px) {\n  .main-nav .logo {\n    display: none;\n  }\n}",
+                    "styleUrl": "./layout.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "authService",
+                        "type": "AuthService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "authStore",
+                        "type": "Store<AuthState>",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 81,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "authService",
+                        "type": "AuthService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "authStore",
+                        "type": "Store<AuthState>",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"main-nav position-relative\">\n  <img class=\"logo\" src=\"assets/images/Logo.svg\" width=\"121px\" height=\"121px\">\n  <div class=\"menu-container\">\n    <sb-header [menuItems]=\"menuItems\" [linkActive]=\"activePathUrl$ | async\"></sb-header>\n  </div>\n</div>\n<router-outlet></router-outlet>\n<app-footer></app-footer>"
+        },
+        {
             "name": "LoginComponent",
-            "id": "component-LoginComponent-4adee701ae158646ec814a8f01bb8a04",
+            "id": "component-LoginComponent-3bcb846814246a65fcfd2bdb8bad69e7",
             "file": "src/app/auth/login/login.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1580,7 +2174,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnDestroy } from '@angular/core';\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\nimport { Router } from '@angular/router';\nimport { Subject } from 'rxjs';\nimport { takeUntil } from 'rxjs/operators';\nimport { AuthService } from '@app-services/auth.service';\n\n@Component({\n  selector: 'app-login',\n  templateUrl: './login.component.html',\n  styleUrls: ['./login.component.scss'],\n})\nexport class LoginComponent implements OnDestroy {\n  public loginForm: FormGroup;\n  private destroy$: Subject<boolean> = new Subject<boolean>();\n\n  public login() {\n    const { email, password } = this.loginForm.getRawValue();\n    this.authService.login(email, password).pipe(\n      takeUntil(this.destroy$)\n    ).subscribe(\n      ({ user }) => {\n        this.handleLogin(user);\n      }\n    );\n  }\n\n  public googleLogin() {\n    this.authService.googleSignIn().subscribe(\n      ({ user }) => {\n        this.handleLogin(user);\n      }\n    );\n  }\n\n  public facebookLogin() {\n    this.authService.facebookSignIn().subscribe(\n      ({ user }) => {\n        this.handleLogin(user);\n      }\n    );\n  }\n\n  private handleLogin(user: firebase.default.User | null): void {\n    if (!!user) {\n      this.router.navigate(['/home']);\n    }\n  }\n\n  ngOnInit() {\n    this.loginForm = this.formBuilder.group({\n      email: ['', Validators.required],\n      password: ['', Validators.required]\n    });\n  }\n\n  ngOnDestroy() {\n    this.destroy$.next(true);\n    this.destroy$.unsubscribe();\n  }\n\n  constructor(\n    private router: Router,\n    private authService: AuthService,\n    private formBuilder: FormBuilder\n  ) {}\n}\n",
+            "sourceCode": "import { Component, OnDestroy, OnInit } from '@angular/core';\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\nimport { Router } from '@angular/router';\nimport { Subject } from 'rxjs';\nimport { takeUntil } from 'rxjs/operators';\nimport { AuthService } from '@app-services/auth.service';\n\n@Component({\n  selector: 'app-login',\n  templateUrl: './login.component.html',\n  styleUrls: ['./login.component.scss'],\n})\nexport class LoginComponent implements OnDestroy, OnInit {\n  public loginForm: FormGroup;\n  private destroy$: Subject<boolean> = new Subject<boolean>();\n\n  public login() {\n    const { email, password } = this.loginForm.getRawValue();\n    this.authService.login(email, password).pipe(\n      takeUntil(this.destroy$)\n    ).subscribe(\n      ({ user }) => {\n        this.handleLogin(user);\n      }\n    );\n  }\n\n  public googleLogin() {\n    this.authService.googleSignIn().subscribe(\n      ({ user }) => {\n        this.handleLogin(user);\n      }\n    );\n  }\n\n  public facebookLogin() {\n    this.authService.facebookSignIn().subscribe(\n      ({ user }) => {\n        this.handleLogin(user);\n      }\n    );\n  }\n\n  private handleLogin(user: firebase.default.User | null): void {\n    if (!!user) {\n      this.router.navigate(['/home']);\n    }\n  }\n\n  ngOnInit() {\n    this.loginForm = this.formBuilder.group({\n      email: ['', Validators.required],\n      password: ['', Validators.required]\n    });\n  }\n\n  ngOnDestroy() {\n    this.destroy$.next(true);\n    this.destroy$.unsubscribe();\n  }\n\n  constructor(\n    private router: Router,\n    private formBuilder: FormBuilder,\n    private authService: AuthService,\n  ) { }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1602,14 +2196,14 @@
                         "deprecationMessage": ""
                     },
                     {
-                        "name": "authService",
-                        "type": "AuthService",
+                        "name": "formBuilder",
+                        "type": "FormBuilder",
                         "deprecated": false,
                         "deprecationMessage": ""
                     },
                     {
-                        "name": "formBuilder",
-                        "type": "FormBuilder",
+                        "name": "authService",
+                        "type": "AuthService",
                         "deprecated": false,
                         "deprecationMessage": ""
                     }
@@ -1626,8 +2220,8 @@
                         }
                     },
                     {
-                        "name": "authService",
-                        "type": "AuthService",
+                        "name": "formBuilder",
+                        "type": "FormBuilder",
                         "deprecated": false,
                         "deprecationMessage": "",
                         "tagName": {
@@ -1635,8 +2229,8 @@
                         }
                     },
                     {
-                        "name": "formBuilder",
-                        "type": "FormBuilder",
+                        "name": "authService",
+                        "type": "AuthService",
                         "deprecated": false,
                         "deprecationMessage": "",
                         "tagName": {
@@ -1646,9 +2240,125 @@
                 ]
             },
             "implements": [
-                "OnDestroy"
+                "OnDestroy",
+                "OnInit"
             ],
             "templateData": "<div class=\"login-section\">\n  <h3 class=\"txt-yellow pb-4 pl-3\">Welcome back!</h3>\n  <form [formGroup]=\"loginForm\">\n    <label class=\"txt-gray-6\">Email</label>\n    <sb-text-input type=\"email\" formControlName=\"email\"></sb-text-input>\n    <label class=\"txt-gray-6 pt-5\">Password</label>\n    <sb-text-input type=\"password\" formControlName=\"password\" [disableValidations]=\"true\"></sb-text-input>\n  </form>\n  <div class=\"\">\n    <div class=\"btn-login\"><sb-icon-button label=\"LOG IN\" type=\"success\" width=\"345px\" (click)=\"login()\"></sb-icon-button></div>\n    <div class=\"btn-google\"><sb-icon-button label=\"LOG IN WITH GOOGLE\" [isOutline]=\"true\" width=\"345px\" (click)=\"googleLogin()\"></sb-icon-button></div>\n    <div class=\"btn-facebook\"><sb-icon-button label=\"LOG IN WITH FACEBOOK\" [isOutline]=\"true\" width=\"345px\" (click)=\"facebookLogin()\"></sb-icon-button></div>\n  </div>\n</div>"
+        },
+        {
+            "name": "PizzaCarouselSectionComponent",
+            "id": "component-PizzaCarouselSectionComponent-aa62f5bb6898521fe2ef56f1ed9227b6",
+            "file": "src/app/home/pizza-carousel-section/pizza-carousel-section.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-pizza-carousel-section",
+            "styleUrls": [
+                "./pizza-carousel-section.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./pizza-carousel-section.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "pizzaCarouselList$",
+                    "defaultValue": "new BehaviorSubject<PizzaMenuCardContent[]>([])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "pizzaCarouselOptions$",
+                    "defaultValue": "this.pizzaCarouselList$.asObservable().pipe(\n    switchMap(pizzasList => {\n      return from(pizzasList).pipe(\n        bufferCount(3),\n        toArray()\n      );\n    })\n  )",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<[][]>",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "pizzasList",
+                    "defaultValue": "[{\n    bgColorGradientFrom: '#8F9F19',\n    bgColorGradientTo: '#D2DA99',\n    title: 'VEGGIE FEST',\n    numOfGrams: 520,\n    numOfCalories: 1000,\n    description: 'Mushrooms, purple basil, capers and our famous secret veggie mix.',\n    price: 12,\n    cardBackgroundUrl: 'assets/images/veggie-pizza.png'\n  },\n  {\n    bgColorGradientFrom: '#D91F1F',\n    bgColorGradientTo: '#F1A980',\n    title: 'SALAMI & TOMATO',\n    numOfGrams: 560,\n    numOfCalories: 1500,\n    description: 'What a perfect combination of salami, tomato wedges and sage. Tastes just like home.',\n    price: 16,\n    cardBackgroundUrl: 'assets/images/tomato-pizza.png'\n  },\n  {\n    bgColorGradientFrom: '#46B88F',\n    bgColorGradientTo: '#D0FD88',\n    title: 'PEPPERONI & EGG',\n    numOfGrams: 540,\n    numOfCalories: 1200,\n    description: 'Our famous egg, basil, capers and black pepper. Don’t knock it ‘til you try it.',\n    price: 14,\n    cardBackgroundUrl: 'assets/images/pepperoni-pizza.png'\n  },\n  {\n    bgColorGradientFrom: '#D96D1F',\n    bgColorGradientTo: '#F1D180',\n    title: 'SALAMI & MUSHROOMS',\n    numOfGrams: 560,\n    numOfCalories: 1500,\n    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',\n    price: 16,\n    cardBackgroundUrl: 'assets/images/mushrooms-pizza.png'\n  },\n  {\n    bgColorGradientFrom: '#1B9F19',\n    bgColorGradientTo: '#A6DA99',\n    title: '‘LIVES & ‘SHROOMS',\n    numOfGrams: 520,\n    numOfCalories: 1000,\n    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet porttitor augue cursus viverra. Urna.',\n    price: 12,\n    cardBackgroundUrl: 'assets/images/lives-pizza.png'\n  },\n  {\n    bgColorGradientFrom: '#D91F1F',\n    bgColorGradientTo: '#F19B80',\n    title: 'ITALIAN-TICAN',\n    numOfGrams: 540,\n    numOfCalories: 1200,\n    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu molestie massa odio nulla diam. At.',\n    price: 14,\n    cardBackgroundUrl: 'assets/images/italian-pizza.png'\n  }, {\n    bgColorGradientFrom: '#199F7F',\n    bgColorGradientTo: '#99DAC3',\n    title: 'SUPREME STYLE',\n    numOfGrams: 520,\n    numOfCalories: 1000,\n    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero vivamus nunc blandit.',\n    price: 12,\n    cardBackgroundUrl: 'assets/images/supreme-pizza.png'\n  }]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 96,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "subscribeCarouselOptions",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 92,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { BehaviorSubject, from, Observable } from 'rxjs';\nimport { bufferCount, switchMap, toArray } from 'rxjs/operators';\nimport { PizzaMenuCardContent } from '@app-shared/general.model';\n\n@Component({\n  selector: 'app-pizza-carousel-section',\n  templateUrl: './pizza-carousel-section.component.html',\n  styleUrls: ['./pizza-carousel-section.component.scss']\n})\nexport class PizzaCarouselSectionComponent implements OnInit {\n  private pizzaCarouselList$ = new BehaviorSubject<PizzaMenuCardContent[]>([]);\n  public pizzaCarouselOptions$: Observable<PizzaMenuCardContent[][]> = this.pizzaCarouselList$.asObservable().pipe(\n    switchMap(pizzasList => {\n      return from(pizzasList).pipe(\n        bufferCount(3),\n        toArray()\n      );\n    })\n  );\n\n  private pizzasList = [{\n    bgColorGradientFrom: '#8F9F19',\n    bgColorGradientTo: '#D2DA99',\n    title: 'VEGGIE FEST',\n    numOfGrams: 520,\n    numOfCalories: 1000,\n    description: 'Mushrooms, purple basil, capers and our famous secret veggie mix.',\n    price: 12,\n    cardBackgroundUrl: 'assets/images/veggie-pizza.png'\n  },\n  {\n    bgColorGradientFrom: '#D91F1F',\n    bgColorGradientTo: '#F1A980',\n    title: 'SALAMI & TOMATO',\n    numOfGrams: 560,\n    numOfCalories: 1500,\n    description: 'What a perfect combination of salami, tomato wedges and sage. Tastes just like home.',\n    price: 16,\n    cardBackgroundUrl: 'assets/images/tomato-pizza.png'\n  },\n  {\n    bgColorGradientFrom: '#46B88F',\n    bgColorGradientTo: '#D0FD88',\n    title: 'PEPPERONI & EGG',\n    numOfGrams: 540,\n    numOfCalories: 1200,\n    description: 'Our famous egg, basil, capers and black pepper. Don’t knock it ‘til you try it.',\n    price: 14,\n    cardBackgroundUrl: 'assets/images/pepperoni-pizza.png'\n  },\n  {\n    bgColorGradientFrom: '#D96D1F',\n    bgColorGradientTo: '#F1D180',\n    title: 'SALAMI & MUSHROOMS',\n    numOfGrams: 560,\n    numOfCalories: 1500,\n    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',\n    price: 16,\n    cardBackgroundUrl: 'assets/images/mushrooms-pizza.png'\n  },\n  {\n    bgColorGradientFrom: '#1B9F19',\n    bgColorGradientTo: '#A6DA99',\n    title: '‘LIVES & ‘SHROOMS',\n    numOfGrams: 520,\n    numOfCalories: 1000,\n    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet porttitor augue cursus viverra. Urna.',\n    price: 12,\n    cardBackgroundUrl: 'assets/images/lives-pizza.png'\n  },\n  {\n    bgColorGradientFrom: '#D91F1F',\n    bgColorGradientTo: '#F19B80',\n    title: 'ITALIAN-TICAN',\n    numOfGrams: 540,\n    numOfCalories: 1200,\n    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu molestie massa odio nulla diam. At.',\n    price: 14,\n    cardBackgroundUrl: 'assets/images/italian-pizza.png'\n  }, {\n    bgColorGradientFrom: '#199F7F',\n    bgColorGradientTo: '#99DAC3',\n    title: 'SUPREME STYLE',\n    numOfGrams: 520,\n    numOfCalories: 1000,\n    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus libero vivamus nunc blandit.',\n    price: 12,\n    cardBackgroundUrl: 'assets/images/supreme-pizza.png'\n  }];\n\n  private subscribeCarouselOptions() {\n    this.pizzaCarouselList$.next(this.pizzasList);\n  }\n\n  ngOnInit() {\n    this.subscribeCarouselOptions();\n  }\n\n  constructor() { }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../assets/scss/colors';\n#pizza-carousel-section {\n  padding-top: 40px;\n  padding-bottom: 150px;\n  .section-title{\n    margin: 0 32%;\n  }\n  .carousel-content{\n    padding-top: 100px;\n    sb-pizza-menu-card {\n      margin: 0 1%;\n    }\n  }\n}\n\n::ng-deep {\n  .carousel-indicators {\n    bottom: -105px;\n    align-items: center;\n\n    button {\n      &.active {\n        width: 22px !important;\n        height: 22px !important;\n        background-color: $secondary;\n      }\n      margin: 0 30px !important;\n      background-color: $gray-2;\n      width: 14px !important;\n      height: 14px !important;\n      border-radius: 100% !important;\n    }\n  }\n}",
+                    "styleUrl": "./pizza-carousel-section.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 98
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div id=\"pizza-carousel-section\" class=\"text-center\">\n  <h3 class=\"section-title txt-white\">You can also try one of our greatest hits</h3>\n  <div class=\"carousel-content\">\n    <carousel>\n      <slide class=\"slide-{{i}}\" *ngFor=\"let pizzaOptionSlides of pizzaCarouselOptions$ | async; let i = index\">\n        <div class=\"d-flex justify-content-center\">\n          <sb-pizza-menu-card *ngFor=\"let pizzaOption of pizzaOptionSlides\"\n            [bgColorGradientFrom]= \"pizzaOption.bgColorGradientFrom\"\n            [bgColorGradientTo]= \"pizzaOption.bgColorGradientTo\"\n            [title]= \"pizzaOption.title\"\n            [numOfGrams]= \"pizzaOption.numOfGrams\"\n            [numOfCalories]= \"pizzaOption.numOfCalories\"\n            [description]= \"pizzaOption.description\"\n            [price]= \"pizzaOption.price\"\n            [cardBackgroundUrl]= \"pizzaOption.cardBackgroundUrl\">\n          </sb-pizza-menu-card>\n        </div>\n      </slide>\n    </carousel>\n  </div>\n</div>"
         },
         {
             "name": "PizzaMenuCardComponent",
@@ -1773,7 +2483,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"pizza-card\" [ngStyle]=\"background\">\n  <div class=\"content\">\n    <h4 class=\"mb-1\">{{title}}</h4>\n    <div>\n      <caption class=\"d-inline txt-gray-6\">{{numOfGrams}}g</caption>\n      <caption class=\"d-inline txt-gray-6 calories\">{{numOfCalories}} cal</caption>\n    </div>\n    <p class=\"description pt-1 pb-1 m-0\">{{description}}</p>\n    <div class=\"row pizza-card-footer\">\n      <div class=\"price-container pr-3 pl-0 py-2 col-4\">\n        <label class=\"price-label\">starts at</label>\n        <span class=\"price\">{{price | currency : 'USD' : 'symbol' : '1.0-0'}}</span>\n      </div>\n      <div class=\"col-8 px-0\">\n        <sb-icon-button class=\"add-btn float-right\" label=\"ADD\" (click)=\"onClick.emit($event)\"></sb-icon-button>\n      </div>\n    </div>\n  </div>\n</div>"
+            "templateData": "<div class=\"pizza-card\" [ngStyle]=\"background\">\n  <div class=\"content\">\n    <h4 class=\"mb-1\">{{title}}</h4>\n    <div>\n      <caption class=\"d-inline txt-gray-6\">{{numOfGrams}}g</caption>\n      <caption class=\"d-inline txt-gray-6 calories\">{{numOfCalories}} cal</caption>\n    </div>\n    <p class=\"description pt-1 pb-1 m-0\">{{description}}</p>\n    <div class=\"row pizza-card-footer\">\n      <div class=\"price-container pr-3 pl-0 py-2 col-4\">\n        <label class=\"price-label\">starts at</label>\n        <span class=\"price\">{{price | currency : 'USD' : 'symbol' : '1.0-0'}}</span>\n      </div>\n      <div class=\"col-8 px-0\">\n        <sb-icon-button class=\"add-btn float-right\" width=\"130px\" label=\"ADD\" (click)=\"onClick.emit($event)\"></sb-icon-button>\n      </div>\n    </div>\n  </div>\n</div>"
         },
         {
             "name": "PromotionCardComponent",
@@ -1854,7 +2564,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../assets/scss/colors';\n\n.promotion-card {\n  width: 588px;\n  height: 369px;\n  padding: 18px;\n  position: relative;\n  text-align: center;\n  border-radius: 10px;\n  mix-blend-mode: normal;\n  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);\n\n  .main-title-content {\n    z-index: 10;\n\n    .decorator-left {\n      position: absolute;\n      left: 0px;\n      bottom: -10px;\n      z-index: -1;\n    }\n\n    .decorator-right {\n      position: absolute;\n      top: 0;\n      right: 20px;\n      z-index: -1;\n    }\n  }\n\n  .second-title {\n    margin-left: 75px;\n    margin-right: 75px;\n  }\n\n  .description {\n    color: $white;\n    font-size: 16px;\n    line-height: 21px;\n    text-align: center;\n    font-style: normal;\n    font-weight: normal;\n    font-family: 'Red Hat Display';\n  }\n\n  .promotion-footer {\n    bottom: 10px;\n    position: absolute;\n\n    .disclaimer {\n      font-size: 12px;\n      font-weight: 500;\n      line-height: 16px;\n      margin-left: 55px;\n      font-style: normal;\n      margin-right: 55px;\n      font-family: 'Red Hat Display';\n    }\n  }\n}",
+                    "data": "@import '../../../../assets/scss/colors';\n\n.promotion-card {\n  z-index: 1;\n  width: 588px;\n  height: 369px;\n  padding: 18px;\n  position: relative;\n  text-align: center;\n  border-radius: 10px;\n  mix-blend-mode: normal;\n  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);\n\n  .main-title-content {\n    z-index: 10;\n\n    .decorator-left {\n      position: absolute;\n      left: 0px;\n      bottom: -10px;\n      z-index: -1;\n    }\n\n    .decorator-right {\n      position: absolute;\n      top: 0;\n      right: 20px;\n      z-index: -1;\n    }\n  }\n\n  .second-title {\n    margin-left: 60px;\n    margin-right: 60px;\n  }\n\n  .description {\n    color: $white;\n    font-size: 16px;\n    line-height: 21px;\n    text-align: center;\n    font-style: normal;\n    font-weight: normal;\n    font-family: 'Red Hat Display';\n  }\n\n  .promotion-footer {\n    bottom: 10px;\n    position: absolute;\n\n    .disclaimer {\n      font-size: 12px;\n      font-weight: 500;\n      line-height: 16px;\n      margin-left: 55px;\n      font-style: normal;\n      margin-right: 55px;\n      font-family: 'Red Hat Display';\n    }\n  }\n}",
                     "styleUrl": "./promotion-card.component.scss"
                 }
             ],
@@ -2784,13 +3494,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-ad596b7ef0133cf36eb6e2bc37063120",
+            "id": "module-AppModule-39f0d05127ffbdfe357b40b0dbc969a9",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { StoreModule } from '@ngrx/store';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { StoreDevtoolsModule } from '@ngrx/store-devtools';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { ToastrModule } from 'ngx-toastr';\n\nimport { reducer } from './store/app.reducer';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './app-routing.module';\nimport { environment } from '@app-environment';\n\n// Services\nimport { AuthService } from '@app-services/auth.service';\n\n// Guards\nimport { AuthGuard } from './guards/auth.guard';\n\n// Firebase\nimport { initializeApp,provideFirebaseApp } from '@angular/fire/app';\nimport { provideAuth,getAuth } from '@angular/fire/auth';\nimport { provideFirestore,getFirestore } from '@angular/fire/firestore';\n\n// Components\nimport { FooterComponent } from './components/footer/footer.component';\n\n// Share\nimport { SharedModule } from '@app-shared/shared.module';\nimport { AngularFireModule } from '@angular/fire/compat';\n\n@NgModule({\n  declarations: [AppComponent, FooterComponent],\n  imports: [\n    SharedModule,\n    BrowserModule,\n    AppRoutingModule,\n    ToastrModule.forRoot(),\n    BrowserAnimationsModule,\n    StoreModule.forRoot({ app: reducer }),\n    StoreDevtoolsModule.instrument({\n      maxAge: 25,\n      logOnly: environment.production,\n    }),\n    AngularFireModule.initializeApp(environment.firebase),\n    provideFirebaseApp(() => initializeApp(environment.firebase)),\n    provideAuth(() => getAuth()),\n    provideFirestore(() => getFirestore()),\n  ],\n  providers: [AuthService, AuthGuard],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { StoreModule } from '@ngrx/store';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { StoreDevtoolsModule } from '@ngrx/store-devtools';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { ToastrModule } from 'ngx-toastr';\n\nimport { reducer } from './store/app.reducer';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './app-routing.module';\nimport { environment } from '@app-environment';\n\n// Services\nimport { AuthService } from '@app-services/auth.service';\n\n// Guards\nimport { AuthGuard } from './guards/auth.guard';\n\n// Firebase\nimport { initializeApp,provideFirebaseApp } from '@angular/fire/app';\nimport { provideAuth,getAuth } from '@angular/fire/auth';\nimport { provideFirestore,getFirestore } from '@angular/fire/firestore';\nimport { AngularFireModule } from '@angular/fire/compat';\n\n// Components\nimport { FooterComponent } from './components/footer/footer.component';\nimport { LayoutComponent } from './layout/layout.component';\n\n// Share\nimport { SharedModule } from '@app-shared/shared.module';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    LayoutComponent,\n    FooterComponent\n  ],\n  imports: [\n    SharedModule,\n    BrowserModule,\n    AppRoutingModule,\n    ToastrModule.forRoot(),\n    BrowserAnimationsModule,\n    StoreModule.forRoot({ app: reducer }),\n    StoreDevtoolsModule.instrument({\n      maxAge: 25,\n      logOnly: environment.production,\n    }),\n    AngularFireModule.initializeApp(environment.firebase),\n    provideFirebaseApp(() => initializeApp(environment.firebase)),\n    provideAuth(() => getAuth()),\n    provideFirestore(() => getFirestore()),\n  ],\n  providers: [AuthService, AuthGuard],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -2808,6 +3518,9 @@
                         },
                         {
                             "name": "FooterComponent"
+                        },
+                        {
+                            "name": "LayoutComponent"
                         }
                     ]
                 },
@@ -2851,13 +3564,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-9b811dcca6d63ccc263f945e938efef5",
+            "id": "module-AppRoutingModule-5a119aebea494f648ed8475624a19538",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { AuthGuard } from './guards/auth.guard';\n\nconst routes: Routes = [\n  {\n    path: 'auth',\n    loadChildren: () => \"import('@app-auth/auth.module').then(m => m.AuthModule)\"\n  },\n  {\n    path: 'home',\n    loadChildren: () => \"import('./home/home.module').then(m => m.HomeModule)\",\n    canLoad: [AuthGuard]\n  },\n  { path: '', redirectTo: 'auth', pathMatch: 'full' },\n  { path: '**', redirectTo: 'auth' },\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { AuthGuard } from './guards/auth.guard';\nimport { LayoutComponent } from './layout/layout.component';\n\nconst routes: Routes = [\n  {\n    path: '',\n    redirectTo: '/auth/welcome',\n    pathMatch: 'full'\n  },\n  {\n    path: '',\n    component: LayoutComponent,\n    children: [\n      {\n        path: 'auth',\n        loadChildren: () => \"import('@app-auth/auth.module').then(m => m.AuthModule)\"\n      },\n      {\n        path: 'home',\n        loadChildren: () => \"import('./home/home.module').then(m => m.HomeModule)\",\n        canLoad: [AuthGuard]\n      },\n    ]\n  },\n  { path: '**', redirectTo: 'auth' },\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -2887,13 +3600,13 @@
         },
         {
             "name": "AuthModule",
-            "id": "module-AuthModule-67dd9a4bb6143558b2b622e98a87a4c2",
+            "id": "module-AuthModule-5b57c3e7ecddadc4c5b8135c494bb91b",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/auth/auth.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { environment } from '@app-environment';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\nimport { AuthRouterModule } from './auth.router.module';\nimport { AuthService } from '@app-services/auth.service';\n\n// Store\nimport { StoreModule } from '@ngrx/store';\nimport { reducer } from './store/auth.reducer';\n\n// Share\nimport { SharedModule } from '@app-shared/shared.module';\n\n// Components\nimport { AuthComponent } from './auth.component';\nimport { LoginComponent } from './login/login.component';\nimport { SignInComponent } from './sign-in/sign-in.component';\nimport { WelcomeComponent } from './welcome/welcome.component';\n\n// Firebase\nimport { AngularFireModule } from '@angular/fire/compat';\n\n// Components\nconst COMPONENTS = [\n  AuthComponent,\n  LoginComponent,\n  SignInComponent,\n  WelcomeComponent,\n];\n\n@NgModule({\n  imports: [\n    FormsModule,\n    CommonModule,\n    SharedModule,\n    AuthRouterModule,\n    ReactiveFormsModule,\n    StoreModule.forFeature('auth', reducer),\n    AngularFireModule.initializeApp(environment.firebase)\n  ],\n  declarations: [...COMPONENTS],\n  providers: [ AuthService ]\n})\nexport class AuthModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { AuthRouterModule } from './auth.router.module';\nimport { AuthService } from '@app-services/auth.service';\n\n// Local Modules\nimport { LoginModule } from './login/login.module';\nimport { SignInModule } from './sign-in/sign-in.module';\nimport { WelcomeModule } from './welcome/welcome.module';\n\n// Store\nimport { StoreModule } from '@ngrx/store';\nimport { reducer } from './store/auth.reducer';\n\n// Components\nimport { AuthComponent } from './auth.component';\n\nconst LOCAL_MODULES = [\n  LoginModule,\n  SignInModule,\n  WelcomeModule\n];\n\n@NgModule({\n  imports: [\n    ...LOCAL_MODULES,\n    CommonModule,\n    AuthRouterModule,\n    StoreModule.forFeature('auth', reducer),\n  ],\n  declarations: [AuthComponent],\n  providers: [ AuthService ]\n})\nexport class AuthModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -2908,15 +3621,6 @@
                     "elements": [
                         {
                             "name": "AuthComponent"
-                        },
-                        {
-                            "name": "LoginComponent"
-                        },
-                        {
-                            "name": "SignInComponent"
-                        },
-                        {
-                            "name": "WelcomeComponent"
                         }
                     ]
                 },
@@ -2927,7 +3631,13 @@
                             "name": "AuthRouterModule"
                         },
                         {
-                            "name": "SharedModule"
+                            "name": "LoginModule"
+                        },
+                        {
+                            "name": "SignInModule"
+                        },
+                        {
+                            "name": "WelcomeModule"
                         }
                     ]
                 },
@@ -2983,13 +3693,13 @@
         },
         {
             "name": "HomeModule",
-            "id": "module-HomeModule-2a25d4bcc0c77d467bd4867dbad3c773",
+            "id": "module-HomeModule-a2b75b22ce570d1ad51cac364f675dc8",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/home/home.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { HomeComponent } from './home.component';\nimport { HomeRouterModule } from './home.router.module';\n\n@NgModule({\n  imports: [\n    CommonModule,\n    HomeRouterModule,\n  ],\n  declarations: [HomeComponent]\n})\nexport class HomeModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { HomeComponent } from './home.component';\nimport { HomeRouterModule } from './home.router.module';\n\n// Modules\nimport { ModalModule } from 'ngx-bootstrap/modal';\nimport { CarouselModule } from 'ngx-bootstrap/carousel';\nimport { SharedModule } from '@app-shared/shared.module';\n\n// Components\nimport { HomeHeaderComponent } from './home-header/home-header.component';\nimport { DayPromosSectionComponent } from './day-promos-section/day-promos-section.component';\nimport { PizzaCarouselSectionComponent } from './pizza-carousel-section/pizza-carousel-section.component';\nimport { CustomizePizzaFormComponent } from '../components/customize-pizza-form/customize-pizza-form.component';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { BsDropdownModule } from 'ngx-bootstrap/dropdown';\n@NgModule({\n  imports: [\n    FormsModule,\n    CommonModule,\n    SharedModule,\n    CarouselModule,\n    HomeRouterModule,\n    ReactiveFormsModule,\n    ModalModule.forRoot(),\n    BsDropdownModule.forRoot()\n  ],\n  declarations: [\n    HomeComponent,\n    HomeHeaderComponent,\n    DayPromosSectionComponent,\n    CustomizePizzaFormComponent,\n    PizzaCarouselSectionComponent,\n  ]\n})\nexport class HomeModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -2999,7 +3709,19 @@
                     "type": "declarations",
                     "elements": [
                         {
+                            "name": "CustomizePizzaFormComponent"
+                        },
+                        {
+                            "name": "DayPromosSectionComponent"
+                        },
+                        {
                             "name": "HomeComponent"
+                        },
+                        {
+                            "name": "HomeHeaderComponent"
+                        },
+                        {
+                            "name": "PizzaCarouselSectionComponent"
                         }
                     ]
                 },
@@ -3008,6 +3730,9 @@
                     "elements": [
                         {
                             "name": "HomeRouterModule"
+                        },
+                        {
+                            "name": "SharedModule"
                         }
                     ]
                 },
@@ -3062,14 +3787,58 @@
             ]
         },
         {
+            "name": "LoginModule",
+            "id": "module-LoginModule-7cf3facec1394b62ddfc10b5585c31cd",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/auth/login/login.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\nimport { LoginComponent } from './login.component';\n\n// Share\nimport { SharedModule } from '@app-shared/shared.module';\n\n@NgModule({\n  imports: [\n    FormsModule,\n    SharedModule,\n    CommonModule,\n    ReactiveFormsModule,\n  ],\n  declarations: [LoginComponent]\n})\nexport class LoginModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "LoginComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "SharedModule",
-            "id": "module-SharedModule-7a5e96446f413f0f5a48961a3d59c6cc",
+            "id": "module-SharedModule-9a5d83528dad1c5df0994f9d98363685",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/shared.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n// Stories\nimport Button from './stories/button/button.component';\nimport Header from './stories/header/header.component';\nimport Dropdown from './stories/dropdown/dropdown.component';\nimport TextInput from './stories/text-input/text-input.component';\nimport IconButton from './stories/icon-button/icon-button.component';\nimport PizzaMenuCardComponent from './stories/pizza-menu-card/pizza-menu-card.component';\n\nconst STORIES = [\n  Header,\n  Button,\n  Dropdown,\n  TextInput,\n  IconButton,\n  PizzaMenuCardComponent\n];\n\n@NgModule({\n  imports: [\n    CommonModule\n  ],\n  declarations: [...STORIES],\n  exports: [...STORIES]\n})\nexport class SharedModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n// Stories\nimport Button from './stories/button/button.component';\nimport Header from './stories/header/header.component';\nimport Dropdown from './stories/dropdown/dropdown.component';\nimport TextInput from './stories/text-input/text-input.component';\nimport IconButton from './stories/icon-button/icon-button.component';\nimport PromotionCard from './stories/promotion-card//promotion-card.component';\nimport PizzaMenuCard from './stories/pizza-menu-card/pizza-menu-card.component';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { BsDropdownModule } from 'ngx-bootstrap/dropdown';\nconst STORIES = [\n  Header,\n  Button,\n  Dropdown,\n  PromotionCard,\n  TextInput,\n  IconButton,\n  PizzaMenuCard\n];\n\n@NgModule({\n  imports: [\n    CommonModule,\n    BsDropdownModule.forRoot()\n  ],\n  declarations: [...STORIES],\n  exports: [...STORIES]\n})\nexport class SharedModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -3091,7 +3860,10 @@
                             "name": "IconButton"
                         },
                         {
-                            "name": "PizzaMenuCardComponent"
+                            "name": "PizzaMenuCard"
+                        },
+                        {
+                            "name": "PromotionCard"
                         },
                         {
                             "name": "TextInput"
@@ -3118,12 +3890,103 @@
                             "name": "IconButton"
                         },
                         {
-                            "name": "PizzaMenuCardComponent"
+                            "name": "PizzaMenuCard"
+                        },
+                        {
+                            "name": "PromotionCard"
                         },
                         {
                             "name": "TextInput"
                         }
                     ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SignInModule",
+            "id": "module-SignInModule-3f10a00883af7b3f505a7b02adc96e12",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/auth/sign-in/sign-in.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\nimport { SignInComponent } from './sign-in.component';\n\n// Share\nimport { SharedModule } from '@app-shared/shared.module';\n\n@NgModule({\n  imports: [\n    FormsModule,\n    SharedModule,\n    CommonModule,\n    ReactiveFormsModule,\n  ],\n  declarations: [SignInComponent]\n})\nexport class SignInModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SignInComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "WelcomeModule",
+            "id": "module-WelcomeModule-cd6e5cb55a5238f502df22cfb097b47c",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/auth/welcome/welcome.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\nimport { WelcomeComponent } from './welcome.component';\n\n// Share\nimport { SharedModule } from '@app-shared/shared.module';\n\n@NgModule({\n  imports: [\n    FormsModule,\n    SharedModule,\n    CommonModule,\n    ReactiveFormsModule,\n  ],\n  declarations: [WelcomeComponent]\n})\nexport class WelcomeModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "WelcomeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
                 },
                 {
                     "type": "bootstrap",
@@ -3207,16 +4070,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "createReducer(\n  initialState,\n  on(AuthActions.authorizeUser, (state, {payload}) => ({\n    ...state,\n    user: payload\n  }))\n)"
-            },
-            {
-                "name": "COMPONENTS",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/auth/auth.module.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "[]",
-                "defaultValue": "[\n  AuthComponent,\n  LoginComponent,\n  SignInComponent,\n  WelcomeComponent,\n]"
             },
             {
                 "name": "context",
@@ -3429,6 +4282,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "LOCAL_MODULES",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/auth/auth.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  LoginModule,\n  SignInModule,\n  WelcomeModule\n]"
+            },
+            {
                 "name": "myAction",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3512,6 +4375,16 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/shared/stories/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/shared/stories/chip/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3523,16 +4396,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/stories/dropdown/dropdown.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/shared/stories/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3685,7 +4548,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n  Header,\n  Button,\n  Dropdown,\n  TextInput,\n  IconButton,\n  PizzaMenuCardComponent\n]"
+                "defaultValue": "[\n  Header,\n  Button,\n  Dropdown,\n  PromotionCard,\n  TextInput,\n  IconButton,\n  PizzaMenuCard\n]"
             },
             {
                 "name": "Success",
@@ -3731,6 +4594,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/shared/stories/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/shared/stories/chip/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3761,11 +4634,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/stories/button/button.stories.ts",
+                "file": "src/app/shared/stories/icon-button/icon-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                "type": "Story<IconButton>",
+                "defaultValue": "(args: IconButton) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3781,16 +4654,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/stories/icon-button/icon-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<IconButton>",
-                "defaultValue": "(args: IconButton) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/shared/stories/promotion-card/promotion-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3801,21 +4664,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/stories/text-input/text-input.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<TextInput>",
-                "defaultValue": "(args: TextInput) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/shared/stories/search-input/search-input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SearchInput>",
                 "defaultValue": "(args: SearchInput) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/stories/text-input/text-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<TextInput>",
+                "defaultValue": "(args: TextInput) => ({\n  props: args,\n})"
             },
             {
                 "name": "Text",
@@ -4008,6 +4871,59 @@
                 "deprecationMessage": "",
                 "description": "",
                 "file": "src/app/shared/stories/address-credit-card/address-credit-card.component.ts"
+            },
+            {
+                "name": "Products",
+                "childs": [
+                    {
+                        "name": "sauce",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "sauce"
+                    },
+                    {
+                        "name": "cheese",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "cheese"
+                    },
+                    {
+                        "name": "toppings",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "toppings"
+                    },
+                    {
+                        "name": "drinks",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "drinks"
+                    },
+                    {
+                        "name": "salads",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "salads"
+                    },
+                    {
+                        "name": "appetizers",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "appetizers"
+                    },
+                    {
+                        "name": "desserts",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "desserts"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/components/customize-pizza-form/customize-pizza-form.component.ts"
             },
             {
                 "name": "Types",
@@ -4243,18 +5159,6 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "createSelector(\n  selectAuthState,\n  (state: AuthState) => state.user\n)"
-                }
-            ],
-            "src/app/auth/auth.module.ts": [
-                {
-                    "name": "COMPONENTS",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/auth/auth.module.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  AuthComponent,\n  LoginComponent,\n  SignInComponent,\n  WelcomeComponent,\n]"
                 }
             ],
             "src/test.ts": [
@@ -4600,6 +5504,18 @@
                     "defaultValue": "(args: Header) => ({\n  props: args,\n})"
                 }
             ],
+            "src/app/auth/auth.module.ts": [
+                {
+                    "name": "LOCAL_MODULES",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/auth/auth.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  LoginModule,\n  SignInModule,\n  WelcomeModule\n]"
+                }
+            ],
             "src/app/store/app.actions.ts": [
                 {
                     "name": "myAction",
@@ -4622,6 +5538,48 @@
                     "deprecationMessage": "",
                     "type": "string",
                     "defaultValue": "'You are not authorized to view this page, please log in first'"
+                }
+            ],
+            "src/app/shared/stories/button/button.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/stories/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/stories/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Success",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/stories/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/stories/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Button>",
+                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
                 }
             ],
             "src/app/shared/stories/chip/chip.stories.ts": [
@@ -4666,48 +5624,6 @@
                     "deprecationMessage": "",
                     "type": "Story<Dropdown>",
                     "defaultValue": "(args: Dropdown) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/app/shared/stories/button/button.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/stories/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/stories/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Success",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/stories/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/stories/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Button>",
-                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
                 }
             ],
             "src/app/shared/stories/icon-button/icon-button.stories.ts": [
@@ -4793,7 +5709,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n  Header,\n  Button,\n  Dropdown,\n  TextInput,\n  IconButton,\n  PizzaMenuCardComponent\n]"
+                    "defaultValue": "[\n  Header,\n  Button,\n  Dropdown,\n  PromotionCard,\n  TextInput,\n  IconButton,\n  PizzaMenuCard\n]"
                 }
             ]
         },
@@ -4963,6 +5879,61 @@
                     "file": "src/app/shared/stories/address-credit-card/address-credit-card.component.ts"
                 }
             ],
+            "src/app/components/customize-pizza-form/customize-pizza-form.component.ts": [
+                {
+                    "name": "Products",
+                    "childs": [
+                        {
+                            "name": "sauce",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "sauce"
+                        },
+                        {
+                            "name": "cheese",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "cheese"
+                        },
+                        {
+                            "name": "toppings",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "toppings"
+                        },
+                        {
+                            "name": "drinks",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "drinks"
+                        },
+                        {
+                            "name": "salads",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "salads"
+                        },
+                        {
+                            "name": "appetizers",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "appetizers"
+                        },
+                        {
+                            "name": "desserts",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "desserts"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/app/components/customize-pizza-form/customize-pizza-form.component.ts"
+                }
+            ],
             "src/app/store/app.actions.ts": [
                 {
                     "name": "Types",
@@ -5015,79 +5986,85 @@
                 "module": "AppRoutingModule",
                 "children": [
                     {
-                        "path": "auth",
-                        "loadChildren": "@app-auth/auth.module#AuthModule",
-                        "children": [
-                            {
-                                "kind": "module",
-                                "children": [
-                                    {
-                                        "name": "routes",
-                                        "filename": "src/app/auth/auth.router.module.ts",
-                                        "module": "AuthRouterModule",
-                                        "children": [
-                                            {
-                                                "path": "",
-                                                "component": "AuthComponent",
-                                                "children": [
-                                                    {
-                                                        "path": "welcome",
-                                                        "component": "WelcomeComponent"
-                                                    },
-                                                    {
-                                                        "path": "login",
-                                                        "component": "LoginComponent"
-                                                    },
-                                                    {
-                                                        "path": "sign-up",
-                                                        "component": "SignInComponent"
-                                                    },
-                                                    {
-                                                        "path": "",
-                                                        "redirectTo": "welcome",
-                                                        "pathMatch": "full"
-                                                    }
-                                                ]
-                                            }
-                                        ],
-                                        "kind": "module"
-                                    }
-                                ],
-                                "module": "AuthModule"
-                            }
-                        ]
-                    },
-                    {
-                        "path": "home",
-                        "loadChildren": "./home/home.module#HomeModule",
-                        "canLoad": [
-                            "AuthGuard"
-                        ],
-                        "children": [
-                            {
-                                "kind": "module",
-                                "children": [
-                                    {
-                                        "name": "routes",
-                                        "filename": "src/app/home/home.router.module.ts",
-                                        "module": "HomeRouterModule",
-                                        "children": [
-                                            {
-                                                "path": "",
-                                                "component": "HomeComponent"
-                                            }
-                                        ],
-                                        "kind": "module"
-                                    }
-                                ],
-                                "module": "HomeModule"
-                            }
-                        ]
+                        "path": "",
+                        "redirectTo": "/auth/welcome",
+                        "pathMatch": "full"
                     },
                     {
                         "path": "",
-                        "redirectTo": "auth",
-                        "pathMatch": "full"
+                        "component": "LayoutComponent",
+                        "children": [
+                            {
+                                "path": "auth",
+                                "loadChildren": "@app-auth/auth.module#AuthModule",
+                                "children": [
+                                    {
+                                        "kind": "module",
+                                        "children": [
+                                            {
+                                                "name": "routes",
+                                                "filename": "src/app/auth/auth.router.module.ts",
+                                                "module": "AuthRouterModule",
+                                                "children": [
+                                                    {
+                                                        "path": "",
+                                                        "component": "AuthComponent",
+                                                        "children": [
+                                                            {
+                                                                "path": "welcome",
+                                                                "component": "WelcomeComponent"
+                                                            },
+                                                            {
+                                                                "path": "login",
+                                                                "component": "LoginComponent"
+                                                            },
+                                                            {
+                                                                "path": "sign-up",
+                                                                "component": "SignInComponent"
+                                                            },
+                                                            {
+                                                                "path": "",
+                                                                "redirectTo": "welcome",
+                                                                "pathMatch": "full"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "kind": "module"
+                                            }
+                                        ],
+                                        "module": "AuthModule"
+                                    }
+                                ]
+                            },
+                            {
+                                "path": "home",
+                                "loadChildren": "./home/home.module#HomeModule",
+                                "canLoad": [
+                                    "AuthGuard"
+                                ],
+                                "children": [
+                                    {
+                                        "kind": "module",
+                                        "children": [
+                                            {
+                                                "name": "routes",
+                                                "filename": "src/app/home/home.router.module.ts",
+                                                "module": "HomeRouterModule",
+                                                "children": [
+                                                    {
+                                                        "path": "",
+                                                        "component": "HomeComponent"
+                                                    }
+                                                ],
+                                                "kind": "module"
+                                            }
+                                        ],
+                                        "module": "HomeModule"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "path": "**",
@@ -5108,7 +6085,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -5125,7 +6102,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "COMPONENTS",
+                "name": "LOCAL_MODULES",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5227,6 +6204,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/customize-pizza-form/customize-pizza-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CustomizePizzaFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/footer/footer.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5255,12 +6241,48 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/home/day-promos-section/day-promos-section.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DayPromosSectionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/home/home-header/home-header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeHeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/home/home.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "HomeComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/home/pizza-carousel-section/pizza-carousel-section.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PizzaCarouselSectionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layout/layout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -5288,6 +6310,15 @@
                 "name": "MenuItem",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/general.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "PizzaMenuCardContent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -5394,7 +6425,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -5472,7 +6503,7 @@
                 "linktype": "component",
                 "name": "DropdownComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {

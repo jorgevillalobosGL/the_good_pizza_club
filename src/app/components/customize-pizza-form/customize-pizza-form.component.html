@@ -31,42 +31,45 @@
     <h3 class="txt-white text-center pt-5">Choose your toppings</h3>
     <h4 class="txt-white pt-5">Sauce</h4>
     <div class="btn-content d-flex justify-content-between flex-wrap pt-5">
-      <sb-button label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
+      <sb-button 
+        *ngFor="let sauce of products.sauce"
+        [label]="sauce.name"
+        [isOutline]="sauceField.value !== sauce.id"
+        width="300px"
+        height="90px"
+        (click)="onSelectProduct('sauce', sauce)">
+      </sb-button>
     </div>
     <h4 class="txt-white text-center pt-5">No sauce?</h4>
   </div>
   <div>
     <h4 class="txt-white pt-5">Cheese</h4>
     <div class="d-flex justify-content-between flex-wrap py-5">
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
+      <sb-button 
+        *ngFor="let cheese of products.cheese"
+        class="p-3"
+        [label]="cheese.name" 
+        [isOutline]="true"
+        [isOutline]="cheeseField.value !== cheese.id"
+        width="300px"
+        height="90px"
+        (click)="onSelectProduct('cheese', cheese)">
+      </sb-button>
     </div>
     <h4 class="txt-white text-center pt-5">No cheese?</h4>
   </div>
   <div>
     <h4 class="txt-white pt-5">Toppings</h4>
     <div class="d-flex justify-content-between flex-wrap py-5">
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
-      <sb-button class="p-3" label="Tomato" [isOutline]="true" width="300px" height="90px"></sb-button>
+      <sb-button
+        *ngFor="let topping of products.toppings"
+        class="p-3"
+        [label]="topping.name"
+        [isOutline]="true"
+        [isOutline]="toppingField.value !== topping.id"
+        width="300px"
+        height="90px"
+        (click)="onSelectProduct('topping', topping)"></sb-button>
     </div>
     <h4 class="txt-white text-center pt-5">Extra Something?</h4>
   </div>
@@ -75,31 +78,31 @@
     <div class="row py-5">
       <div class="col-6">
         <h4 class="txt-white pt-5 pb-3">Drinks</h4>
-        <sb-dropdown class="main-dropdown pt-5"></sb-dropdown>
+        <sb-dropdown [dropdownValues]="getDdValues(products.drinks)" class="main-dropdown pt-5"></sb-dropdown>
         <div class="quantity-container row py-3">
-          <sb-dropdown class="col-6"></sb-dropdown>
+          <sb-dropdown [dropdownValues]="getDdnumber(9)" class="col-6"></sb-dropdown>
           <sb-button class="col-6 text-right" label="ADD"></sb-button>
         </div>
       
         <h4 class="txt-white pt-5 pb-3">Appetizers</h4>
-        <sb-dropdown class="main-dropdown pt-5"></sb-dropdown>
+        <sb-dropdown [dropdownValues]="getDdValues(products.appetizers)" class="main-dropdown pt-5"></sb-dropdown>
         <div class="quantity-container row py-3">
-          <sb-dropdown class="col-6"></sb-dropdown>
+          <sb-dropdown [dropdownValues]="getDdnumber(9)" class="col-6"></sb-dropdown>
           <sb-button class="col-6 text-right" label="ADD"></sb-button>
         </div>
       </div>
       <div class="col-6">
-        <h4 class="txt-white pt-5 pb-3">Drinks</h4>
-        <sb-dropdown class="main-dropdown pt-5"></sb-dropdown>
+        <h4 class="txt-white pt-5 pb-3">Salads</h4>
+        <sb-dropdown [dropdownValues]="getDdnumber(9)" [dropdownValues]="getDdValues(products.salads)" class="main-dropdown pt-5"></sb-dropdown>
         <div class="quantity-container row py-3">
-          <sb-dropdown class="col-6"></sb-dropdown>
+          <sb-dropdown [dropdownValues]="getDdnumber(9)" class="col-6"></sb-dropdown>
           <sb-button class="col-6 text-right" label="ADD"></sb-button>
         </div>
 
-        <h4 class="txt-white pt-5 pb-3">Appetizers</h4>
-        <sb-dropdown class="main-dropdown"></sb-dropdown>
+        <h4 class="txt-white pt-5 pb-3">Desserts</h4>
+        <sb-dropdown [dropdownValues]="getDdValues(products.desserts)" class="main-dropdown"></sb-dropdown>
         <div class="quantity-container row py-3">
-          <sb-dropdown class="col-6"></sb-dropdown>
+          <sb-dropdown [dropdownValues]="getDdnumber(9)" class="col-6"></sb-dropdown>
           <sb-button class="col-6 text-right" label="ADD"></sb-button>
         </div>
       </div>

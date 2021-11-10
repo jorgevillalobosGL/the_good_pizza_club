@@ -3,7 +3,7 @@
     aria-expanded="false">{{label}}</a>
   <div class="dropdown-menu">
     <a 
-      *ngFor="let dropdownValue of dropdownValues"
+      *ngFor="let dropdownValue of dropdownValues ; trackBy:labsTrackBy;"
       [ngClass]="{'disabled': dropdownValue.disabled}"
       (click)="onItemClick(dropdownValue)"
       class="dropdown-item">

@@ -3,27 +3,12 @@
   <h2 class="txt-yellow modal-title">Make it your own way</h2>
   <h3 class="txt-white">Choose your size</h3>
   <div class="pizza-size-container d-flex align-items-baseline justify-content-center">
-    <div>
-      <span class="pizza-size pizza-size-sm mx-5 cursor-pointer mb-4"></span>
+    <div *ngFor="let size of products.sizes" (click)="onSelectProduct('size', size)">
+      <span class="pizza-size pizza-size-{{size.name}} mx-5 cursor-pointer mb-4"></span>
       <span class="pizza-size_text">
-      <h4 class="txt-white">Small</h4>
-      <h4 class="txt-white">7”</h4>
+      <h4 class="txt-white">{{size.name | titlecase}}</h4>
+      <h4 class="txt-white">{{size.description}}</h4>
     </span>
-    </div>
-    <div>
-      <span class="pizza-size pizza-size-md mx-5 cursor-pointer mb-4"></span>
-      <span class="pizza-size_text">
-      <h4 class="txt-white">Medium</h4>
-      <h4 class="txt-white">10”</h4>
-    </span>
-    </div>
-    <div>
-      <span class="pizza-size pizza-size-lg mx-5 cursor-pointer mb-4"></span>
-      <span class="pizza-size_text">
-      <h4 class="txt-white">Large</h4>
-      <h4 class="txt-white">13”</h4>
-    </span>
-    </div>
   </div>
 </div>
 <div class="container">
@@ -34,7 +19,7 @@
       <sb-button 
         *ngFor="let sauce of products.sauce"
         [label]="sauce.name"
-        [isOutline]="sauceField.value !== sauce.id"
+        [isOutline]="sauceField?.value?.id !== sauce.id"
         width="300px"
         height="90px"
         (click)="onSelectProduct('sauce', sauce)">
@@ -50,7 +35,7 @@
         class="p-3"
         [label]="cheese.name" 
         [isOutline]="true"
-        [isOutline]="cheeseField.value !== cheese.id"
+        [isOutline]="cheeseField?.value?.id !== cheese.id"
         width="300px"
         height="90px"
         (click)="onSelectProduct('cheese', cheese)">
@@ -66,7 +51,7 @@
         class="p-3"
         [label]="topping.name"
         [isOutline]="true"
-        [isOutline]="toppingField.value !== topping.id"
+        [isOutline]="toppingField?.value?.id !== topping.id"
         width="300px"
         height="90px"
         (click)="onSelectProduct('topping', topping)"></sb-button>
@@ -78,37 +63,77 @@
     <div class="row py-5">
       <div class="col-6">
         <h4 class="txt-white pt-5 pb-3">Drinks</h4>
-        <sb-dropdown [dropdownValues]="getDdValues(products.drinks)" class="main-dropdown pt-5"></sb-dropdown>
+        <sb-dropdown
+          [dropdownValues]="getDdValues(products.drinks)"
+          [reset]="reset$ | async"
+          class="main-dropdown pt-5" 
+          (itemSelected)="onExtraSelected('drink', $event)">
+        </sb-dropdown>
         <div class="quantity-container row py-3">
-          <sb-dropdown [dropdownValues]="getDdnumber(9)" class="col-6"></sb-dropdown>
-          <sb-button class="col-6 text-right" label="ADD"></sb-button>
+          <sb-dropdown 
+            [dropdownValues]="getDdnumber(9)"
+            [reset]="reset$ | async"
+            class="col-6"
+            (itemSelected)="onExtraQuantity('drink', $event)">
+          </sb-dropdown>
+          <sb-button class="col-6 text-right" label="ADD" (click)="onAddExtra('drink')"></sb-button>
         </div>
       
         <h4 class="txt-white pt-5 pb-3">Appetizers</h4>
-        <sb-dropdown [dropdownValues]="getDdValues(products.appetizers)" class="main-dropdown pt-5"></sb-dropdown>
+        <sb-dropdown 
+          [dropdownValues]="getDdValues(products.appetizers)"
+          [reset]="reset$ | async"
+          class="main-dropdown pt-5"
+          (itemSelected)="onExtraSelected('appetizer', $event)">
+        </sb-dropdown>
         <div class="quantity-container row py-3">
-          <sb-dropdown [dropdownValues]="getDdnumber(9)" class="col-6"></sb-dropdown>
-          <sb-button class="col-6 text-right" label="ADD"></sb-button>
+          <sb-dropdown
+            [dropdownValues]="getDdnumber(9)"
+            [reset]="reset$ | async"
+            class="col-6"
+            (itemSelected)="onExtraQuantity('appetizer', $event)">
+          </sb-dropdown>
+          <sb-button class="col-6 text-right" label="ADD" (click)="onAddExtra('appetizer')"></sb-button>
         </div>
       </div>
       <div class="col-6">
         <h4 class="txt-white pt-5 pb-3">Salads</h4>
-        <sb-dropdown [dropdownValues]="getDdnumber(9)" [dropdownValues]="getDdValues(products.salads)" class="main-dropdown pt-5"></sb-dropdown>
+        <sb-dropdown
+          [dropdownValues]="getDdValues(products.salads)"
+          [reset]="reset$ | async"
+          class="main-dropdown pt-5"
+          (itemSelected)="onExtraSelected('salad', $event)">
+        </sb-dropdown>
         <div class="quantity-container row py-3">
-          <sb-dropdown [dropdownValues]="getDdnumber(9)" class="col-6"></sb-dropdown>
-          <sb-button class="col-6 text-right" label="ADD"></sb-button>
+          <sb-dropdown
+            [dropdownValues]="getDdnumber(9)"
+            [reset]="reset$ | async"
+            class="col-6"
+            (itemSelected)="onExtraQuantity('salad', $event)">
+          </sb-dropdown>
+          <sb-button class="col-6 text-right" label="ADD" (click)="onAddExtra('salad')"></sb-button>
         </div>
 
         <h4 class="txt-white pt-5 pb-3">Desserts</h4>
-        <sb-dropdown [dropdownValues]="getDdValues(products.desserts)" class="main-dropdown"></sb-dropdown>
+        <sb-dropdown
+          [dropdownValues]="getDdValues(products.desserts)"
+          [reset]="reset$ | async"
+          class="main-dropdown"
+          (itemSelected)="onExtraSelected('dessert', $event)">
+        </sb-dropdown>
         <div class="quantity-container row py-3">
-          <sb-dropdown [dropdownValues]="getDdnumber(9)" class="col-6"></sb-dropdown>
-          <sb-button class="col-6 text-right" label="ADD"></sb-button>
+          <sb-dropdown
+            [dropdownValues]="getDdnumber(9)"
+            [reset]="reset$ | async"
+            class="col-6"
+            (itemSelected)="onExtraQuantity('dessert', $event)">
+          </sb-dropdown>
+          <sb-button class="col-6 text-right" label="ADD" (click)="onAddExtra('dessert')"></sb-button>
         </div>
       </div>
     </div>
     <div class="d-flex justify-content-center py-5">
-      <sb-button class="px-5" label="RESTART" width="420px" height="120px"></sb-button>
+      <sb-button class="px-5" label="RESTART" width="420px" height="120px" (click)="onRestart()"></sb-button>
       <sb-button class="px-5" label="ADD TO CARD" width="420px" height="120px"></sb-button>
     </div>
   </div>

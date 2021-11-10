@@ -13,6 +13,7 @@ import { HomeHeaderComponent } from './home-header/home-header.component';
 import { DayPromosSectionComponent } from './day-promos-section/day-promos-section.component';
 import { PizzaCarouselSectionComponent } from './pizza-carousel-section/pizza-carousel-section.component';
 import { CustomizePizzaFormComponent } from '../components/customize-pizza-form/customize-pizza-form.component';
+
 @NgModule({
   imports: [
     CommonModule,

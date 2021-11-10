@@ -16,19 +16,19 @@
       border-radius: 100%;
       display: block;
 
-      &-sm {
+      &-small {
         width: 155px;
         height: 155px;
         border-color: $red;
       }
 
-      &-md {
+      &-medium {
         width: 174px;
         height: 174px;
         border-color: $red;
       }
 
-      &-lg {
+      &-large {
         width: 198px;
         height: 198px;
         background-color: $green-1;

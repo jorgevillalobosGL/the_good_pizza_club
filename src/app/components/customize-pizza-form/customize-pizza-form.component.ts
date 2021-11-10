@@ -1,26 +1,51 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
 import { DropdownValue } from '../../shared/general.model';
 
-enum Products {
-  sauce = 'sauce',
-  cheese = 'cheese',
-  toppings = 'toppings',
-  drinks = 'drinks',
-  salads = 'salads',
-  appetizers = 'appetizers',
-  desserts = 'desserts',
+enum ExtraType {
+  drink= 'drink',
+  salad= 'salad',
+  appetizer= 'appetizer',
+  dessert= 'dessert',
 }
+
+const TempExtraDefault = {
+  drink: { item: null, quantity: 0 },
+  salad: { item: null, quantity: 0 },
+  appetizer: { item: null, quantity: 0 },
+  dessert: { item: null, quantity: 0 },
+};
 @Component({
   selector: 'app-customize-pizza-form',
   templateUrl: './customize-pizza-form.component.html',
   styleUrls: ['./customize-pizza-form.component.scss']
 })
 export class CustomizePizzaFormComponent implements OnInit{
-  lado: string;
+  public reset$ = new BehaviorSubject(false);
   public customPizzaForm: FormGroup;
-
+  private tempExtra = { ...TempExtraDefault };
   public products = {
+    sizes: [
+      {
+        id: 100,
+        name: 'small',
+        price: 0.5,
+        description: '7”'
+      },
+      {
+        id: 200,
+        name: 'medium',
+        price: 0.5,
+        description: '10”'
+      },
+      {
+        id: 300,
+        name: 'large',
+        price: 0.5,
+        description: '13”'
+      },
+    ],
     sauce: [
       {
         id: 1,
@@ -142,6 +167,10 @@ export class CustomizePizzaFormComponent implements OnInit{
     ]
   };
 
+  public get sizeField(): FormControl {
+    return this.customPizzaForm.get('size') as FormControl;
+  }
+
   public get sauceField(): FormControl {
     return this.customPizzaForm.get('sauce') as FormControl;
   }
@@ -152,6 +181,22 @@ export class CustomizePizzaFormComponent implements OnInit{
 
   public get toppingField(): FormControl {
     return this.customPizzaForm.get('topping') as FormControl;
+  }
+
+  public get drinkField(): FormControl {
+    return this.customPizzaForm.get('drink') as FormControl;
+  }
+
+  public get saladField(): FormControl {
+    return this.customPizzaForm.get('salad') as FormControl;
+  }
+
+  public get appetizerField(): FormControl {
+    return this.customPizzaForm.get('appetizer') as FormControl;
+  }
+
+  public get dessertField(): FormControl {
+    return this.customPizzaForm.get('dessert') as FormControl;
   }
 
   public getDdValues(productList: any[]): DropdownValue[] {
@@ -175,11 +220,31 @@ export class CustomizePizzaFormComponent implements OnInit{
   }
 
   public onSelectProduct(category: string, product: any) {
-    this.customPizzaForm.get(category)?.setValue(product.id);
+    this.customPizzaForm.get(category)?.setValue(product);
+  }
+
+  public onExtraSelected(extra: string, item: any) {
+    this.tempExtra[<ExtraType>extra].item = item;
+  }
+
+  public onExtraQuantity(extra: string, item: DropdownValue) {
+    this.tempExtra[<ExtraType>extra].quantity = +item.value;
+  }
+
+  public onAddExtra(extra: string) {
+    const extraTobeAdded = this.tempExtra[<ExtraType>extra];
+    this.customPizzaForm.get(extra)?.setValue(extraTobeAdded);
+  }
+
+  public onRestart() {
+    this.reset$.next(true);
+    this.customPizzaForm.reset();
+    this.tempExtra = { ...TempExtraDefault };
   }
 
   public ngOnInit() {
     this.customPizzaForm = this.formBuilder.group({
+      size:[],
       sauce: [],
       cheese: [],
       topping: [],

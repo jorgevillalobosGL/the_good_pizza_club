@@ -18,10 +18,13 @@ const STORIES = [
   IconButton,
   PizzaMenuCard
 ];
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [...STORIES],
   exports: [...STORIES]

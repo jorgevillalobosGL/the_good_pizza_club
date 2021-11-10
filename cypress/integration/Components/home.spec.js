@@ -28,4 +28,10 @@ describe('Home', () => {
 
   })
 
+  describe('Customize your Pizza Modal', () => {
+    it('should display the modal', () => {
+      cy.get('#home-section .home-header .customize-btn').click();
+      cy.get('#customize-pizza-form').should('exist');
+    })
+  })
 })

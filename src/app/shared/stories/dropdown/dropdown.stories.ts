@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import Dropdown from './dropdown.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export default {
   title: 'Components/Dropdown',
@@ -11,7 +12,9 @@ export default {
     moduleMetadata({
       declarations: [],
       imports: [
-        CommonModule
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule
       ]
     }),
   ],

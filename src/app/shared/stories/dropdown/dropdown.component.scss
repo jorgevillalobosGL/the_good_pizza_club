@@ -1,6 +1,7 @@
 @import '../../../../assets/scss/colors';
 
 .dropdown {
+  list-style-type: none;
 	&.show {
 		.dropdown-toggle {
 			&::before {
@@ -12,6 +13,7 @@
 	}
 }
 .dropdown-toggle {
+  width: 100%;
 	color: $white;
 	padding: 25px;
 	font-size: 20px;
@@ -36,6 +38,7 @@
 	}
 }
 .dropdown-menu {
+  width: 100%;
 	margin: 0px;
 	min-width: 230px;
 	background: $gray-2;

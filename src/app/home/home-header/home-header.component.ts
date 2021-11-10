@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-home-header',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-header.component.scss']
 })
 export class HomeHeaderComponent {
+  @Output() onClick = new EventEmitter<Event>();
 
   constructor() { }
 

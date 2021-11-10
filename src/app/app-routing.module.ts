@@ -22,6 +22,11 @@ const routes: Routes = [
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
         canLoad: [AuthGuard]
       },
+      {
+        path: 'menu',
+        loadChildren: () => import('./menu/menu.module').then(m => m.MenuModule),
+        canLoad: [AuthGuard]
+      },
     ]
   },
   { path: '**', redirectTo: 'auth' },

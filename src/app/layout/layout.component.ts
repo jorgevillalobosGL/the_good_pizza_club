@@ -32,7 +32,7 @@ public activePathUrl$: Observable<any>;
     this.menuItems = [
       {
         name: 'Menu',
-        url: 'home',
+        url: '/menu',
       },
       {
         name: 'About Us',

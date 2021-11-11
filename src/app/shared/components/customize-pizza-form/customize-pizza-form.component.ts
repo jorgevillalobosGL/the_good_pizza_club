@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
-import { DropdownValue } from '../../shared/general.model';
+import { DropdownValue } from '../../general.model';
 
 enum ExtraType {
   drink= 'drink',

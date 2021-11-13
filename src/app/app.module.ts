@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { reducer } from './store/app.reducer';
+import { AppEffects } from './store/app.effects';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '@app-environment';
@@ -17,9 +18,9 @@ import { AuthService } from '@app-services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 
 // Firebase
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 
 // Components
@@ -28,6 +29,7 @@ import { LayoutComponent } from './layout/layout.component';
 
 // Share
 import { SharedModule } from '@app-shared/shared.module';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { SharedModule } from '@app-shared/shared.module';
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     StoreModule.forRoot({ app: reducer }),
+    EffectsModule.forRoot([AppEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
@@ -54,4 +57,4 @@ import { SharedModule } from '@app-shared/shared.module';
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

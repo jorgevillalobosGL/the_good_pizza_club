@@ -2,7 +2,7 @@
   <h3 class="section-title txt-white">You can also try one of our greatest hits</h3>
   <div class="carousel-content">
     <carousel>
-      <slide class="slide-{{i}}" *ngFor="let pizzaOptionSlides of pizzaCarouselOptions$ | async; let i = index">
+      <slide class="slide-{{i}}" *ngFor="let pizzaOptionSlides of pizzaCarouselList$ | async; let i = index">
         <div class="d-flex justify-content-center">
           <sb-pizza-menu-card *ngFor="let pizzaOption of pizzaOptionSlides"
             [bgColorGradientFrom]= "pizzaOption.bgColorGradientFrom"

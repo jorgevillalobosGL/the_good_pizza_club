@@ -5,11 +5,13 @@ import { MenuRouterModule } from './menu.router.module';
 import { SharedModule } from '@app-shared/shared.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
+// Services
+import { ProductsService } from '../services/products.service';
 // Component
 import { MenuComponent } from './menu.component';
 import { MenuHeaderComponent } from './menu-header/menu-header.component';
 import { RepertoryComponent } from './repertory/repertory.component';
-// import { CustomizePizzaFormComponent } from '../shared/components/customize-pizza-form/customize-pizza-form.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -20,8 +22,8 @@ import { RepertoryComponent } from './repertory/repertory.component';
   declarations: [
     MenuComponent,
     RepertoryComponent,
-    MenuHeaderComponent,
-    // CustomizePizzaFormComponent
-  ]
+    MenuHeaderComponent
+  ],
+  providers: [ProductsService]
 })
 export class MenuModule { }

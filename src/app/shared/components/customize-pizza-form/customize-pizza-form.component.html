@@ -1,5 +1,5 @@
 <div id="customize-pizza-form" class="bg-gray-1">
-<div class="text-center">
+<div class="text-center" *ngIf="products$ | async as products">
   <h2 class="txt-yellow modal-title">Make it your own way</h2>
   <h3 class="txt-white">Choose your size</h3>
   <div class="pizza-size-container d-flex align-items-baseline justify-content-center">
@@ -64,7 +64,7 @@
       <div class="col-6">
         <h4 class="txt-white pt-5 pb-3">Drinks</h4>
         <sb-dropdown
-          [dropdownValues]="getDdValues(products.drinks)"
+          [dropdownValues]="getDdValues(products?.drinks || [])"
           [reset]="reset$ | async"
           class="main-dropdown pt-5" 
           (itemSelected)="onExtraSelected('drink', $event)">
@@ -81,7 +81,7 @@
       
         <h4 class="txt-white pt-5 pb-3">Appetizers</h4>
         <sb-dropdown 
-          [dropdownValues]="getDdValues(products.appetizers)"
+          [dropdownValues]="getDdValues(products?.appetizers || [])"
           [reset]="reset$ | async"
           class="main-dropdown pt-5"
           (itemSelected)="onExtraSelected('appetizer', $event)">
@@ -99,7 +99,7 @@
       <div class="col-6">
         <h4 class="txt-white pt-5 pb-3">Salads</h4>
         <sb-dropdown
-          [dropdownValues]="getDdValues(products.salads)"
+          [dropdownValues]="getDdValues(products?.salads || [])"
           [reset]="reset$ | async"
           class="main-dropdown pt-5"
           (itemSelected)="onExtraSelected('salad', $event)">
@@ -116,7 +116,7 @@
 
         <h4 class="txt-white pt-5 pb-3">Desserts</h4>
         <sb-dropdown
-          [dropdownValues]="getDdValues(products.desserts)"
+          [dropdownValues]="getDdValues(products?.desserts || [])"
           [reset]="reset$ | async"
           class="main-dropdown"
           (itemSelected)="onExtraSelected('dessert', $event)">

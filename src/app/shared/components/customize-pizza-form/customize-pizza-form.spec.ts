@@ -1,20 +1,24 @@
 import { TestBed } from '@angular/core/testing';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { Product } from '../../general.model';
 import { CustomizePizzaFormComponent } from './customize-pizza-form.component';
 
 describe('Address / Credit Card Story', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
+      imports: [ReactiveFormsModule, StoreModule.forRoot({})],
       declarations: [CustomizePizzaFormComponent],
     }).compileComponents();
   });
 
   it('should save pizza ingredients when user select it', () => {
-    const ingredientMock = {
+    const ingredientMock: Product = {
       id: 1,
       name: 'Tomato',
-      price: 0.5
+      description: '',
+      price: 0.5,
+      stock: 10
     };
     const fixture = TestBed.createComponent(CustomizePizzaFormComponent);
     const component = fixture.componentInstance;

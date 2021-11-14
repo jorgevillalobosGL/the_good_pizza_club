@@ -4,6 +4,11 @@ import { EMPTY, from, Observable } from 'rxjs';
 import firebase from 'firebase/compat/app';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from './user.service';
+import { User } from '@app-shared/models/user.model';
+import { AuthState } from '../auth/store/auth.reducer';
+import { Store } from '@ngrx/store';
+import * as AuthActions from '@app-auth/store/auth.actions';
 
 @Injectable()
 export class AuthService {
@@ -26,6 +31,12 @@ export class AuthService {
         response?.user?.updateProfile({
           displayName: name
         });
+        const user: User = {
+          uid: <string>response?.user?.uid,
+          email: <string>response?.user?.email,
+          name
+        };
+        this.authStore.dispatch(AuthActions.createUser({ user }));
       }),
       catchError((error) => {
         this.toastr.error(error.message.replace('Firebase:', ''), 'Error');
@@ -64,6 +75,8 @@ export class AuthService {
   }
 
   constructor(
+    private authStore: Store<AuthState>,
+    private userService: UserService,
     private toastr: ToastrService,
     private firebaseAuth: AngularFireAuth
   ) { }

@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
-import { Product } from '../../general.model';
+import { Product } from '@app-shared/models/general.model';
 import { CustomizePizzaFormComponent } from './customize-pizza-form.component';
 
 describe('Address / Credit Card Story', () => {

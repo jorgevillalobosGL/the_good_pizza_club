@@ -1,5 +1,5 @@
 import { createReducer, Action, createFeatureSelector, on, createSelector } from '@ngrx/store';
-import { User } from '@app-shared/general.model';
+import { User } from '@app-shared/models/user.model';
 import * as AuthActions from './auth.actions';
 
 export interface AuthState {

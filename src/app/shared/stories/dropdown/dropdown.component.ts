@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { DropdownValue } from '@app-shared/general.model';
+import { DropdownValue } from '@app-shared/models/general.model';
 
 const DefaultLabel = 'Select an Item';
 @Component({

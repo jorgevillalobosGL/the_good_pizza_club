@@ -4,7 +4,7 @@ import { select, Store } from '@ngrx/store';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { fetchProductsCatalog } from '../../../store/app.actions';
 import { AppState, selectProductCatalog } from '../../../store/app.reducer';
-import { DropdownValue, Product, ProductsCatalog } from '../../general.model';
+import { DropdownValue, Product, ProductsCatalog } from '@app-shared/models/general.model';
 
 enum ExtraType {
   drink= 'drink',

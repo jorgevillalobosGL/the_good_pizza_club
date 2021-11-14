@@ -13,6 +13,7 @@ import { environment } from '@app-environment';
 
 // Services
 import { AuthService } from '@app-services/auth.service';
+import { UserService } from '@app-services/user.service';
 
 // Guards
 import { AuthGuard } from './guards/auth.guard';
@@ -54,7 +55,7 @@ import { EffectsModule } from '@ngrx/effects';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, UserService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

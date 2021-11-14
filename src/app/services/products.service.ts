@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { PizzaMenuCardContent } from '../shared/general.model';
+import { PizzaMenuCardContent } from '@app-shared/models/general.model';
 
 @Injectable({
   providedIn: 'root'

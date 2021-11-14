@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { PizzaMenuCardContent, Product, ProductsCatalog } from '../shared/general.model';
+import { PizzaMenuCardContent, Product, ProductsCatalog } from '@app-shared/models/general.model';
 
 export enum Types {
   FETCH_PIZZAS = '[core] fetch pizzas list',

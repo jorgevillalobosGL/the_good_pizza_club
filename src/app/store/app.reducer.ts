@@ -1,5 +1,5 @@
 import { createReducer, Action, createFeatureSelector, on, createSelector } from '@ngrx/store';
-import { PizzaMenuCardContent, Product, ProductsCatalog } from '../shared/general.model';
+import { PizzaMenuCardContent, Product, ProductsCatalog } from '@app-shared/models/general.model';
 import * as AppActions from './app.actions';
 
 export interface AppState {

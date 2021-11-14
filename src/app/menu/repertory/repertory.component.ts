@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { PizzaMenuCardContent } from '../../shared/general.model';
+import { PizzaMenuCardContent } from '@app-shared/models/general.model';
 import { fetchPizzas } from '../../store/app.actions';
 import { AppState, selectPizzas } from '../../store/app.reducer';
 

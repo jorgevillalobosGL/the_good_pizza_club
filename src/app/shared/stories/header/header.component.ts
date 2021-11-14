@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuItem } from '@app-shared/general.model';
+import { MenuItem } from '@app-shared/models/general.model';
 
 @Component({
   selector: 'sb-header',

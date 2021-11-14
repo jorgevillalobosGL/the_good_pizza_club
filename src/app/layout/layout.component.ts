@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { distinctUntilChanged, filter, map, pluck } from 'rxjs/operators';
 
-import { MenuItem } from '@app-shared/general.model';
+import { MenuItem } from '@app-shared/models/general.model';
 import { AuthService } from '@app-services/auth.service';
 
 import { AuthState } from '@app-auth/store/auth.reducer';
@@ -70,6 +70,7 @@ public activePathUrl$: Observable<any>;
           this.authStore.dispatch(
             AuthActions.authorizeUser({
               payload: {
+                uid: user.uid,
                 name: user?.displayName || '',
                 email: user?.email || '',
               }

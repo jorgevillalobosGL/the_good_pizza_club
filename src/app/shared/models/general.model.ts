@@ -10,11 +10,6 @@ export interface MenuItem {
   icon?: string;
 }
 
-export interface User {
-  name: string;
-  email: string;
-}
-
 export interface PizzaMenuCardContent {
   bgColorGradientFrom: string,
   bgColorGradientTo: string,

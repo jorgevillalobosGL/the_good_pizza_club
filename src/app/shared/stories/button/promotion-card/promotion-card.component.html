@@ -1,0 +1,13 @@
+<div class="promotion-card" [ngStyle]="{'background-color': bgColor}">
+  <div class="main-title-content position-relative">
+    <img *ngIf="showDecorators" class="decorator-left" src="assets/images/leaf-left.png">
+    <h2 class="main-title txt-red">{{mainTitle}}</h2>
+    <img *ngIf="showDecorators" class="decorator-right" src="assets/images/leaf-right.png">
+  </div>
+  <h3 class="second-title txt-yellow my-0">{{secondTitle}}</h3>
+  <span *ngIf="description" class="description">{{description}}</span>
+  <div class="promotion-footer">
+    <sb-icon-button [showIcon]="true" label="ADD TO CART" (click)="onClick.emit($event)"></sb-icon-button>
+    <p class="disclaimer txt-white pt-3">Promotion valid only for pickup and express purchases, not valid with other coupons. Promotion valid only on Fridays.</p>
+  </div>
+</div>

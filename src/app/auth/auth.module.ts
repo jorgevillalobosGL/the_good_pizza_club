@@ -1,46 +1,39 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { environment } from '../../environments/environment';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthRouterModule } from './auth.router.module';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '@app-services/auth.service';
+import { UserService } from '@app-services/user.service';
+
+// Local Modules
+import { LoginModule } from './login/login.module';
+import { SignInModule } from './sign-in/sign-in.module';
+import { WelcomeModule } from './welcome/welcome.module';
 
 // Store
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/auth.reducer';
-
-// Share
-import { SharedModule } from '../../app/shared/shared.module';
+import { AuthEffects } from './store/auth.effects';
 
 // Components
 import { AuthComponent } from './auth.component';
-import { LoginComponent } from './login/login.component';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { EffectsModule } from '@ngrx/effects';
 
-// Firebase
-import { AngularFireModule } from '@angular/fire/compat';
-
-// Components
-const COMPONENTS = [
-  AuthComponent,
-  LoginComponent,
-  SignInComponent,
-  WelcomeComponent,
+const LOCAL_MODULES = [
+  LoginModule,
+  SignInModule,
+  WelcomeModule
 ];
 
 @NgModule({
   imports: [
-    FormsModule,
+    ...LOCAL_MODULES,
     CommonModule,
-    SharedModule,
     AuthRouterModule,
-    ReactiveFormsModule,
     StoreModule.forFeature('auth', reducer),
-    AngularFireModule.initializeApp(environment.firebase)
+    EffectsModule.forFeature([AuthEffects]),
   ],
-  declarations: [...COMPONENTS],
-  providers: [ AuthService ]
+  declarations: [AuthComponent],
+  providers: [ AuthService, UserService ]
 })
 export class AuthModule { }

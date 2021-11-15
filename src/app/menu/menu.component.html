@@ -1,0 +1,44 @@
+<div id="menu-section">
+  <div>
+    <app-menu-header></app-menu-header>
+  </div>
+  <div class="menu-main-container">
+    <app-repertory></app-repertory>
+    <h2 class="txt-yellow text-center">None of the above?</h2>
+    <div class="btn-content">
+      <sb-button
+        class="customize-btn"
+        label="CUSTOMIZE YOUR OWN"
+        width="505px"
+        height="117px"
+        (click)="openModal(customPizzaModal)">
+      </sb-button>
+    </div>
+    <div id="bottom-section">
+      <div class="section-container">
+        <div class="pt-5">
+          <h3 class="txt-white text-center pt-4 pb-5">Or try one of our daily promotions!</h3>
+          <div class="promo-content d-flex justify-content-center pt-5">
+            <sb-promotion-card
+              class="promo-1 position-relative p-3"
+              bgColor="#284B56"
+              mainTitle="33% OFF"
+              secondTitle="WALNUT & FRESNO CHILLI">
+            </sb-promotion-card>
+            <sb-promotion-card
+              class="promo-2 position-relative p-3"
+              bgColor="#380A48"
+              [showDecorators]="true"
+              mainTitle="2 x 1 Fridays"
+              secondTitle="TOMATO & BASIL"
+              description="On medium size pizzas with no additional toppings.">
+            </sb-promotion-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #customPizzaModal>
+  <app-customize-pizza-form></app-customize-pizza-form>
+</ng-template>

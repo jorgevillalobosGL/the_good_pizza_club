@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '@app-services/auth.service';
 
 @Component({
   selector: 'app-sign-in',

@@ -1,0 +1,64 @@
+@import '../../../../assets/scss/colors';
+
+#customize-pizza-form {
+  padding-top: 138px;
+  border-radius: 10px 200px 10px 10px;
+
+  .modal-title {
+    padding-bottom: 125px;
+  }
+
+  .pizza-size-container {
+    padding-top: 60px;
+
+    .pizza-size {
+      border: 3px solid;
+      border-radius: 100%;
+      display: block;
+
+      &-small {
+        width: 155px;
+        height: 155px;
+        border-color: $red;
+      }
+
+      &-medium {
+        width: 174px;
+        height: 174px;
+        border-color: $red;
+      }
+
+      &-large {
+        width: 198px;
+        height: 198px;
+        background-color: $green-1;
+      }
+    }
+  }
+
+  .container {
+    padding-left: 60px;
+    padding-right: 60px;
+
+
+    .btn-content {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .main-dropdown {
+      width: 100%;
+    }
+  }
+}
+
+::ng-deep {
+  .modal-xl {
+    max-width: 73%;
+  }
+
+  .modal-content {
+    border-radius: 10px 200px 10px 10px;
+    background-color: $gray-1;
+  }
+}

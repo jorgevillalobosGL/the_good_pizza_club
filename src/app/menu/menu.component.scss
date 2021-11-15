@@ -1,0 +1,47 @@
+@import '../../assets/scss/colors';
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+#menu-section .menu-main-container {
+  padding-top: 122px;
+
+  .btn-content {
+    height: 209px;
+
+    .customize-btn {
+      z-index: 1;
+      left: 32%;
+      top: 149px;
+      position: relative;
+    }
+  }
+
+  #bottom-section {
+    height: 1330px;
+    bottom: -300px;
+    margin-top: -300px;
+    position: relative;
+    background-color: #27AE60;
+    border-radius: 418px 0px 0px 0px;
+
+    .section-container {
+      top: 104px;
+      position: relative;
+
+      sb-button {
+        padding-left: 70px;
+      }
+
+      .promo-2 {
+        margin-top: 125px;
+      }
+    }
+  }
+}
+@include media-breakpoint-down(md) {
+  .promo-content {
+    padding-left: 10%;
+    display: block !important;
+  }
+}

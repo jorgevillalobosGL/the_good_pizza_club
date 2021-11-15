@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { ToastrService } from 'ngx-toastr';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '@app-services/auth.service';
 
 const NOT_AUTHORIZATION_MESSAGE = 'You are not authorized to view this page, please log in first';
 @Injectable({

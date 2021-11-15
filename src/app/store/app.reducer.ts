@@ -1,19 +1,36 @@
 import { createReducer, Action, createFeatureSelector, on, createSelector } from '@ngrx/store';
+import { PizzaMenuCardContent, Product, ProductsCatalog } from '@app-shared/models/general.model';
 import * as AppActions from './app.actions';
 
 export interface AppState {
-  myState: string;
+  pizzas: PizzaMenuCardContent[];
+  productsCatalog: ProductsCatalog;
+  shoppingCart: Product[];
 };
 
 const initialState: AppState = {
-  myState: ''
+  pizzas: [],
+  productsCatalog: {},
+  shoppingCart: []
 };
 
 const appReducer = createReducer(
   initialState,
-  on(AppActions.myAction, (state, {payload}) => ({
+  on(AppActions.fetchPizzasSuccess, (state, {payload}) => ({
     ...state,
-    myState: payload
+    pizzas: payload
+  })),
+  on(AppActions.fetchProductsCatalogSuccess, (state, {payload}) => ({
+    ...state,
+    productsCatalog: payload
+  })),
+  on(AppActions.fetchShoppingCardSuccess, (state, {payload}) => ({
+    ...state,
+    shoppingCart: payload
+  })),
+  on(AppActions.clearShoppingCard, (state) => ({
+    ...state,
+    shoppingCart: []
   }))
 );
 
@@ -23,7 +40,15 @@ export  function  reducer(state: AppState | undefined, action: Action) {
 
 // Selectors
 export const selectAppState = createFeatureSelector<AppState>('app');
-export const selectMyState = createSelector(
+export const selectPizzas = createSelector(
   selectAppState,
-  (state: AppState) => state.myState
+  (state: AppState) => state.pizzas
+);
+export const selectProductCatalog = createSelector(
+  selectAppState,
+  (state: AppState) => state.productsCatalog
+);
+export const selectShoppingCard = createSelector(
+  selectAppState,
+  (state: AppState) => state.shoppingCart
 );

@@ -1,0 +1,30 @@
+@import '../../../../assets/scss/colors';
+
+.input-icons {
+  .icon {
+    top: 5px;
+    left: 35px;
+    color: $gray-2;
+    font-size: 30px;
+    min-width: 39px;
+    position: relative;
+    -webkit-box-pack: center;
+    display: -webkit-inline-box;
+  }
+
+  .input-field {
+    color: $gray-2;
+    font-size: 20px;
+    line-height: 26px;
+    padding: 22px 25px;
+    text-align: center;
+    margin-left: -25px;
+    font-style: normal;
+    border-radius: 50px;
+    font-weight: normal;
+    padding-left: 84.5px;
+    width: calc(100% - 25px);
+    background-color: $gray-4;
+    font-family: 'Red Hat Display';
+  }
+}

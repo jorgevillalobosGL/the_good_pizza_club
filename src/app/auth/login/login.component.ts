@@ -1,16 +1,16 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '@app-services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnDestroy {
+export class LoginComponent implements OnDestroy, OnInit {
   public loginForm: FormGroup;
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
@@ -61,7 +61,7 @@ export class LoginComponent implements OnDestroy {
 
   constructor(
     private router: Router,
+    private formBuilder: FormBuilder,
     private authService: AuthService,
-    private formBuilder: FormBuilder
-  ) {}
+  ) { }
 }

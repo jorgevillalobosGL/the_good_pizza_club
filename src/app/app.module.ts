@@ -58,4 +58,4 @@ import { EffectsModule } from '@ngrx/effects';
   providers: [AuthService, UserService, AuthGuard],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

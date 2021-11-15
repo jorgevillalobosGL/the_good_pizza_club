@@ -1,0 +1,13 @@
+<li class="dropdown">
+  <a class="dropdown-toggle icon-menu-arrow" data-toggle="dropdown" role="button" aria-haspopup="true"
+    aria-expanded="false">{{label}}</a>
+  <div class="dropdown-menu">
+    <a 
+      *ngFor="let dropdownValue of dropdownValues"
+      [ngClass]="{'disabled': dropdownValue.disabled}"
+      (click)="onItemClick(dropdownValue)"
+      class="dropdown-item">
+      {{dropdownValue.text || dropdownValue.value}}
+    </a> 
+  </div>
+</li>

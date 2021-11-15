@@ -1,0 +1,59 @@
+@import '../../assets/scss/colors';
+
+.dropdown {
+	&.show {
+		.dropdown-toggle {
+			&::before {
+				padding-left: 0px;
+				padding-right: 10px;
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+.dropdown-toggle {
+	color: $white;
+	padding: 25px;
+	font-size: 20px;
+	min-width: 230px;
+	margin-left: 5px;
+	line-height: 26px;
+	background: $gray-2;
+	border-radius: 10px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	display: inline-block;
+	font-family: 'Red Hat Display';
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+	&::after {
+		display: none;
+	}
+	&::before {
+		float: right;
+		font-size: 30px;
+		padding-left: 10px;
+	}
+}
+.dropdown-menu {
+	margin: 0px;
+	min-width: 230px;
+	background: $gray-2;
+	top: -10px !important;
+	.dropdown-item {
+		color: $white;
+		font-size: 20px;
+		line-height: 26px;
+		font-style: normal;
+		font-weight: normal;
+		font-family: 'Red Hat Display';
+		&.disabled {
+			color: $gray-3;
+		}
+		&:hover {
+			border-radius: 50px;
+			text-decoration: none;
+			background-color: $green-2;
+		}
+	}
+}

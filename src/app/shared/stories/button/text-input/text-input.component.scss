@@ -1,0 +1,39 @@
+@import '../../../../../assets/scss/colors';
+
+.input-icons {
+  position: relative;
+  .icon {
+    position: absolute;
+    font-size: 30px;
+    left: 30px;
+    top: 20px;
+    color: $gray-4;
+    min-width:39px;
+    display: -webkit-inline-box;
+    -webkit-box-pack: center;
+  }
+  .input-field {
+    width: 100%;
+    padding: 22px 25px;
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 26px;
+    color: $gray-1;
+    background-color: $gray-6;
+    border-radius: 10px;
+    &.type-password, &.type-email {
+      padding-left: 84.5px;
+    }
+
+    &.state{
+      &-danger {
+        border: 2px solid $red;
+      }
+      &-success {
+        border: 2px solid $green-2;
+      }
+    }
+  }
+}

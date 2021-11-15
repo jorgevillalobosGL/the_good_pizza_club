@@ -1,0 +1,17 @@
+<div id="repertory-section" class="text-center">
+  <h3 class="section-title txt-white">Our repertoire</h3>
+  <div class="repertory-content mx-5 d-flex flex-wrap justify-content-center">
+    <sb-pizza-menu-card
+      class="px-3"
+      *ngFor="let pizza of pizzasList$ | async" 
+      [bgColorGradientFrom]="pizza.bgColorGradientFrom"
+      [bgColorGradientTo]="pizza.bgColorGradientTo"
+      [title]="pizza.title"
+      [numOfGrams]="pizza.numOfGrams"
+      [numOfCalories]="pizza.numOfCalories"
+      [description]="pizza.description"
+      [price]="pizza.price"
+      [cardBackgroundUrl]="pizza.cardBackgroundUrl">
+    </sb-pizza-menu-card>
+  </div>
+</div>

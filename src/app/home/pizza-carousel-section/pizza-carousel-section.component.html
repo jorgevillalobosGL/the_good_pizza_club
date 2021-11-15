@@ -1,0 +1,21 @@
+<div id="pizza-carousel-section" class="text-center">
+  <h3 class="section-title txt-white">You can also try one of our greatest hits</h3>
+  <div class="carousel-content">
+    <carousel>
+      <slide class="slide-{{i}}" *ngFor="let pizzaOptionSlides of pizzaCarouselList$ | async; let i = index">
+        <div class="d-flex justify-content-center">
+          <sb-pizza-menu-card *ngFor="let pizzaOption of pizzaOptionSlides"
+            [bgColorGradientFrom]= "pizzaOption.bgColorGradientFrom"
+            [bgColorGradientTo]= "pizzaOption.bgColorGradientTo"
+            [title]= "pizzaOption.title"
+            [numOfGrams]= "pizzaOption.numOfGrams"
+            [numOfCalories]= "pizzaOption.numOfCalories"
+            [description]= "pizzaOption.description"
+            [price]= "pizzaOption.price"
+            [cardBackgroundUrl]= "pizzaOption.cardBackgroundUrl">
+          </sb-pizza-menu-card>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+</div>

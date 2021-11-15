@@ -1,0 +1,7 @@
+<button
+    type="button"
+    [ngStyle]="{'width': width, 'height': height}"
+    (click)="onClick.emit($event)"
+    [ngClass]="classes" [disabled]="isDisabled">
+    {{ label }}
+</button>

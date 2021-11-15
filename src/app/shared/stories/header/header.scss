@@ -1,0 +1,55 @@
+@import '../../../../assets/scss/colors';
+
+.nav {
+  a {
+    order: 0;
+    margin: 0px;
+    padding: 0px;
+    font-size: 24px;
+    font-weight: 300;
+    position: static;
+    line-height: 30px;
+    font-style: normal;
+    text-align: center;
+    font-family: Rowdies;
+
+    &.nav-link.active, &.nav-link:hover {
+      color: $yellow;
+    }
+  }
+
+  .nav-link,
+  .icon {
+    color: $gray-6;
+
+    &.active,
+    &:hover {
+      color: $gray-4;
+    }
+  }
+
+}
+
+.mobile-menu {
+  display: none;
+
+  .bg-dark .nav-link, .icon {
+    font-style: normal;
+    font-family: Rowdies;
+    font-size: 24px;
+    color: $gray-6;
+    &.active{
+      color: $yellow;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .mobile-menu {
+    display: block;
+  }
+
+  .nav {
+    display: none !important;
+  }
+}

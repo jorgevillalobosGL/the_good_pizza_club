@@ -15,6 +15,10 @@ describe('Menu', () => {
     cy.get('#repertory-section .repertory-content').find('sb-pizza-menu-card').should('have.length', 8)
   })
 
+  it('should display News Letter Section in menu page', () => {
+    cy.get('#newsSubscription').should('be.visible');
+  });
+
   describe('Customize your Pizza Modal', () => {
     it('should display the modal', () => {
       cy.get('#menu-section .customize-btn').click();

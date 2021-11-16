@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { CanLoad, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { EMPTY, Observable } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 
 import { ToastrService } from 'ngx-toastr';
-import { AuthService } from '@app-services/auth.service';
+import { select, Store } from '@ngrx/store';
+import { AuthState, selectUser } from '@app-auth/store/auth.reducer';
 
 const NOT_AUTHORIZATION_MESSAGE = 'You are not authorized to view this page, please log in first';
 @Injectable({
@@ -12,12 +13,18 @@ const NOT_AUTHORIZATION_MESSAGE = 'You are not authorized to view this page, ple
 })
 export class AuthGuard implements CanLoad {
   canLoad(): Observable<boolean> {
-    return this.authService.isUserAuth().pipe(
-      tap((isAuth) => {
-        if (!isAuth) {
+    return this.authStore.pipe(
+      select(selectUser),
+      map(user => !!user),
+      tap(user => {
+        if (!user) {
           this.toastr.error(NOT_AUTHORIZATION_MESSAGE);
           this.router.navigate(['/auth']);
         }
+      }),
+      catchError(() => {
+        this.router.navigate(['/auth']);
+        return EMPTY;
       })
     );
   }
@@ -25,6 +32,6 @@ export class AuthGuard implements CanLoad {
   constructor(
     private toastr: ToastrService,
     private router: Router,
-    private authService: AuthService
+    private authStore: Store<AuthState>,
   ) { }
 }

@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Welcome Page', () => {
+describe('Login Page', () => {
   beforeEach(() => {
     cy.visit('localhost:4200/auth/login')
   })
@@ -48,4 +48,8 @@ describe('Welcome Page', () => {
       .invoke('attr', 'label')
       .should('eq', 'LOG IN WITH FACEBOOK')
   })
+
+  it('should not display News Letter Section in Login page', () => {
+    cy.get('#newsSubscription').should('not.exist');
+  });
 })

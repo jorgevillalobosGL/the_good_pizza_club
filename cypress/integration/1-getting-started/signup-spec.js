@@ -47,4 +47,8 @@ describe('Sign Up Page', () => {
       .invoke('attr', 'label')
       .should('eq', 'SIGN UP WITH FACEBOOK')
   })
+
+  it('should not display News Letter Section in SignUp page', () => {
+    cy.get('#newsSubscription').should('not.exist');
+  });
 })

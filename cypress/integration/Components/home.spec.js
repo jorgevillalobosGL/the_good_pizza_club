@@ -28,6 +28,10 @@ describe('Home', () => {
 
   })
 
+  it('should display News Letter Section in home page', () => {
+    cy.get('#newsSubscription').should('be.visible');
+  });
+
   describe('Customize your Pizza Modal', () => {
     it('should display the modal', () => {
       cy.get('#home-section .home-header .customize-btn').click();

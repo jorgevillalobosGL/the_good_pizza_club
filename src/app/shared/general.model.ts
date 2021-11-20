@@ -11,6 +11,7 @@ export interface MenuItem {
 }
 
 export interface User {
+  uid?: string;
   name: string;
   email: string;
 }

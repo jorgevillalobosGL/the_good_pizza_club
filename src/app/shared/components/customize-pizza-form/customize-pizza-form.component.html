@@ -1,10 +1,14 @@
 <div id="customize-pizza-form" class="bg-gray-1">
-<div class="text-center" *ngIf="products$ | async as products">
+<form 
+  [formGroup]="customPizzaForm"
+  *ngIf="products$ | async as products"
+  class="text-center">
   <h2 class="txt-yellow modal-title">Make it your own way</h2>
   <h3 class="txt-white">Choose your size</h3>
   <div class="pizza-size-container d-flex align-items-baseline justify-content-center">
     <div *ngFor="let size of products.sizes" (click)="onSelectProduct('size', size)">
-      <span class="pizza-size pizza-size-{{size.name}} mx-5 cursor-pointer mb-4"></span>
+      <span class="pizza-size pizza-size-{{size.name}} mx-5 cursor-pointer mb-4" 
+      [ngClass]="{'selected': sizeField?.value?.item?.id === size?.id}"></span>
       <span class="pizza-size_text">
       <h4 class="txt-white">{{size.name | titlecase}}</h4>
       <h4 class="txt-white">{{size.description}}</h4>
@@ -19,7 +23,7 @@
       <sb-button 
         *ngFor="let sauce of products.sauce"
         [label]="sauce.name"
-        [isOutline]="sauceField?.value?.id !== sauce.id"
+        [isOutline]="sauceField?.value?.item?.id !== sauce?.id"
         width="300px"
         height="90px"
         (click)="onSelectProduct('sauce', sauce)">
@@ -35,7 +39,7 @@
         class="p-3"
         [label]="cheese.name" 
         [isOutline]="true"
-        [isOutline]="cheeseField?.value?.id !== cheese.id"
+        [isOutline]="cheeseField?.value?.item?.id !== cheese.id"
         width="300px"
         height="90px"
         (click)="onSelectProduct('cheese', cheese)">
@@ -51,7 +55,7 @@
         class="p-3"
         [label]="topping.name"
         [isOutline]="true"
-        [isOutline]="toppingField?.value?.id !== topping.id"
+        [isOutline]="toppingField?.value?.item?.id !== topping.id"
         width="300px"
         height="90px"
         (click)="onSelectProduct('topping', topping)"></sb-button>
@@ -133,9 +137,9 @@
       </div>
     </div>
     <div class="d-flex justify-content-center py-5">
-      <sb-button class="px-5" label="RESTART" width="420px" height="120px" (click)="onRestart()"></sb-button>
-      <sb-button class="px-5" label="ADD TO CARD" width="420px" height="120px"></sb-button>
+      <sb-button class="px-5" label="RESTART" width="420px" height="120px" [isOutline]="true" (click)="onRestart()"></sb-button>
+      <sb-button class="px-5" label="ADD TO CARD" width="420px" height="120px" (click)="onAddToCard()"></sb-button>
     </div>
   </div>
 </div>
-</div>
+</form>

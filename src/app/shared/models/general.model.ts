@@ -38,3 +38,8 @@ export interface ProductsCatalog {
   appetizers?: Product[];
   desserts?: Product[];
 }
+
+export interface ShoppingCardItem {
+  item: Product;
+  quantity: number;
+}

@@ -3,12 +3,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { Product } from '@app-shared/models/general.model';
 import { CustomizePizzaFormComponent } from './customize-pizza-form.component';
+import { ToastrService } from 'ngx-toastr';
+
 
 describe('Address / Credit Card Story', () => {
+  const mockToastrService = {
+    info: () => {},
+  };
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, StoreModule.forRoot({})],
       declarations: [CustomizePizzaFormComponent],
+      providers: [{ provide: ToastrService, useValue: mockToastrService}]
     }).compileComponents();
   });
 
@@ -24,7 +30,7 @@ describe('Address / Credit Card Story', () => {
     const component = fixture.componentInstance;
     component.ngOnInit();
     component.onSelectProduct('sauce', ingredientMock);
-    expect(component.sauceField.value).toEqual(ingredientMock);
+    expect(component.sauceField.value.item).toEqual(ingredientMock);
   });
 
   it('should save extra ingredients in Temporal state when user select it', () => {

@@ -11,6 +11,13 @@ export class MenuComponent {
   public openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, { id: 1, class: 'modal-xl' });
   }
-  constructor(private modalService: BsModalService) { }
+
+  public onCloseModal() {
+    this.modalRef?.hide();
+  }
+
+  constructor(
+    private modalService: BsModalService,
+  ) { }
 
 }

@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { map, mergeMap } from 'rxjs/operators';
+import { select, Store } from '@ngrx/store';
+import { map, mergeMap, switchMap, take, withLatestFrom } from 'rxjs/operators';
+
+import { AppState, selectShoppingCard, selectUser } from '../store/app.reducer';
 import { ProductsService } from '../services/products.service';
+import { UserService } from '../services/user.service';
 import {
   fetchPizzas,
   fetchPizzasSuccess,
   fetchProductsCatalog,
-  fetchProductsCatalogSuccess
+  fetchProductsCatalogSuccess,
+  fetchShoppingCard,
+  fetchShoppingCardSuccess,
+  saveShoppingCard,
+  saveShoppingCardSuccess,
 } from './app.actions';
+import { of } from 'rxjs';
 
 @Injectable()
 export class AppEffects {
@@ -29,9 +38,38 @@ export class AppEffects {
       ))
     ))
 
+  saveShoppingCard$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(saveShoppingCard),
+      switchMap(({payload}) => this.appStore.pipe(
+        select(selectShoppingCard),
+        take(1),
+        switchMap(shoppingCard => (!!shoppingCard) ? of([...shoppingCard, ...payload]) : of(payload)),
+      )),
+      withLatestFrom(this.appStore.pipe(select(selectUser))),
+      mergeMap(([shoppingCard, user]) => {
+        return this.userService.saveShoppingCard(user?.uid as string, shoppingCard).pipe(
+          map(() => saveShoppingCardSuccess({ payload: shoppingCard }))
+        );
+      })
+    )
+  )
+
+  fetchShoppingCard$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fetchShoppingCard),
+      switchMap(() => this.appStore.pipe(select(selectUser))),
+      mergeMap((user) =>
+        this.userService.getShoppingCard(user?.uid as string).pipe(
+          map(result => fetchShoppingCardSuccess({ payload: result }))
+        ))
+    ))
+
   constructor(
     private actions$: Actions,
-    private productsService: ProductsService
+    private userService: UserService,
+    private appStore: Store<AppState>,
+    private productsService: ProductsService,
   ) { }
 
 }

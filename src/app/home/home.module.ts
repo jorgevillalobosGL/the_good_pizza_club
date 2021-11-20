@@ -25,7 +25,6 @@ import { PizzaCarouselSectionComponent } from './pizza-carousel-section/pizza-ca
     HomeComponent,
     HomeHeaderComponent,
     DayPromosSectionComponent,
-    // CustomizePizzaFormComponent,
     PizzaCarouselSectionComponent,
   ]
 })

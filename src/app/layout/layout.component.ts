@@ -52,7 +52,7 @@ public activePathUrl$: Observable<any>;
       },
       {
         name: '',
-        url: '/shopping',
+        url: '/checkout',
         icon: 'icon-shopping',
       },
     ];

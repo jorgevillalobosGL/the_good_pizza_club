@@ -46,7 +46,7 @@ import { EffectsModule } from '@ngrx/effects';
     AppRoutingModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    StoreModule.forRoot({ app: reducer }),
+    StoreModule.forRoot({ 'app': reducer }),
     EffectsModule.forRoot([AppEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

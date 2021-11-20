@@ -6,27 +6,33 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from '../../store/app.effects';
 import { ProductsService } from '../../services/products.service';
 import { of } from 'rxjs';
+import { UserService } from '../../services/user.service';
 
 describe('Address / Credit Card Story', () => {
   let mockToolBarService = {
     // eslint-disable-next-line no-use-before-define
     getPizzasList: () => getPizzaListMock(),
-    getProductsCatalog: () => {},
+    getProductsCatalog: () => { },
   };
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        StoreModule.forRoot({app: reducer}),
+        StoreModule.forRoot({ app: reducer }),
         EffectsModule.forRoot([AppEffects]),
       ],
       declarations: [PizzaCarouselSectionComponent],
-      providers: [ { provide: ProductsService, useValue: mockToolBarService } ]
+      providers: [
+        { provide: ProductsService, useValue: mockToolBarService },
+        { provide: UserService, useValue: {} }
+      ]
 
     }).compileComponents();
   });
+
   it('should split the Pizza List in Groups of 3', fakeAsync(() => {
     const fixture = TestBed.createComponent(PizzaCarouselSectionComponent);
     const component = fixture.componentInstance;
+
     mockToolBarService = jasmine.createSpyObj(['getCustomer']);
     fixture.detectChanges();
     component.pizzaCarouselList$.subscribe(options => {

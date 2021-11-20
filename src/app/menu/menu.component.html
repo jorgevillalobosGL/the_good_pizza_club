@@ -40,5 +40,5 @@
   </div>
 </div>
 <ng-template #customPizzaModal>
-  <app-customize-pizza-form></app-customize-pizza-form>
+  <app-customize-pizza-form (closeModal)="onCloseModal()"></app-customize-pizza-form>
 </ng-template>

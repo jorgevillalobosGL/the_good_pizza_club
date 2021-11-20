@@ -16,6 +16,10 @@
       border-radius: 100%;
       display: block;
 
+      &.selected {
+        background-color: $green-1;
+      }
+
       &-small {
         width: 155px;
         height: 155px;
@@ -31,7 +35,7 @@
       &-large {
         width: 198px;
         height: 198px;
-        background-color: $green-1;
+        border-color: $red;
       }
     }
   }

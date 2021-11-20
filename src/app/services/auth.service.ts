@@ -74,6 +74,10 @@ export class AuthService {
     );
   }
 
+  public getCurrentUser(): Observable<firebase.User | null> {
+    return from(this.firebaseAuth.currentUser);
+  }
+
   constructor(
     private authStore: Store<AuthState>,
     private userService: UserService,

@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
-import { PizzaMenuCardContent, Product, ProductsCatalog } from '@app-shared/models/general.model';
+import { PizzaMenuCardContent, ProductsCatalog, ShoppingCardItem } from '@app-shared/models/general.model';
+import { User } from '../shared/general.model';
 
 export enum Types {
   FETCH_PIZZAS = '[core] fetch pizzas list',
@@ -14,6 +15,8 @@ export enum Types {
   SAVE_SHOPPING_CARD = '[core] save shopping card',
   SAVE_SHOPPING_CARD_SUCCESS = '[core] save shopping card success',
   SAVE_SHOPPING_CARD_FAILURE = '[core] save shopping card failure',
+  LOAD_USER = '[core] load user',
+  LOAD_USER_SUCCESS = '[core] load user success',
   CLEAR_SHOPPING_CARD = '[core] clear shopping card'
 }
 
@@ -41,18 +44,28 @@ export const fetchShoppingCard = createAction(
 
 export const fetchShoppingCardSuccess = createAction(
   Types.FETCH_SHOPPING_CARD_SUCCESS,
-  props<{ payload: Product[] }>()
+  props<{ payload: ShoppingCardItem[] }>()
 );
 
 export const saveShoppingCard = createAction(
-  Types.SAVE_SHOPPING_CARD
+  Types.SAVE_SHOPPING_CARD,
+  props<{ payload: ShoppingCardItem[] }>()
 );
 
 export const saveShoppingCardSuccess = createAction(
   Types.SAVE_SHOPPING_CARD_SUCCESS,
-  props<{ payload: Product[] }>()
+  props<{ payload: ShoppingCardItem[] }>()
 );
 
 export const clearShoppingCard = createAction(
   Types.CLEAR_SHOPPING_CARD
+);
+
+export const loadUser = createAction(
+  Types.LOAD_USER,
+  props<{ payload: User }>()
+);
+
+export const loadUserSuccess = createAction(
+  Types.LOAD_USER_SUCCESS
 );

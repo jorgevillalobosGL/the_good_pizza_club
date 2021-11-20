@@ -1,0 +1,32 @@
+@import '../../assets/scss/colors';
+
+.checkout-main-container {
+  padding-top: 90px;
+  padding-left: 120px;
+}
+
+::ng-deep {
+  .tabs-container {
+    .nav-tabs {
+      display: inline-flex;
+      border-bottom: 1px solid $gray-3;
+    .nav-item {
+      font-family: 'Rowdies';
+      font-style: normal;
+      font-weight: 300 !important;
+      font-size: 24px !important;
+      line-height: 30px !important;
+      .nav-link{
+        color: $gray-6;
+        padding: 15px 35px;
+      }
+      &.active .nav-link{
+        color: $yellow;
+        border-color: transparent;
+        border-bottom: solid 4px $yellow;
+        background-color: unset;
+      }
+    }
+    }
+  }
+}

@@ -27,6 +27,11 @@ const routes: Routes = [
         loadChildren: () => import('./menu/menu.module').then(m => m.MenuModule),
         canLoad: [AuthGuard]
       },
+      {
+        path: 'checkout',
+        loadChildren: () => import('./checkout/checkout.module').then(m => m.CheckoutModule),
+        canLoad: [AuthGuard]
+      },
     ]
   },
   { path: '**', redirectTo: 'auth' },

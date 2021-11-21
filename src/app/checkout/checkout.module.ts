@@ -5,6 +5,7 @@ import { CheckoutRouterModule } from './checkout.router.module';
 import { SharedModule } from '@app-shared/shared.module';
 import { CheckoutHeaderComponent } from './checkout-header/checkout-header.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { OrderTabBodyComponent } from './order-tab-body/order-tab-body.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
   ],
   declarations: [
     CheckoutComponent,
-    CheckoutHeaderComponent
+    CheckoutHeaderComponent,
+    OrderTabBodyComponent
   ]
 })
 export class CheckoutModule { }

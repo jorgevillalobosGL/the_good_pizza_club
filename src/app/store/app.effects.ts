@@ -15,6 +15,7 @@ import {
   fetchShoppingCardSuccess,
   saveShoppingCard,
   saveShoppingCardSuccess,
+  setShoppingCard,
 } from './app.actions';
 import { of } from 'rxjs';
 
@@ -50,6 +51,18 @@ export class AppEffects {
       mergeMap(([shoppingCard, user]) => {
         return this.userService.saveShoppingCard(user?.uid as string, shoppingCard).pipe(
           map(() => saveShoppingCardSuccess({ payload: shoppingCard }))
+        );
+      })
+    )
+  )
+
+  setShoppingCard$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(setShoppingCard),
+      withLatestFrom(this.appStore.pipe(select(selectUser))),
+      mergeMap(([action, user]) => {
+        return this.userService.saveShoppingCard(user?.uid as string, action.payload).pipe(
+          map(() => saveShoppingCardSuccess({ payload: action.payload }))
         );
       })
     )

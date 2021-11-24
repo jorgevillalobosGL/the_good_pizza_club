@@ -42,7 +42,11 @@ const appReducer = createReducer(
   on(AppActions.loadUser, (state, {payload}) => ({
     ...state,
     user: payload
-  }))
+  })),
+  on(AppActions.setShoppingCard, (state, {payload}) => ({
+    ...state,
+    shoppingCart: payload
+  })),
 );
 
 export  function  reducer(state: AppState | undefined, action: Action) {

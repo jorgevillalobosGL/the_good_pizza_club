@@ -7,9 +7,10 @@ import { AppEffects } from '../../store/app.effects';
 import { ProductsService } from '../../services/products.service';
 import { of } from 'rxjs';
 import { UserService } from '../../services/user.service';
+import { CommonModule } from '@angular/common';
 
 describe('Address / Credit Card Story', () => {
-  let mockToolBarService = {
+  let mockProductsService = {
     // eslint-disable-next-line no-use-before-define
     getPizzasList: () => getPizzaListMock(),
     getProductsCatalog: () => { },
@@ -22,7 +23,7 @@ describe('Address / Credit Card Story', () => {
       ],
       declarations: [PizzaCarouselSectionComponent],
       providers: [
-        { provide: ProductsService, useValue: mockToolBarService },
+        { provide: ProductsService, useValue: mockProductsService },
         { provide: UserService, useValue: {} }
       ]
 
@@ -33,7 +34,7 @@ describe('Address / Credit Card Story', () => {
     const fixture = TestBed.createComponent(PizzaCarouselSectionComponent);
     const component = fixture.componentInstance;
 
-    mockToolBarService = jasmine.createSpyObj(['getCustomer']);
+    mockProductsService = jasmine.createSpyObj(['getCustomer']);
     fixture.detectChanges();
     component.pizzaCarouselList$.subscribe(options => {
       expect(options.length).toEqual(3);

@@ -17,7 +17,8 @@ export enum Types {
   SAVE_SHOPPING_CARD_FAILURE = '[core] save shopping card failure',
   LOAD_USER = '[core] load user',
   LOAD_USER_SUCCESS = '[core] load user success',
-  CLEAR_SHOPPING_CARD = '[core] clear shopping card'
+  CLEAR_SHOPPING_CARD = '[core] clear shopping card',
+  SET_SHOPPING_CARD = '[core] set shopping card',
 }
 
 export const fetchPizzas = createAction(
@@ -68,4 +69,9 @@ export const loadUser = createAction(
 
 export const loadUserSuccess = createAction(
   Types.LOAD_USER_SUCCESS
+);
+
+export const setShoppingCard = createAction(
+  Types.SET_SHOPPING_CARD,
+  props<{ payload: ShoppingCardItem[] }>()
 );

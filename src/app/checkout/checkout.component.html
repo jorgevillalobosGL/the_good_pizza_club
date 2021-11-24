@@ -4,15 +4,17 @@
   </div>
   <div class="checkout-main-container row">
     <div class="col-6 tabs-container">
-      <tabset>
+      <tabset #staticTabs>
         <tab heading="Order" id="order-tab">
           <app-order-tab-body></app-order-tab-body>
         </tab>
-        <tab heading="Address">Basic content 1</tab>
-        <tab heading="Payment">Basic content 2</tab>
-        <tab heading="Checkout">Basic content 2</tab>
+        <tab heading="Address" id="address-tab">Basic content 1</tab>
+        <tab heading="Payment" id="payment-tab">Basic content 2</tab>
+        <tab heading="Checkout" id="checkout-tab">Basic content 2</tab>
       </tabset>
     </div>
-    <div class="col-6"></div>
+    <div class="col-6">
+      <app-billing-summary (nextStepClick)="onNextStep()"></app-billing-summary>
+    </div>
   </div>
 </div>

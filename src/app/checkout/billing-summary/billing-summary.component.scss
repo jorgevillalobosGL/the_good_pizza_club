@@ -1,0 +1,30 @@
+@import '../../../assets/scss/colors';
+
+#billing-summary {
+  width: 365px;
+  margin-top: 60px;
+  background: $gray-1;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 10px 10px 70px 10px;
+
+  .table-container {
+    padding-bottom: 50px;
+    border-bottom: 2px solid $gray-3;
+
+    td {
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+
+    .qty {
+      width: 20px;
+      padding-right: 0px;
+    }
+  }
+
+  .table-total {
+    td {
+      padding: 0
+    }
+  }
+}

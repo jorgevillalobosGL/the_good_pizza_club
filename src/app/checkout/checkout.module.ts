@@ -6,7 +6,7 @@ import { SharedModule } from '@app-shared/shared.module';
 import { CheckoutHeaderComponent } from './checkout-header/checkout-header.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { OrderTabBodyComponent } from './order-tab-body/order-tab-body.component';
-
+import { BillingSummaryComponent } from './billing-summary/billing-summary.component';
 @NgModule({
   imports: [
     SharedModule,
@@ -16,8 +16,9 @@ import { OrderTabBodyComponent } from './order-tab-body/order-tab-body.component
   ],
   declarations: [
     CheckoutComponent,
+    OrderTabBodyComponent,
+    BillingSummaryComponent,
     CheckoutHeaderComponent,
-    OrderTabBodyComponent
   ]
 })
 export class CheckoutModule { }

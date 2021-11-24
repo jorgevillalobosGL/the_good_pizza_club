@@ -1,0 +1,45 @@
+<div id="billing-summary" class="mx-5 p-5">
+  <h4 class="txt-yellow pb-4">Summary</h4>
+  <div class="table-container table-responsive table-borderless">
+    <table class="table txt-white" *ngIf="(shoppingCart$ | async) as shoppingCart">
+      <tbody>
+        <tr *ngFor="let product of shoppingCart">
+          <td class="qty">{{product.quantity}}</td>
+          <td>
+            <p class="m-0">{{product?.item?.name}}</p>
+          </td>
+          <td>{{(product?.item?.price || 0) * (product?.quantity || 0) | currency}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-total table-responsive table-borderless" >
+    <table class="table txt-white mt-3" *ngIf="subtotal$ | async as subtotal">
+      <tbody>
+        <tr>
+          <td>Subtotal</td>
+          <td>{{subtotal | currency}}</td>
+        </tr>
+        <tr>
+          <td>Total Savings</td>
+          <td class="txt-green-1">-{{getSavings(subtotal) | currency}}</td>
+        </tr>
+        <tr class="pt-4">
+          <td class="pt-3">Express</td>
+          <td class="pt-3">{{expressAmount | currency}}</td>
+        </tr>
+        <tr>
+          <td>Taxes</td>
+          <td>{{getTaxes(subtotal) | currency}}</td>
+        </tr>
+        <tr>
+          <td class="txt-yellow pt-3">Total</td>
+          <td class="pt-3">{{getTotal(subtotal) | currency}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pt-3">
+    <sb-button label="NEXT STEP" width="267px" (click)="nextStepClick.emit($event)"></sb-button>
+  </div>
+</div>

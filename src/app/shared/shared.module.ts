@@ -9,6 +9,7 @@ import TextInput from './stories/text-input/text-input.component';
 import IconButton from './stories/icon-button/icon-button.component';
 import PromotionCard from './stories/promotion-card//promotion-card.component';
 import PizzaMenuCard from './stories/pizza-menu-card/pizza-menu-card.component';
+import AddressCreditCard from './stories/address-credit-card/address-credit-card.component';
 
 // Components
 import { CustomizePizzaFormComponent } from './components/customize-pizza-form/customize-pizza-form.component';
@@ -20,7 +21,8 @@ const STORIES = [
   PromotionCard,
   TextInput,
   IconButton,
-  PizzaMenuCard
+  PizzaMenuCard,
+  AddressCreditCard
 ];
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 

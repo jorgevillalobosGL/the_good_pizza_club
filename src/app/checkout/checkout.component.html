@@ -3,17 +3,19 @@
     <app-checkout-header></app-checkout-header>
   </div>
   <div class="checkout-main-container row">
-    <div class="col-6 tabs-container">
+    <div class="col-7 tabs-container">
       <tabset #staticTabs>
         <tab heading="Order" id="order-tab">
           <app-order-tab-body></app-order-tab-body>
         </tab>
-        <tab heading="Address" id="address-tab">Basic content 1</tab>
+        <tab heading="Address" id="address-tab">
+          <app-address-tab-body></app-address-tab-body>
+        </tab>
         <tab heading="Payment" id="payment-tab">Basic content 2</tab>
         <tab heading="Checkout" id="checkout-tab">Basic content 2</tab>
       </tabset>
     </div>
-    <div class="col-6">
+    <div class="col-5">
       <app-billing-summary (nextStepClick)="onNextStep()"></app-billing-summary>
     </div>
   </div>

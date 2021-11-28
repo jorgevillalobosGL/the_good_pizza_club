@@ -1,3 +1,5 @@
+import { CardStates, CardTypes } from '../stories/address-credit-card/address-credit-card.component';
+
 export interface DropdownValue {
   value: string | number;
   text?: string;
@@ -42,4 +44,16 @@ export interface ProductsCatalog {
 export interface ShoppingCardItem {
   item: Product;
   quantity: number;
+}
+
+export interface Address {
+  name: string;
+  address: string;
+  phone?: string;
+  isDefault: boolean;
+}
+
+export interface AddressCard extends Address{
+  type: CardTypes,
+  state: CardStates,
 }

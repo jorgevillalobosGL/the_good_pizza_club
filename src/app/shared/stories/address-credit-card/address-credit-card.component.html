@@ -8,7 +8,7 @@
   <div class="card-footer p-0 row align-items-center">
     <sb-icon-button class="col-auto"[isOutline]="true" [label]="state" (click)="onClick.emit($event)"></sb-icon-button>
     <div class="position-relative col-auto row">
-      <label class="card-footer-text text-truncate" [ngClass]="{'txt-gray-6': isDefault || state === 'NEW'}">{{footerText}}</label>
+      <label class="card-footer-text text-truncate pl-0" [ngClass]="{'txt-gray-6': isDefault || state === 'NEW'}">{{footerText}}</label>
       <li *ngIf="state !== 'NEW'" class="icon icon-start" (click)="onDefaultClick.emit($event)" [ngClass]="{'txt-yellow': isDefault}"></li>
     </div>
   </div>

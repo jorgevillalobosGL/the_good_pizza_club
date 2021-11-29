@@ -1,0 +1,26 @@
+<div id="credit-card-modal" class="txt-white container pt-5">
+  <form [formGroup]="creditCardForm">
+    <div class="py-4">
+      <label>Card Title</label>
+      <sb-text-input formControlName="title" [c]="title"></sb-text-input>
+    </div>
+    <div class="pt-4">
+      <label>Credit Card number</label>
+      <sb-text-input formControlName="content1" [c]="content1"></sb-text-input>
+    </div>
+    <div class="pt-4">
+      <label>Name on Credit Card</label>
+      <sb-text-input formControlName="content2" [c]="content2"></sb-text-input>
+    </div>
+    <div class="form-check pt-4">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="isDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        Mark as default
+      </label>
+    </div>
+    <div class="py-4 d-flex flex-row justify-content-center">
+      <sb-button class="px-3" label="Save" (click)="onSaveCreditCard()"></sb-button>
+      <sb-button class="px-3" label="Cancel" (click)="onClose.emit($event)"></sb-button>
+    </div>
+  </form>
+</div>

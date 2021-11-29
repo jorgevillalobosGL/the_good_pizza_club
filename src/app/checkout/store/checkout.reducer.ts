@@ -1,13 +1,15 @@
 import { createReducer, Action, createFeatureSelector, on, createSelector } from '@ngrx/store';
-import { Address } from '@app-shared/models/general.model';
+import { Address, CreditCard } from '@app-shared/models/general.model';
 import * as CheckoutActions from './checkout.actions';
 
 export interface CheckoutState {
   addresses: Address[] | null;
+  creditCards: CreditCard[] | null;
 };
 
 const initialState: CheckoutState = {
-  addresses: null
+  addresses: null,
+  creditCards: null
 };
 
 const checkOutReducer = createReducer(
@@ -23,6 +25,18 @@ const checkOutReducer = createReducer(
   on(CheckoutActions.editAddressesSuccess, (state, {payload}) => ({
     ...state,
     addresses: payload
+  })),
+  on(CheckoutActions.createCreditCardSuccess, (state, {payload}) => ({
+    ...state,
+    creditCards: payload
+  })),
+  on(CheckoutActions.loadCreditCardsSuccess, (state, {payload}) => ({
+    ...state,
+    creditCards: payload
+  })),
+  on(CheckoutActions.editCreditCardSuccess, (state, {payload}) => ({
+    ...state,
+    creditCards: payload
   }))
 );
 
@@ -35,4 +49,8 @@ export const selectCheckoutState = createFeatureSelector<CheckoutState>('checkou
 export const selectAddresses = createSelector(
   selectCheckoutState,
   (state: CheckoutState) => state.addresses
+);
+export const selectCreditCards = createSelector(
+  selectCheckoutState,
+  (state: CheckoutState) => state.creditCards
 );

@@ -1,0 +1,27 @@
+<div id="payment-tab-body" class="py-5">
+  <div class="header-content pt-2">
+    <h3 class="txt-white">Your payments</h3>
+    <div class="d-flex flex-row txt-white" *ngIf="user$ | async as user">
+      <label class="pr-2">{{user.name}}</label><span>not you? <a class="txt-yellow cursor-pointer">click here</a></span>
+    </div>
+  </div>
+  <div class="d-flex flex-wrap pt-5">
+    <sb-address-credit-card
+      *ngFor="let creditCard of creditCards$ | async; let i = index"
+      class="pr-3 pb-3"
+      (click)="onDeleteCreditCard(i)"
+      [title]="creditCard.title || ''"
+      [content1]="creditCard.content1 || ''"
+      [content2]="creditCard.content2 || ''"
+      [isDefault]="creditCard.isDefault"
+      [state]="creditCard.state"
+      [type]="creditCard.type"
+      ></sb-address-credit-card>
+      <sb-address-credit-card (click)="openModal(creditCardModal)"></sb-address-credit-card>
+  </div>
+</div>
+<ng-template #creditCardModal>
+  <app-credit-card-modal
+  (onClose)="onCloseModal()"
+  [index] = "dataIndex"></app-credit-card-modal>
+</ng-template>

@@ -6,7 +6,7 @@ import { map, mergeMap, switchMap, take, withLatestFrom } from 'rxjs/operators';
 
 import { selectUser } from '../../store/app.reducer';
 import { UserService } from '../../services/user.service';
-import { CheckoutState, selectAddresses } from './checkout.reducer';
+import { CheckoutState, selectAddresses, selectCreditCards } from './checkout.reducer';
 import {
   editAddresses,
   loadAddresses,
@@ -14,7 +14,15 @@ import {
   loadAddressesSuccess,
   editAddressesSuccess,
   createAddressesSuccess,
+  loadCreditCards,
+  createCreditCard,
+  createCreditCardSuccess,
+  editCreditCard,
+  loadCreditCardsSuccess,
+  editCreditCardSuccess,
+  deleteCreditCard
 } from './checkout.actions';
+import { CreditCard } from '../../shared/models/general.model';
 
 @Injectable()
 export class CheckoutEffects {
@@ -70,6 +78,86 @@ export class CheckoutEffects {
       mergeMap(([addresses, user]) => {
         return this.userService.saveUserAddress(user?.uid as string, addresses).pipe(
           map(() => editAddressesSuccess({ payload: addresses }))
+        );
+      })
+    )
+  )
+
+  loadCreditCards$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadCreditCards),
+      switchMap(() => this.checkOutStore.pipe(
+        select(selectUser),
+      )),
+      mergeMap(user => this.userService.getCreditCardList(user?.uid as string).pipe(
+        map(result => loadCreditCardsSuccess({ payload: result }))
+      ))
+    )
+  );
+
+  saveCreditCards$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(createCreditCard),
+      switchMap(({payload}) => this.checkOutStore.pipe(
+        select(selectCreditCards),
+        take(1),
+        switchMap(creditCards => (!!creditCards) ? of([...creditCards, payload]) : of([payload])),
+      )),
+      withLatestFrom(this.checkOutStore.pipe(select(selectUser))),
+      mergeMap(([creditCard, user]) => {
+        return this.userService.saveUserCreditCards(user?.uid as string, creditCard).pipe(
+          map(() => createCreditCardSuccess({ payload: creditCard }))
+        );
+      })
+    )
+  )
+
+  editCreditCards$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(editCreditCard),
+      switchMap(({payload}) => this.checkOutStore.pipe(
+        select(selectCreditCards),
+        take(1),
+        switchMap(creditCards => {
+          let _creditCard = [];
+          if(!!creditCards) {
+            _creditCard = creditCards.slice(0, payload.index || 0)
+              .concat(payload.creditCard)
+              .concat(creditCards.slice((payload.index || 0) + 1));
+          } else {
+            _creditCard = [payload.creditCard];
+          }
+          return of(_creditCard);
+        }),
+      )),
+      withLatestFrom(this.checkOutStore.pipe(select(selectUser))),
+      mergeMap(([creditCards, user]) => {
+        return this.userService.saveUserCreditCards(user?.uid as string, creditCards).pipe(
+          map(() => editCreditCardSuccess({ payload: creditCards }))
+        );
+      })
+    )
+  )
+
+  deleteCreditCards$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(deleteCreditCard),
+      switchMap(({index}) => this.checkOutStore.pipe(
+        select(selectCreditCards),
+        take(1),
+        switchMap(creditCards => {
+          let _creditCard: CreditCard[] = [];
+          if(!!creditCards) {
+            _creditCard = creditCards.slice(0, index || 0)
+              .concat(creditCards.slice((index || 0) + 1));
+          }
+          return of(_creditCard);
+        }),
+      )),
+      withLatestFrom(this.checkOutStore.pipe(select(selectUser))),
+      mergeMap(([creditCards, user]) => {
+        return this.userService.saveUserCreditCards(user?.uid as string, creditCards).pipe(
+          map(() => editCreditCardSuccess({ payload: creditCards }))
         );
       })
     )

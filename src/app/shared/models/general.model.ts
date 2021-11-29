@@ -57,3 +57,15 @@ export interface AddressCard extends Address{
   type: CardTypes,
   state: CardStates,
 }
+
+export interface CreditCard {
+  title: string;
+  content1?: string;
+  content2?: string;
+  isDefault: boolean;
+}
+
+export interface CreditCardData extends CreditCard{
+  type: CardTypes,
+  state: CardStates,
+}

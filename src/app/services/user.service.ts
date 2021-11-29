@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { User } from '@app-shared/models/user.model';
 import { from, Observable } from 'rxjs';
-import { Address, ShoppingCardItem } from '@app-shared/models/general.model';
-import { map, tap } from 'rxjs/operators';
+import { Address, CreditCard, ShoppingCardItem } from '@app-shared/models/general.model';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class UserService {
@@ -35,6 +35,19 @@ export class UserService {
   getAddressList(uid: string): Observable<Address[]> {
     return this.firestore.doc(`${uid}/addresses`).get().pipe(
       map((addresses: any) => addresses.data()?.addresses)
+    );
+  }
+
+  saveUserCreditCards(uid: string, creditCardsList: CreditCard[]): Observable<any>{
+    const creditCards = {
+      creditCards: creditCardsList
+    };
+    return from(this.firestore.doc(`${uid}/creditCards`).set(creditCards));
+  }
+
+  getCreditCardList(uid: string): Observable<CreditCard[]> {
+    return this.firestore.doc(`${uid}/creditCards`).get().pipe(
+      map((creditCards: any) => creditCards.data()?.creditCards)
     );
   }
 

@@ -1,0 +1,57 @@
+<div id="checkout-tab-body" class="py-5">
+  <div class="header-content pt-2">
+    <h3 class="txt-white">Order Summary</h3>
+    <div class="d-flex flex-row txt-white" *ngIf="user$ | async as user">
+      <label class="pr-2">{{user.name}}</label><span>not you? <a class="txt-yellow cursor-pointer">click here</a></span>
+    </div>
+  </div>
+  <div class="table-responsive table-borderless">
+    <table class="table txt-white" *ngIf="(shoppingCart$ | async) as shoppingCart">
+      <thead>
+        <tr>
+          <th scope="col" class="w-25 pl-4">Quantity</th>
+          <th scope="col" class="w-75">Product</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of shoppingCart">
+          <td class="qty-field p-0">
+            {{product.quantity}}
+          </td>
+          <td class="p-0">
+            <p class="m-0">{{product?.item?.name}}</p>
+            <caption class="txt-yellow p-0">Customize</caption>
+          </td>
+          <td class="p-0">{{(product?.item?.price || 0) * (product?.quantity || 0) | currency}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="address-credit-section" class="d-flex flex-row">
+    <div class="card w-50 m-3" *ngIf="(creditCard$ | async) as creditCard">
+      <img class="credit-card-logo" src="assets/images/mastercard.svg">
+      <div class="card-body txt-white">
+        <h5 class="card-title pb-3">{{ creditCard.title }}</h5>
+        <h6 class="card-subtitle mb-2">{{ creditCard.content1 }}</h6>
+        <p class="card-text">{{ creditCard.content2 }}</p>
+      </div>
+    </div>
+    <div class="card w-50 m-3" *ngIf="(address$ | async) as address">
+      <div class="card-body txt-white">
+        <h5 class="card-title pb-3">{{ address.name }}</h5>
+        <h6 class="card-subtitle mb-2">{{ address.address }}</h6>
+        <p class="card-text">{{ address.phone }}</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <app-total-payment></app-total-payment>
+  </div>
+  <div>
+    <div class="py-4 d-flex flex-row justify-content-center">
+      <sb-button class="px-3" label="GO BACK" [isOutline]="true" (click)="goBackStepClick.emit($event)"></sb-button>
+      <sb-button class="px-3" label="PLACE ORDER" (click)="onPlaceOrder()"></sb-button>
+    </div>
+  </div>
+</div>

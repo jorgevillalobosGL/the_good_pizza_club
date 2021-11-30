@@ -5,20 +5,22 @@
   <div class="checkout-main-container row">
     <div class="col-7 tabs-container">
       <tabset #staticTabs>
-        <tab heading="Order" id="order-tab">
+        <tab heading="Order" id="order-tab" (selectTab)="hideNextBtn = false">
           <app-order-tab-body></app-order-tab-body>
         </tab>
-        <tab heading="Address" id="address-tab">
+        <tab heading="Address" id="address-tab" (selectTab)="hideNextBtn = false">
           <app-address-tab-body></app-address-tab-body>
         </tab>
-        <tab heading="Payment" id="payment-tab">
+        <tab heading="Payment" id="payment-tab" (selectTab)="hideNextBtn = false">
           <app-payment-tab-body></app-payment-tab-body>
+        </tab>s
+        <tab heading="Checkout" id="checkout-tab" (selectTab)="hideNextBtn = true">
+          <app-checkout-tab-body (goBackStepClick)="onBackToFirstStep()"></app-checkout-tab-body>
         </tab>
-        <tab heading="Checkout" id="checkout-tab">Basic content 2</tab>
       </tabset>
     </div>
     <div class="col-5">
-      <app-billing-summary (nextStepClick)="onNextStep()"></app-billing-summary>
+      <app-billing-summary [hideNextBtn]="hideNextBtn" (nextStepClick)="onNextStep()"></app-billing-summary>
     </div>
   </div>
 </div>

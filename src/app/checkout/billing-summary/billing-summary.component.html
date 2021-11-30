@@ -14,32 +14,9 @@
     </table>
   </div>
   <div class="table-total table-responsive table-borderless" >
-    <table class="table txt-white mt-3" *ngIf="subtotal$ | async as subtotal">
-      <tbody>
-        <tr>
-          <td>Subtotal</td>
-          <td>{{subtotal | currency}}</td>
-        </tr>
-        <tr>
-          <td>Total Savings</td>
-          <td class="txt-green-1">-{{getSavings(subtotal) | currency}}</td>
-        </tr>
-        <tr class="pt-4">
-          <td class="pt-3">Express</td>
-          <td class="pt-3">{{expressAmount | currency}}</td>
-        </tr>
-        <tr>
-          <td>Taxes</td>
-          <td>{{getTaxes(subtotal) | currency}}</td>
-        </tr>
-        <tr>
-          <td class="txt-yellow pt-3">Total</td>
-          <td class="pt-3">{{getTotal(subtotal) | currency}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <app-total-payment></app-total-payment>
   </div>
-  <div class="pt-3">
+  <div class="pt-3" *ngIf="!hideNextBtn">
     <sb-button label="NEXT STEP" width="267px" (click)="nextStepClick.emit($event)"></sb-button>
   </div>
 </div>

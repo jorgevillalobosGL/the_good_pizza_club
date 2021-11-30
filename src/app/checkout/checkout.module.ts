@@ -18,16 +18,20 @@ import { CheckoutHeaderComponent } from './checkout-header/checkout-header.compo
 import { AddressTabBodyComponent } from './address-tab-body/address-tab-body.component';
 import { PaymentTabBodyComponent } from './payment-tab-body/payment-tab-body.component';
 import { CreditCardModalComponent } from './credit-card-modal/credit-card-modal.component';
+import { CheckoutTabBodyComponent } from './checkout-tab-body/checkout-tab-body.component';
+import { TotalPaymentComponent } from './total-payment/total-payment.component';
 
 const COMPONENTS = [
   CheckoutComponent,
   AddressModalComponent,
   OrderTabBodyComponent,
+  TotalPaymentComponent,
   BillingSummaryComponent,
   CheckoutHeaderComponent,
   AddressTabBodyComponent,
   PaymentTabBodyComponent,
   CreditCardModalComponent,
+  CheckoutTabBodyComponent,
 ];
 @NgModule({
   imports: [

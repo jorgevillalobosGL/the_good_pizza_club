@@ -78,23 +78,23 @@
         }
 
         &-content {
-          top: 25px;
-          right: 45px;
-          width: 200px;
-          padding: 15px;
+          top: 1.5625rem;
+          right: 2.8125rem;
+          width: 12.5rem;
+          padding: 0.9375rem;
           position: absolute;
-          border-radius: 10px;
+          border-radius: 0.625rem;
           background-color: $gray-1;
         }
       }
     }
 
     .gmap_canvas {
-      border-radius: 20px;
+      border-radius: 1.25rem;
       overflow: hidden;
       background: none !important;
-      height: 500px;
-      width: 900px;
+      height: 31.25rem;
+      width: 56.25rem;
     }
   }
 }

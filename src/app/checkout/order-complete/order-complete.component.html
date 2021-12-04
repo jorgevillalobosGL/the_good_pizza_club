@@ -1,0 +1,54 @@
+<div id="order-complete-section">
+  <div class="pb-5">
+    <app-checkout-header></app-checkout-header>
+  </div>
+  <div class="py-5">
+    <h3 class="txt-yellow text-center">Your order has been completed!</h3>
+    <h4 class="txt-white text-center pt-3">N051661</h4>
+    <h5 class="txt-white text-center">Order number</h5>
+  </div>
+  <div>
+    <div class="cronograma-section d-flex flex-row justify-content-around pt-5">
+      <div class="line"></div>
+      <span class="cron-point order-placed active">
+        <li class="icon icon-shopping"></li>
+        <label>Order placed</label>
+      </span>
+      <span class="cron-point order-begin active">
+        <li class="icon icon-pizza"></li>
+        <label>Order being prepared</label>
+      </span>
+      <span class="cron-point order-onway">
+        <li class="icon icon-motocycle"></li>
+        <label>Your order is on its way</label>
+      </span>
+      <span class="cron-point order-athome">
+        <li class="icon icon-house"></li>
+        <label>They’re outside! GO!</label>
+      </span>
+    </div>
+  </div>
+  <div class="map-section">
+    <div>
+      <div class="mapouter">
+        <h4 class="text-right txt-yellow pt-5">Your delivery person</h4>
+        <div class="delivery-card">
+          <img src="assets/images/user.png">
+          <div class="delivery-card-content">
+            <p class="m-0 txt-white">Juan Diego Muñoz</p>
+            <caption class="d-inline p-0 txt-white">He’s 24 and loves Soccer!</caption>
+          </div>
+        </div>
+        <div class="gmap_canvas">
+          <iframe width="900" height="500" id="gmap_canvas"
+            src="https://maps.google.com/maps?q=costa%20rica%20gorilla%20logic&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>
+        <div class="text-center">
+          <caption class="txt-white d-inline pr-3">Problems with the order?</caption>
+          <caption class="txt-yellow d-inline">Get in touch with us ?</caption>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

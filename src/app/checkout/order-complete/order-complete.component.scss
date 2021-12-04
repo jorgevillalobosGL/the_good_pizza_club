@@ -1,0 +1,100 @@
+@import '../../../assets/scss/colors';
+
+#order-complete-section {
+  min-height: 2000px;
+
+  .cronograma-section {
+    position: relative;
+
+    .line {
+      z-index: 0;
+      width: 75%;
+      height: 5px;
+      bottom: 40px;
+      position: absolute;
+      background-image: linear-gradient(to right, $yellow, $gray-2);
+    }
+
+    .cron-point {
+      z-index: 1;
+      width: 77px;
+      height: 77px;
+      display: block;
+      position: relative;
+      border-radius: 100%;
+      background-color: $gray-2;
+
+      &.active {
+        background-color: $yellow;
+
+        .icon {
+          color: $gray-1;
+        }
+      }
+
+      .icon {
+        color: $gray-3;
+        font-size: 30px;
+        padding-top: 25px;
+        text-align: center;
+      }
+
+      label {
+        left: -35px;
+        width: 142px;
+        bottom: -80px;
+        color: $yellow;
+        font-size: 20px;
+        line-height: 26px;
+        position: absolute;
+        text-align: center;
+        font-style: normal;
+        font-weight: normal;
+        font-family: 'Red Hat Display';
+      }
+    }
+  }
+
+  .map-section {
+    padding-top: 150px;
+
+    .mapouter {
+      width: 900px;
+      height: 500px;
+      margin: 0 auto;
+      text-align: right;
+      position: relative;
+      .delivery-card {
+        float: right;
+        height: 60px;
+        width: 300px;
+        padding:15px;
+        position: relative;
+        img {
+          left: 0;
+          z-index: 1;
+          width: 100px;
+          position: absolute;
+        }
+
+        &-content {
+          top: 25px;
+          right: 45px;
+          width: 200px;
+          padding: 15px;
+          position: absolute;
+          border-radius: 10px;
+          background-color: $gray-1;
+        }
+      }
+    }
+
+    .gmap_canvas {
+      border-radius: 20px;
+      overflow: hidden;
+      background: none !important;
+      height: 500px;
+      width: 900px;
+    }
+  }
+}

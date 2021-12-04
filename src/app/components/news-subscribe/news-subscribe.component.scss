@@ -2,15 +2,15 @@
 
 #newsSubscription {
   left: 28%;
-  top: 115px;
+  top: 7.1875rem;
   z-index: 1;
-  width: 632px;
-  height: 190px;
-  padding: 40px;
+  width: 39.5rem;
+  height: 11.875rem;
+  padding: 2.5rem;
   position: relative;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   background-color: $yellow;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
 
   .txt {
     color: $gray-1;
@@ -18,25 +18,25 @@
     font-family: 'Rowdies';
 
     &-1 {
-      font-size: 16px;
-      line-height: 20px;
+      font-size: 1rem;
+      line-height: 1.25rem;
       font-weight: 300;
     }
 
     &-2 {
       font-weight: normal;
-      font-size: 20px;
-      line-height: 25px;
+      font-size: 1.25rem;
+      line-height: 1.5625rem;
     }
   }
 
   .input-group {
     input, .btn {
-      border-radius: 50px;
+      border-radius: 3.125rem;
     }
     .btn {
-      width: 95px;
-      height: 38px;
+      width: 5.9375rem;
+      height: 2.375rem;
       border-color: $green-1;
       background-color: $green-1;
     }

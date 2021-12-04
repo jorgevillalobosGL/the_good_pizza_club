@@ -1,18 +1,18 @@
 @import '../../../../assets/scss/colors';
 
 #customize-pizza-form {
-  padding-top: 138px;
-  border-radius: 10px 200px 10px 10px;
+  padding-top: 8.625rem;
+  border-radius: 0.625rem 12.5rem 0.625rem 0.625rem;
 
   .modal-title {
-    padding-bottom: 125px;
+    padding-bottom: 7.8125rem;
   }
 
   .pizza-size-container {
-    padding-top: 60px;
+    padding-top: 3.75rem;
 
     .pizza-size {
-      border: 3px solid;
+      border: 0.1875rem solid;
       border-radius: 100%;
       display: block;
 
@@ -21,33 +21,33 @@
       }
 
       &-small {
-        width: 155px;
-        height: 155px;
+        width: 9.6875rem;
+        height: 9.6875rem;
         border-color: $red;
       }
 
       &-medium {
-        width: 174px;
-        height: 174px;
+        width: 10.875rem;
+        height: 10.875rem;
         border-color: $red;
       }
 
       &-large {
-        width: 198px;
-        height: 198px;
+        width: 12.375rem;
+        height: 12.375rem;
         border-color: $red;
       }
     }
   }
 
   .container {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
 
 
     .btn-content {
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 1.875rem;
+      padding-right: 1.875rem;
     }
 
     .main-dropdown {
@@ -62,7 +62,7 @@
   }
 
   .modal-content {
-    border-radius: 10px 200px 10px 10px;
+    border-radius: 0.625rem 12.5rem 0.625rem 0.625rem;
     background-color: $gray-1;
   }
 }

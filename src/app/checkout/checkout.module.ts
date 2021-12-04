@@ -20,12 +20,14 @@ import { PaymentTabBodyComponent } from './payment-tab-body/payment-tab-body.com
 import { CreditCardModalComponent } from './credit-card-modal/credit-card-modal.component';
 import { CheckoutTabBodyComponent } from './checkout-tab-body/checkout-tab-body.component';
 import { TotalPaymentComponent } from './total-payment/total-payment.component';
+import { OrderCompleteComponent } from './order-complete/order-complete.component';
 
 const COMPONENTS = [
   CheckoutComponent,
   AddressModalComponent,
   OrderTabBodyComponent,
   TotalPaymentComponent,
+  OrderCompleteComponent,
   BillingSummaryComponent,
   CheckoutHeaderComponent,
   AddressTabBodyComponent,

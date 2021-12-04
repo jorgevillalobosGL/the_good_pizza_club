@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
-import { from, of } from 'rxjs';
-import { reduce, switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { AppState, selectShoppingCard, selectUser } from '../../store/app.reducer';
 import { selectAddresses, selectCreditCards } from '../store/checkout.reducer';
 
@@ -32,10 +33,11 @@ export class CheckoutTabBodyComponent {
   )
 
   public onPlaceOrder(): void {
-    console.log('PLACE ORDER');
+    this.router.navigate(['/checkout/order-complete']);
   }
 
   constructor(
+    private router: Router,
     private appStore: Store<AppState>,
   ) { }
 

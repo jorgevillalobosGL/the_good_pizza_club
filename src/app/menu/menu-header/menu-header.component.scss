@@ -4,16 +4,16 @@
 
 .header-content {
   text-align: center;
-  top: 214px;
+  top: 13.375rem;
   left: 15%;
   width: 70%;
   h2 {
-    line-height: 33px !important;
+    line-height: 2.0625rem !important;
   }
 }
 
 @include media-breakpoint-down(md) {
   .header-content {
-    left: 10px;
+    left: 0.625rem;
   }
 }

@@ -67,6 +67,6 @@ $value in $colors-list {
 
   // Border Color
   .border-#{'' + $name} {
-    border: 1px solid $value !important;
+    border: 0.0625rem solid $value !important;
   }
 }

@@ -1,12 +1,12 @@
 @import '../../../assets/scss/colors';
 #pizza-carousel-section {
-  padding-top: 40px;
-  padding-bottom: 150px;
+  padding-top: 2.5rem;
+  padding-bottom: 9.375rem;
   .section-title{
     margin: 0 32%;
   }
   .carousel-content{
-    padding-top: 100px;
+    padding-top: 6.25rem;
     sb-pizza-menu-card {
       margin: 0 1%;
     }
@@ -15,19 +15,19 @@
 
 ::ng-deep {
   .carousel-indicators {
-    bottom: -105px;
+    bottom: -6.5625rem;
     align-items: center;
 
     button {
       &.active {
-        width: 22px !important;
-        height: 22px !important;
+        width: 1.375rem !important;
+        height: 1.375rem !important;
         background-color: $secondary;
       }
-      margin: 0 30px !important;
+      margin: 0 1.875rem !important;
       background-color: $gray-2;
-      width: 14px !important;
-      height: 14px !important;
+      width: 0.875rem !important;
+      height: 0.875rem !important;
       border-radius: 100% !important;
     }
   }

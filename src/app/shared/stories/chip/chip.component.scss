@@ -2,14 +2,14 @@
 
 .badge {
   color: $white;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
-  padding: 8px 18px;
-  line-height: 21px;
+  padding: 0.5rem 1.125rem;
+  line-height: 1.3125rem;
   font-style: normal;
   text-align: center;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   letter-spacing: 0em;
   justify-content: center;
   font-family: 'Red Hat Display';
@@ -25,10 +25,10 @@
   .icon {
     color: $white;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 0.625rem;
     display: contents;
     &::before {
-      margin-left: 15px;
+      margin-left: 0.9375rem;
     }
   }
 }

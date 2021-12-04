@@ -10,8 +10,7 @@ const EXPRESS_AMOUNT = 5;
 
 @Component({
   selector: 'app-total-payment',
-  templateUrl: './total-payment.component.html',
-  styleUrls: ['./total-payment.component.scss']
+  templateUrl: './total-payment.component.html'
 })
 export class TotalPaymentComponent {
 

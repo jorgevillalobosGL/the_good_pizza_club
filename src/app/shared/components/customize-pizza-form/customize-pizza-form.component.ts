@@ -31,7 +31,7 @@ export class CustomizePizzaFormComponent implements OnInit{
   public customPizzaForm: FormGroup;
   public reset$ = new BehaviorSubject(false);
   public products$: Observable<ProductsCatalog>;
-  private tempExtra = { ...TempExtraDefault };
+  public tempExtra = { ...TempExtraDefault };
 
   public get sizeField(): FormControl {
     return this.customPizzaForm.get('size') as FormControl;

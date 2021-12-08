@@ -19,9 +19,6 @@ jobs:
       - run: npm run test -- --no-watch --no-progress
       - run: npm run cypress:cli
       - run: npm run build
-      - run:
-          name: "Run Jest and Collect Coverage Reports"
-          command: jest --collectCoverage=true
       - store_artifacts:
           path: coverage
 

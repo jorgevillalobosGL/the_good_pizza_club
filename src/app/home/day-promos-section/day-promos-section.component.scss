@@ -1,12 +1,12 @@
 #day-promos-section {
-  padding-top: 110px;
-  padding-bottom: 50px;
+  padding-top: 6.875rem;
+  padding-bottom: 3.125rem;
 
   .promo-1 {
-    padding-top: 100px;
+    padding-top: 6.25rem;
 
     img {
-      left: 225px;
+      left: 14.0625rem;
     }
 
     sb-promotion-card {
@@ -15,11 +15,11 @@
   }
 
   .promo-2 {
-    padding-top: 85px;
+    padding-top: 5.3125rem;
 
     sb-promotion-card {
       z-index: 1;
-      left: 220px;
+      left: 13.75rem;
       opacity: 0.9;
     }
   }

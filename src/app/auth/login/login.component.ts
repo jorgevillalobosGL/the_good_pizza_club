@@ -26,7 +26,9 @@ export class LoginComponent implements OnDestroy, OnInit {
   }
 
   public googleLogin() {
-    this.authService.googleSignIn().subscribe(
+    this.authService.googleSignIn().pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(
       ({ user }) => {
         this.handleLogin(user);
       }
@@ -34,7 +36,9 @@ export class LoginComponent implements OnDestroy, OnInit {
   }
 
   public facebookLogin() {
-    this.authService.facebookSignIn().subscribe(
+    this.authService.facebookSignIn().pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(
       ({ user }) => {
         this.handleLogin(user);
       }

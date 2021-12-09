@@ -3,20 +3,20 @@
   z-index: 100;
 
   .logo {
-    top: 42px;
-    left: 102px;
+    top: 2.625rem;
+    left: 6.375rem;
     position: absolute;
   }
 
   .menu-container {
-    top: 62px;
+    top: 3.875rem;
     width: 56%;
-    right: 132px;
+    right: 8.25rem;
     position: absolute;
   }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 61.9988rem) {
   .main-nav .logo {
     display: none;
   }

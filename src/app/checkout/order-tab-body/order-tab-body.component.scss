@@ -1,0 +1,27 @@
+@import '../../../assets/scss/colors';
+
+#order-tab-body {
+  .table {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+
+    tbody {
+      font-weight: bold;
+      font-size: 1.25rem;
+      line-height: 1.625rem;
+
+      th {
+        font-weight: normal;
+        font-size: 1rem;
+        line-height: 1.3125rem;
+      }
+
+      .qty-field span {
+        cursor: pointer;
+        padding: 0.25rem 0.625rem;
+        border-radius: 100%;
+        background-color: $gray-2;
+      }
+    }
+  }
+}

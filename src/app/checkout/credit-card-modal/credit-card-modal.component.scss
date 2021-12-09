@@ -1,0 +1,8 @@
+@import '../../../assets/scss/colors';
+
+::ng-deep {
+  .modal-content {
+    border-radius: 0.625rem 6.25rem 0.625rem 0.625rem;
+    background-color: $gray-1;
+  }
+}

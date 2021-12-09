@@ -1,0 +1,49 @@
+@import '../../../assets/scss/colors';
+
+#newsSubscription {
+  left: 28%;
+  top: 7.1875rem;
+  z-index: 1;
+  width: 39.5rem;
+  height: 11.875rem;
+  padding: 2.5rem;
+  position: relative;
+  border-radius: 0.625rem;
+  background-color: $yellow;
+  box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+
+  .txt {
+    color: $gray-1;
+    font-style: normal;
+    font-family: 'Rowdies';
+
+    &-1 {
+      font-size: 1rem;
+      line-height: 1.25rem;
+      font-weight: 300;
+    }
+
+    &-2 {
+      font-weight: normal;
+      font-size: 1.25rem;
+      line-height: 1.5625rem;
+    }
+  }
+
+  .input-group {
+    input, .btn {
+      border-radius: 3.125rem;
+    }
+    .btn {
+      width: 5.9375rem;
+      height: 2.375rem;
+      border-color: $green-1;
+      background-color: $green-1;
+    }
+    .input-group-append {
+      right: 0;
+      z-index: 3;
+      position: absolute;
+    }
+  }
+}

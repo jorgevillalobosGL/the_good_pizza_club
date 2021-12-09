@@ -18,6 +18,10 @@ export class HomeComponent {
     this.modalRef = this.modalService.show(template, { id: 1, class: 'modal-xl' });
   }
 
+  public onCloseModal() {
+    this.modalRef?.hide();
+  }
+
   constructor(
     private router: Router,
     private modalService: BsModalService

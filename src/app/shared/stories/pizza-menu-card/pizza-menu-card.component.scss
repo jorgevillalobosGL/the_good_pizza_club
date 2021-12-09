@@ -1,13 +1,13 @@
 @import '../../../../assets/scss/colors';
 
 .pizza-card {
-  width: 308px;
-  height: 449px;
-  padding-left: 30px;
-  padding-right: 15px;
-  border-radius: 10px 100px 10px 10px;
+  width: 19.25rem;
+  height: 28.0625rem;
+  padding-left: 1.875rem;
+  padding-right: 0.9375rem;
+  border-radius: 0.625rem 6.25rem 0.625rem 0.625rem;
   background-repeat: no-repeat, repeat;
-  box-shadow: 0px 4px 16px 12px rgba(0, 0, 0, 0.14);
+  box-shadow: 0rem 0.25rem 1rem 0.75rem rgba(0, 0, 0, 0.14);
 
   .content {
     position: relative;
@@ -15,20 +15,20 @@
     height: 50%;
 
     .calories {
-      margin-left: 36px;
+      margin-left: 2.25rem;
     }
 
     .description {
       color: $gray-1;
-      font-size: 16px;
-      line-height: 21px;
+      font-size: 1rem;
+      line-height: 1.3125rem;
       font-style: normal;
       font-weight: normal;
       font-family: 'Red Hat Display';
     }
 
     .pizza-card-footer {
-      bottom: 20px;
+      bottom: 1.25rem;
       position: absolute;
       width: -webkit-fill-available;
 
@@ -38,9 +38,9 @@
         .price-label {
           margin: 0;
           color: $gray-1;
-          font-size: 12px;
+          font-size: 0.75rem;
           font-weight: 300;
-          line-height: 15px;
+          line-height: 0.9375rem;
           text-align: center;
           font-style: normal;
           font-family: Rowdies;
@@ -48,9 +48,9 @@
 
         .price {
           color: $gray-1;
-          font-size: 24px;
+          font-size: 1.5rem;
           font-weight: bold;
-          line-height: 30px;
+          line-height: 1.875rem;
           font-style: normal;
           text-align: center;
           font-family: Rowdies;
@@ -58,7 +58,7 @@
       }
 
       .add-btn {
-        right: 20px;
+        right: 1.25rem;
         position: relative;
       }
     }

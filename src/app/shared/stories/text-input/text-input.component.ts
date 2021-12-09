@@ -7,10 +7,12 @@ import {
   ElementRef,
   Output,
   EventEmitter,
+  AfterViewInit
 } from '@angular/core';
 import {
   NG_VALUE_ACCESSOR,
-  ControlValueAccessor
+  ControlValueAccessor,
+  FormControl
 } from '@angular/forms';
 import { Observable, of, Subject } from 'rxjs';
 import { debounceTime, switchMap, tap } from 'rxjs/operators';
@@ -40,7 +42,7 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   encapsulation: ViewEncapsulation.None,
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
 })
-export default class TextInputComponent implements ControlValueAccessor {
+export default class TextInputComponent implements ControlValueAccessor, AfterViewInit {
 
   @Input() placeholder: string = '';
   @Input() disabled: boolean = false;
@@ -49,6 +51,19 @@ export default class TextInputComponent implements ControlValueAccessor {
   @Input() disableValidations = false;
   @Input() customErrorMessage: string | null;
   @Output() isValid = new EventEmitter<boolean>();
+
+  // ID attribute for the field and for attribute for the label
+  @Input() idd = '';
+
+  // The field name text . used to set placeholder also if no pH (placeholder) input is given
+  @Input() text = '';
+
+  // placeholder input
+  @Input() pH: string;
+
+  // current form control input. helpful in validating and accessing form control
+  @Input() c: FormControl = new FormControl();
+
   public _state = this.state;
   public keyStreem$: Subject<string> = new Subject();
   public inputErrors$: Observable<any> = new Observable();
@@ -130,6 +145,25 @@ export default class TextInputComponent implements ControlValueAccessor {
   }
 
   constructor() {}
+
+  ngAfterViewInit() {
+    // set placeholder default value when no input given to pH property
+    if (this.pH === undefined) {
+      this.pH = 'Enter ' + this.text;
+    }
+
+    // RESET the custom input form control UI when the form control is RESET
+    this.c.valueChanges.subscribe(
+      () => {
+        // check condition if the form control is RESET
+        if (this.c.value === '' || this.c.value === null || this.c.value === undefined) {
+          this.innerValue = '';
+          this.inputRef.nativeElement.value = '';
+        }
+      }
+    );
+    this.inputRef.nativeElement.value = this.c.value;
+  }
 
   // ControlValueAccessor
   private innerValue: any = '';

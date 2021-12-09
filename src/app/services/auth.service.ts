@@ -4,7 +4,6 @@ import { EMPTY, from, Observable } from 'rxjs';
 import firebase from 'firebase/compat/app';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ToastrService } from 'ngx-toastr';
-import { UserService } from './user.service';
 import { User } from '@app-shared/models/user.model';
 import { AuthState } from '../auth/store/auth.reducer';
 import { Store } from '@ngrx/store';
@@ -74,9 +73,12 @@ export class AuthService {
     );
   }
 
+  public getCurrentUser(): Observable<firebase.User | null> {
+    return from(this.firebaseAuth.currentUser);
+  }
+
   constructor(
     private authStore: Store<AuthState>,
-    private userService: UserService,
     private toastr: ToastrService,
     private firebaseAuth: AngularFireAuth
   ) { }

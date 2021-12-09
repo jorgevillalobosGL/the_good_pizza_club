@@ -1,0 +1,100 @@
+@import '../../../assets/scss/colors';
+
+#order-complete-section {
+  min-height: 125rem;
+
+  .cronograma-section {
+    position: relative;
+
+    .line {
+      z-index: 0;
+      width: 75%;
+      height: 0.3125rem;
+      bottom: 2.5rem;
+      position: absolute;
+      background-image: linear-gradient(to right, $yellow, $gray-2);
+    }
+
+    .cron-point {
+      z-index: 1;
+      width: 4.8125rem;
+      height: 4.8125rem;
+      display: block;
+      position: relative;
+      border-radius: 100%;
+      background-color: $gray-2;
+
+      &.active {
+        background-color: $yellow;
+
+        .icon {
+          color: $gray-1;
+        }
+      }
+
+      .icon {
+        color: $gray-3;
+        font-size: 1.875rem;
+        padding-top: 1.5625rem;
+        text-align: center;
+      }
+
+      label {
+        left: -2.1875rem;
+        width: 8.875rem;
+        bottom: -5rem;
+        color: $yellow;
+        font-size: 1.25rem;
+        line-height: 1.625rem;
+        position: absolute;
+        text-align: center;
+        font-style: normal;
+        font-weight: normal;
+        font-family: 'Red Hat Display';
+      }
+    }
+  }
+
+  .map-section {
+    padding-top: 9.375rem;
+
+    .mapouter {
+      width: 56.25rem;
+      height: 31.25rem;
+      margin: 0 auto;
+      text-align: right;
+      position: relative;
+      .delivery-card {
+        float: right;
+        height: 3.75rem;
+        width: 18.75rem;
+        padding: 0.9375rem;
+        position: relative;
+        img {
+          left: 0;
+          z-index: 1;
+          width: 6.25rem;
+          position: absolute;
+        }
+
+        &-content {
+          top: 1.5625rem;
+          right: 2.8125rem;
+          width: 12.5rem;
+          padding: 0.9375rem;
+          position: absolute;
+          border-radius: 0.625rem;
+          background-color: $gray-1;
+        }
+      }
+    }
+
+    .gmap_canvas {
+      border-radius: 1.25rem;
+      overflow: hidden;
+      background: none !important;
+      height: 31.25rem;
+      width: 56.25rem;
+    }
+  }
+}

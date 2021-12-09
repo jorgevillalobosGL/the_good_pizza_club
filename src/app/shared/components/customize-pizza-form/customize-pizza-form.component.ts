@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { fetchProductsCatalog } from '../../../store/app.actions';
+import { fetchProductsCatalog, saveShoppingCard } from '../../../store/app.actions';
 import { AppState, selectProductCatalog } from '../../../store/app.reducer';
-import { DropdownValue, Product, ProductsCatalog } from '@app-shared/models/general.model';
+import { DropdownValue, Product, ProductsCatalog, ShoppingCardItem } from '@app-shared/models/general.model';
+import { ToastrService } from 'ngx-toastr';
 
 enum ExtraType {
   drink= 'drink',
@@ -14,7 +15,7 @@ enum ExtraType {
 }
 
 const TempExtraDefault = {
-  drink: { item: null, quantity: 0 },
+  drink:  { item: null, quantity: 0 },
   salad: { item: null, quantity: 0 },
   appetizer: { item: null, quantity: 0 },
   dessert: { item: null, quantity: 0 },
@@ -25,10 +26,12 @@ const TempExtraDefault = {
   styleUrls: ['./customize-pizza-form.component.scss']
 })
 export class CustomizePizzaFormComponent implements OnInit{
-  public reset$ = new BehaviorSubject(false);
+  @Output() closeModal = new EventEmitter<boolean>();
+  @Output() addToCard = new EventEmitter<ShoppingCardItem[]>();
   public customPizzaForm: FormGroup;
-  private tempExtra = { ...TempExtraDefault };
+  public reset$ = new BehaviorSubject(false);
   public products$: Observable<ProductsCatalog>;
+  public tempExtra = { ...TempExtraDefault };
 
   public get sizeField(): FormControl {
     return this.customPizzaForm.get('size') as FormControl;
@@ -83,7 +86,9 @@ export class CustomizePizzaFormComponent implements OnInit{
   }
 
   public onSelectProduct(category: string, product: Product) {
-    this.customPizzaForm.get(category)?.setValue(product);
+    const cardProduct = {item: product, quantity: 1};
+    this.customPizzaForm.get(category)?.setValue(cardProduct);
+    this.toastr.info('item Added');
   }
 
   public onExtraSelected(extra: string, item: any) {
@@ -96,13 +101,36 @@ export class CustomizePizzaFormComponent implements OnInit{
 
   public onAddExtra(extra: string) {
     const extraTobeAdded = this.tempExtra[<ExtraType>extra];
-    this.customPizzaForm.get(extra)?.setValue(extraTobeAdded);
+    if (extraTobeAdded.item && extraTobeAdded.quantity) {
+      this.customPizzaForm.get(extra)?.setValue(extraTobeAdded);
+      this.toastr.info('item Added');
+    } else {
+      this.toastr.error('Please select an item and quantity');
+    }
   }
 
   public onRestart() {
     this.reset$.next(true);
     this.customPizzaForm.reset();
     this.tempExtra = { ...TempExtraDefault };
+  }
+
+  public onAddToCard() {
+    const shoppingCard: ShoppingCardItem[] = [];
+    const selectedProducts = this.customPizzaForm.getRawValue();
+    Object.keys(selectedProducts).forEach(key => {
+      if (selectedProducts[key]) {
+        shoppingCard.push(selectedProducts[key]);
+      }
+    });
+    if (!shoppingCard.length) {
+      this.toastr.error('Please select at least one item');
+      return;
+    }
+    this.appStore.dispatch(saveShoppingCard({
+      payload: shoppingCard
+    }));
+    this.closeModal.emit(true);
   }
 
   private initForm(): void {
@@ -132,6 +160,7 @@ export class CustomizePizzaFormComponent implements OnInit{
 
   constructor(
     private formBuilder: FormBuilder,
-    private appStore: Store<AppState>
+    private appStore: Store<AppState>,
+    private toastr: ToastrService,
   ) { }
 }

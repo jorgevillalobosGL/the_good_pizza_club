@@ -26,6 +26,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 
 // Components
 import { FooterComponent } from './components/footer/footer.component';
+import { NewsSubscribeComponent } from './components/news-subscribe/news-subscribe.component';
 import { LayoutComponent } from './layout/layout.component';
 
 // Share
@@ -36,7 +37,8 @@ import { EffectsModule } from '@ngrx/effects';
   declarations: [
     AppComponent,
     LayoutComponent,
-    FooterComponent
+    FooterComponent,
+    NewsSubscribeComponent
   ],
   imports: [
     SharedModule,
@@ -44,7 +46,7 @@ import { EffectsModule } from '@ngrx/effects';
     AppRoutingModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    StoreModule.forRoot({ app: reducer }),
+    StoreModule.forRoot({ 'app': reducer }),
     EffectsModule.forRoot([AppEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

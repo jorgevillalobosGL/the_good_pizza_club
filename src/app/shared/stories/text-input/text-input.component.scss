@@ -4,35 +4,35 @@
   position: relative;
   .icon {
     position: absolute;
-    font-size: 30px;
-    left: 30px;
-    top: 20px;
+    font-size: 1.875rem;
+    left: 1.875rem;
+    top: 1.25rem;
     color: $gray-4;
-    min-width:39px;
+    min-width: 2.4375rem;
     display: -webkit-inline-box;
     -webkit-box-pack: center;
   }
   .input-field {
     width: 100%;
-    padding: 22px 25px;
+    padding: 1.375rem 1.5625rem;
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
     color: $gray-1;
     background-color: $gray-6;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     &.type-password, &.type-email {
-      padding-left: 84.5px;
+      padding-left: 5.2813rem;
     }
 
     &.state{
       &-danger {
-        border: 2px solid $red;
+        border: 0.125rem solid $red;
       }
       &-success {
-        border: 2px solid $green-2;
+        border: 0.125rem solid $green-2;
       }
     }
   }

@@ -6,9 +6,9 @@ import { distinctUntilChanged, filter, map, pluck } from 'rxjs/operators';
 import { MenuItem } from '@app-shared/models/general.model';
 import { AuthService } from '@app-services/auth.service';
 
-import { AuthState } from '@app-auth/store/auth.reducer';
 import { Store } from '@ngrx/store';
-import * as AuthActions from '@app-auth/store/auth.actions';
+import * as AppActions from '../store/app.actions';
+import { AppState } from '../store/app.reducer';
 
 @Component({
   selector: 'app-layout',
@@ -52,7 +52,7 @@ public activePathUrl$: Observable<any>;
       },
       {
         name: '',
-        url: '/shopping',
+        url: '/checkout',
         icon: 'icon-shopping',
       },
     ];
@@ -67,23 +67,30 @@ public activePathUrl$: Observable<any>;
     this.authService.initUserStateListener().subscribe(
       user => {
         if (!!user) {
-          this.authStore.dispatch(
-            AuthActions.authorizeUser({
-              payload: {
-                uid: user.uid,
-                name: user?.displayName || '',
-                email: user?.email || '',
-              }
-            })
-          );
+          this.activeUser(user);
         }
       }
+    );
+  }
+
+  private activeUser(user: firebase.default.User): void {
+    this.appStore.dispatch(
+      AppActions.loadUser({
+        payload: {
+          uid: user.uid,
+          name: user?.displayName || '',
+          email: user?.email || '',
+        }
+      })
+    );
+    this.appStore.dispatch(
+      AppActions.fetchShoppingCard()
     );
   }
 
   constructor(
     private router: Router,
     private authService: AuthService,
-    private authStore: Store<AuthState>
+    private appStore: Store<AppState>
   ) { }
 }

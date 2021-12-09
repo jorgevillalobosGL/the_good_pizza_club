@@ -1,0 +1,26 @@
+<div id="address-modal" class="txt-white container pt-5">
+  <form [formGroup]="addressForm">
+    <div class="py-4">
+      <label>Name</label>
+      <sb-text-input formControlName="name" [c]="name"></sb-text-input>
+    </div>
+    <div class="pt-4">
+      <label>Address</label>
+      <sb-text-input formControlName="address" [c]="address"></sb-text-input>
+    </div>
+    <div class="pt-4">
+      <label>Phone</label>
+      <sb-text-input formControlName="phone" [c]="phone"></sb-text-input>
+    </div>
+    <div class="form-check pt-4">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="isDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        Mark as default
+      </label>
+    </div>
+    <div class="py-4 d-flex flex-row justify-content-center">
+      <sb-button class="px-3" label="Save" (click)="onSaveAddress()"></sb-button>
+      <sb-button class="px-3" label="Cancel" (click)="onClose.emit($event)"></sb-button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,28 @@
+<div id="address-tab-body" class="py-5">
+  <div class="header-content pt-2">
+    <h3 class="txt-white">Your addresses</h3>
+    <div class="d-flex flex-row txt-white" *ngIf="user$ | async as user">
+      <label class="pr-2">{{user.name}}</label><span>not you? <a class="txt-yellow cursor-pointer">click here</a></span>
+    </div>
+  </div>
+  <div class="d-flex flex-wrap pt-5">
+    <sb-address-credit-card
+      *ngFor="let address of addresses$ | async; let i = index"
+      class="pr-3 pb-3"
+      (click)="openModal(addressModal, address, i)"
+      [title]="address.name || ''"
+      [content1]="address.address || ''"
+      [content2]="address.phone || ''"
+      [isDefault]="address.isDefault"
+      [state]="address.state"
+      [type]="address.type"
+      ></sb-address-credit-card>
+      <sb-address-credit-card (click)="openModal(addressModal)"></sb-address-credit-card>
+  </div>
+</div>
+<ng-template #addressModal>
+  <app-address-modal
+  (onClose)="onCloseModal()" 
+  [data]="data"
+  [index] = "dataIndex"></app-address-modal>
+</ng-template>

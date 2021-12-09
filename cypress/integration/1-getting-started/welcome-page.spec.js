@@ -17,4 +17,8 @@ describe('Welcome Page', () => {
     cy.get('.welcome-section .btn-login').should('be.visible');
     cy.get('.welcome-section .btn-sign-in').should('be.visible');
   })
+
+  it('should not display News Letter Section in Welcome page', () => {
+    cy.get('#newsSubscription').should('not.exist');
+  });
 })

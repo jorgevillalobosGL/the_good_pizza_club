@@ -1,17 +1,20 @@
 import { createReducer, Action, createFeatureSelector, on, createSelector } from '@ngrx/store';
-import { PizzaMenuCardContent, Product, ProductsCatalog } from '@app-shared/models/general.model';
+import { PizzaMenuCardContent, ProductsCatalog, ShoppingCardItem } from '@app-shared/models/general.model';
 import * as AppActions from './app.actions';
+import { User } from '../shared/general.model';
 
 export interface AppState {
   pizzas: PizzaMenuCardContent[];
   productsCatalog: ProductsCatalog;
-  shoppingCart: Product[];
+  shoppingCart: ShoppingCardItem[];
+  user: User | null;
 };
 
 const initialState: AppState = {
   pizzas: [],
   productsCatalog: {},
-  shoppingCart: []
+  shoppingCart: [],
+  user: null
 };
 
 const appReducer = createReducer(
@@ -28,10 +31,22 @@ const appReducer = createReducer(
     ...state,
     shoppingCart: payload
   })),
+  on(AppActions.saveShoppingCardSuccess, (state, {payload}) => ({
+    ...state,
+    shoppingCart: payload
+  })),
   on(AppActions.clearShoppingCard, (state) => ({
     ...state,
     shoppingCart: []
-  }))
+  })),
+  on(AppActions.loadUser, (state, {payload}) => ({
+    ...state,
+    user: payload
+  })),
+  on(AppActions.setShoppingCard, (state, {payload}) => ({
+    ...state,
+    shoppingCart: payload
+  })),
 );
 
 export  function  reducer(state: AppState | undefined, action: Action) {
@@ -51,4 +66,8 @@ export const selectProductCatalog = createSelector(
 export const selectShoppingCard = createSelector(
   selectAppState,
   (state: AppState) => state.shoppingCart
+);
+export const selectUser = createSelector(
+  selectAppState,
+  (state: AppState) => state.user
 );

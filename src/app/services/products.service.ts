@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
-import { PizzaMenuCardContent } from '@app-shared/models/general.model';
+import { PizzaMenuCardContent, ProductsCatalog } from '@app-shared/models/general.model';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { map, switchMap } from 'rxjs/operators';
 
@@ -26,11 +26,11 @@ export class ProductsService {
     );
   }
 
-  public getProductsCatalog(): Observable<any> { // TODO TYPE THIS
+  public getProductsCatalog(): Observable<ProductsCatalog> {
     const products = PRODUCTS.map((product) => this.firestore.collection('catalog').doc('product').collection(product).valueChanges());
     return combineLatest(products).pipe(
       map(([sizes, sauce, cheese, toppings, drinks, salads, appetizers, desserts]) => {
-        return { sizes, sauce, cheese, toppings, drinks, salads, appetizers, desserts };
+        return { sizes, sauce, cheese, toppings, drinks, salads, appetizers, desserts } as ProductsCatalog;
       }),
     );
   }

@@ -19,6 +19,8 @@ jobs:
       - run: npm run test -- --no-watch --no-progress
       - run: npm run cypress:cli
       - run: npm run build
+      - store_artifacts:
+          path: coverage
 
 workflows:
     build-and-test:

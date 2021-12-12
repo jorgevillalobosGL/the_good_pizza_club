@@ -32,13 +32,15 @@ import { LayoutComponent } from './layout/layout.component';
 // Share
 import { SharedModule } from '@app-shared/shared.module';
 import { EffectsModule } from '@ngrx/effects';
+import { ErrorPageComponent } from './errorPage/errorPage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     FooterComponent,
-    NewsSubscribeComponent
+    ErrorPageComponent,
+    NewsSubscribeComponent,
   ],
   imports: [
     SharedModule,

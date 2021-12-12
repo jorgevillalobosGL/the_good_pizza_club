@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { AuthService } from '../../services/auth.service';
 import { AppState, selectShoppingCard, selectUser } from '../../store/app.reducer';
 import { selectAddresses, selectCreditCards } from '../store/checkout.reducer';
 
@@ -36,7 +37,13 @@ export class CheckoutTabBodyComponent {
     this.router.navigate(['/checkout/order-complete']);
   }
 
+  public logOut() {
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
+
   constructor(
+    private authService: AuthService,
     private router: Router,
     private appStore: Store<AppState>,
   ) { }

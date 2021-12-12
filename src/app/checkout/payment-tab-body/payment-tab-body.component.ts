@@ -9,6 +9,8 @@ import { CreditCardData } from '@app-shared/models/general.model';
 import { AppState, selectUser } from '../../store/app.reducer';
 import { CheckoutState, selectCreditCards } from '../store/checkout.reducer';
 import { CardStates, CardTypes } from '@app-shared/stories/address-credit-card/address-credit-card.component';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment-tab-body',
@@ -57,11 +59,18 @@ export class PaymentTabBodyComponent implements OnInit {
     );
   }
 
+  public logOut() {
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
+
   ngOnInit() {
     this.getCreditCards();
   }
 
   constructor(
+    private router: Router,
+    private authService: AuthService,
     private appStore: Store<AppState>,
     private checkoutStore: Store<CheckoutState>,
     private modalService: BsModalService

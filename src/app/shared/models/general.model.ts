@@ -13,22 +13,23 @@ export interface MenuItem {
 }
 
 export interface PizzaMenuCardContent {
-  bgColorGradientFrom: string,
-  bgColorGradientTo: string,
+  id?: number;
+  price: number,
   title: string,
   numOfGrams: number,
-  numOfCalories: number,
   description: string,
-  price: number,
-  cardBackgroundUrl: string
+  numOfCalories: number,
+  bgColorGradientTo: string,
+  cardBackgroundUrl: string,
+  bgColorGradientFrom: string,
 }
 
 export interface Product {
-  id: number;
+  id?: number;
   name: string;
   price: number;
-  description: string;
-  stock: number;
+  description?: string;
+  stock?: number;
 }
 export interface ProductsCatalog {
   sizes?: Product[];
@@ -68,4 +69,15 @@ export interface CreditCard {
 export interface CreditCardData extends CreditCard{
   type: CardTypes,
   state: CardStates,
+}
+
+export interface Promo {
+  id?: number,
+  price: number
+  bgColor: string,
+  mainTitle: string,
+  secondTitle: string,
+  promoNumber: number,
+  description?: string,
+  showDecorators?: boolean,
 }

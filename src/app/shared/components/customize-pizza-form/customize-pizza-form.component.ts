@@ -67,7 +67,7 @@ export class CustomizePizzaFormComponent implements OnInit{
 
   public getDdValues(productList: Product[]): DropdownValue[] {
     return productList.map(product => ({
-      value: product.id,
+      value: product.id || 0,
       text: product.name,
       disabled: false
     }));

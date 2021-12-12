@@ -21,7 +21,7 @@
           </td>
           <td class="p-0">
             <p class="m-0">{{product?.item?.name}}</p>
-            <caption class="txt-yellow p-0">Customize</caption>
+            <caption *ngIf="!(product?.item?.name?.startsWith('Pizza') || product?.item?.name?.startsWith('Promo'))" class="txt-yellow p-0">Customize</caption>
           </td>
           <td class="p-0">{{(product?.item?.price || 0) * (product?.quantity || 0) | currency}}</td>
         </tr>

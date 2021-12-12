@@ -5,6 +5,7 @@
       <slide class="slide-{{i}}" *ngFor="let pizzaOptionSlides of pizzaCarouselList$ | async; let i = index">
         <div class="d-flex justify-content-center">
           <sb-pizza-menu-card *ngFor="let pizzaOption of pizzaOptionSlides"
+            (onClick)="onPizzaOptionClick(pizzaOption)"
             [bgColorGradientFrom]= "pizzaOption.bgColorGradientFrom"
             [bgColorGradientTo]= "pizzaOption.bgColorGradientTo"
             [title]= "pizzaOption.title"

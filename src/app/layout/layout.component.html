@@ -1,7 +1,7 @@
 <div class="main-nav position-relative">
   <a href="/home"><img class="logo" src="assets/images/Logo.svg" width="121px" height="121px"></a>
   <div class="menu-container">
-    <sb-header [menuItems]="menuItems" [linkActive]="activePathUrl$ | async"></sb-header>
+    <sb-header [menuItems]="menuItems" [linkActive]="activePathUrl$ | async" [count]="(shoppingCartItemsCount$ | async) || 0"></sb-header>
   </div>
 </div>
 <router-outlet></router-outlet>

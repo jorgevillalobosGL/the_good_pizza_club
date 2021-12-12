@@ -3,6 +3,7 @@
     <a *ngFor="let menuItem of menuItems" class="nav-link cursor-pointer" [ngClass]="{'active': linkActive === menuItem?.url}"
       (click)="redirectTo(menuItem.url)">
       {{ menuItem.name }} <span *ngIf="menuItem.icon" class="icon" [ngClass]="menuItem.icon"></span>
+      <span *ngIf="menuItem.showcount && count > 0" class="counter">{{count}}</span>
     </a>
   </nav>
   <div class="fixed-top mobile-menu">

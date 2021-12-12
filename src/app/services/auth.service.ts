@@ -53,6 +53,10 @@ export class AuthService {
     );
   }
 
+  public logout(): Observable<void> {
+    return from(this.firebaseAuth.signOut());
+  }
+
   public googleSignIn(): Observable<firebase.auth.UserCredential> {
     const provider = new firebase.auth.GoogleAuthProvider();
     return from(this.firebaseAuth.signInWithPopup(provider)).pipe(

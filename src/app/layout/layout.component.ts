@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
-import { distinctUntilChanged, filter, map, pluck } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, pluck, switchMap } from 'rxjs/operators';
 
 import { MenuItem } from '@app-shared/models/general.model';
 import { AuthService } from '@app-services/auth.service';
 
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import * as AppActions from '../store/app.actions';
-import { AppState } from '../store/app.reducer';
+import { AppState, selectShoppingCard } from '../store/app.reducer';
 
 @Component({
   selector: 'app-layout',
@@ -27,6 +27,13 @@ public activePathUrl$: Observable<any>;
       map<string, string>(url => `/${url?.split('/')[1]}`),
     );
   }
+
+  public shoppingCartItemsCount$: Observable<number> = this.appStore.pipe(
+    select(selectShoppingCard),
+    switchMap(shoppingCard => {
+      return of(shoppingCard?.length || 0);
+    })
+  );
 
   public setMenuItems() {
     this.menuItems = [
@@ -54,6 +61,7 @@ public activePathUrl$: Observable<any>;
         name: '',
         url: '/checkout',
         icon: 'icon-shopping',
+        showcount: true,
       },
     ];
   }

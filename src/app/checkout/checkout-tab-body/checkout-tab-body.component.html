@@ -2,7 +2,7 @@
   <div class="header-content pt-2">
     <h3 class="txt-white">Order Summary</h3>
     <div class="d-flex flex-row txt-white" *ngIf="user$ | async as user">
-      <label class="pr-2">{{user.name}}</label><span>not you? <a class="txt-yellow cursor-pointer">click here</a></span>
+      <label class="pr-2">{{user.name}}</label><span (click)="logOut()">not you? <a class="txt-yellow cursor-pointer">click here</a></span>
     </div>
   </div>
   <div class="table-responsive table-borderless">
@@ -21,7 +21,7 @@
           </td>
           <td class="p-0">
             <p class="m-0">{{product?.item?.name}}</p>
-            <caption class="txt-yellow p-0">Customize</caption>
+            <caption *ngIf="!(product?.item?.name?.startsWith('Pizza') || product?.item?.name?.startsWith('Promo'))" class="txt-yellow p-0">Customize</caption>
           </td>
           <td class="p-0">{{(product?.item?.price || 0) * (product?.quantity || 0) | currency}}</td>
         </tr>

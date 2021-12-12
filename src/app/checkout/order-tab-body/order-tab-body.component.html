@@ -15,7 +15,9 @@
             {{product.quantity}}
             <span class="ml-3" (click)="onQuantity(product, 1)">+</span>
           </td>
-          <td><p class="m-0">{{product?.item?.name}}</p><caption class="txt-yellow p-0">Customize</caption></td>
+          <td><p class="m-0">{{product?.item?.name}}</p>
+            <caption *ngIf="!(product?.item?.name?.startsWith('Pizza') || product?.item?.name?.startsWith('Promo'))" class="txt-yellow p-0">Customize</caption>
+          </td>
           <td>{{(product?.item?.price || 0) * (product?.quantity || 0) | currency}}</td>
         </tr>
       </tbody>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ErrorPageComponent } from './errorPage/errorPage.component';
 import { AuthGuard } from './guards/auth.guard';
 import { LayoutComponent } from './layout/layout.component';
 
@@ -34,7 +35,7 @@ const routes: Routes = [
       },
     ]
   },
-  { path: '**', redirectTo: 'auth' },
+  { path: '**', component: ErrorPageComponent },
 ];
 
 @NgModule({

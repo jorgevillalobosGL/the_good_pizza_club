@@ -10,6 +10,7 @@ import { MenuItem } from '@app-shared/models/general.model';
 export default class HeaderComponent {
   @Input() menuItems: MenuItem[];
   @Input() linkActive: string;
+  @Input() count: number = 0;
 
   redirectTo(link: string) {
     this.router.navigate([link]);

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
-import { map, mergeMap, switchMap, take, withLatestFrom } from 'rxjs/operators';
+import { map, mergeMap, switchMap, take, tap, withLatestFrom } from 'rxjs/operators';
 
 import { AppState, selectShoppingCard, selectUser } from '../store/app.reducer';
 import { ProductsService } from '../services/products.service';
@@ -18,6 +18,7 @@ import {
   setShoppingCard,
 } from './app.actions';
 import { of } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class AppEffects {
@@ -52,7 +53,10 @@ export class AppEffects {
         return this.userService.saveShoppingCard(user?.uid as string, shoppingCard).pipe(
           map(() => saveShoppingCardSuccess({ payload: shoppingCard }))
         );
-      })
+      }),
+      tap(() => {
+        this.toastr.success('Added to Shopping card');
+      }),
     )
   )
 
@@ -80,6 +84,7 @@ export class AppEffects {
 
   constructor(
     private actions$: Actions,
+    private toastr: ToastrService,
     private userService: UserService,
     private appStore: Store<AppState>,
     private productsService: ProductsService,

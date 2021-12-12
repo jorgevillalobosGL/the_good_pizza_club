@@ -37,7 +37,7 @@ export class OrderTabBodyComponent implements OnInit, OnDestroy {
   private subscribeUpdatedShoppintCard(): void {
     this.updatedShoppintCard$.pipe(
       filter(shoppingCard => !!shoppingCard && shoppingCard.length > 0),
-    ).subscribe(shoppingCard => this.appStore.dispatch(setShoppingCard({ payload: shoppingCard })));
+    ).subscribe(shoppingCard => this.appStore.dispatch(setShoppingCard({ payload: shoppingCard as ShoppingCardItem[] })));
   }
 
   public ngOnInit(): void {

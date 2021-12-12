@@ -7,7 +7,8 @@ import { AppEffects } from '../../store/app.effects';
 import { ProductsService } from '../../services/products.service';
 import { of } from 'rxjs';
 import { UserService } from '../../services/user.service';
-import { CommonModule } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
+
 
 describe('Address / Credit Card Story', () => {
   let mockProductsService = {
@@ -16,6 +17,9 @@ describe('Address / Credit Card Story', () => {
     getProductsCatalog: () => { },
   };
   beforeEach(async () => {
+    const mockToastrService = {
+      info: () => { },
+    };
     await TestBed.configureTestingModule({
       imports: [
         StoreModule.forRoot({ app: reducer }),
@@ -24,7 +28,8 @@ describe('Address / Credit Card Story', () => {
       declarations: [PizzaCarouselSectionComponent],
       providers: [
         { provide: ProductsService, useValue: mockProductsService },
-        { provide: UserService, useValue: {} }
+        { provide: UserService, useValue: {} },
+        { provide: ToastrService, useValue: mockToastrService}
       ]
 
     }).compileComponents();

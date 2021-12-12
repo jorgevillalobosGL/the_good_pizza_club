@@ -16,6 +16,15 @@
     &.nav-link.active, &.nav-link:hover {
       color: $yellow;
     }
+    .counter {
+      top: -15px;
+      color: $yellow;
+      font-size: 12px;
+      padding: 0px 12px;
+      position: absolute;
+      border-radius: 100%;
+      background-color: $gray-1;
+    }
   }
 
   .nav-link,

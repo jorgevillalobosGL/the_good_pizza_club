@@ -8,6 +8,8 @@ import { CheckoutState, selectAddresses } from '../store/checkout.reducer';
 import { map } from 'rxjs/operators';
 import { CardStates, CardTypes } from '@app-shared/stories/address-credit-card/address-credit-card.component';
 import { loadAddresses } from '../store/checkout.actions';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-address-tab-body',
@@ -30,6 +32,11 @@ export class AddressTabBodyComponent implements OnInit {
 
   public onCloseModal() {
     this.modalRef?.hide();
+  }
+
+  public logOut() {
+    this.authService.logout();
+    this.router.navigate(['/']);
   }
 
   private getAddresses(): void {
@@ -55,6 +62,8 @@ export class AddressTabBodyComponent implements OnInit {
   }
 
   constructor(
+    private router: Router,
+    private authService: AuthService,
     private appStore: Store<AppState>,
     private checkoutStore: Store<CheckoutState>,
     private modalService: BsModalService

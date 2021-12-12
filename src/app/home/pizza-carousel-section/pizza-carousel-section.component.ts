@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, from } from 'rxjs';
 import { bufferCount, switchMap, toArray } from 'rxjs/operators';
-import { PizzaMenuCardContent } from '@app-shared/models/general.model';
+import { PizzaMenuCardContent, Product, ShoppingCardItem } from '@app-shared/models/general.model';
 import { select, Store } from '@ngrx/store';
 
 import { AppState, selectPizzas } from '../../store/app.reducer';
-import { fetchPizzas } from '../../store/app.actions';
+import { fetchPizzas, saveShoppingCard } from '../../store/app.actions';
 
 @Component({
   selector: 'app-pizza-carousel-section',
@@ -14,6 +14,23 @@ import { fetchPizzas } from '../../store/app.actions';
 })
 export class PizzaCarouselSectionComponent implements OnInit {
   public pizzaCarouselList$: Observable<PizzaMenuCardContent[][]>;
+
+  public onPizzaOptionClick(pizzaOption: PizzaMenuCardContent) {
+    const shoppingCard: ShoppingCardItem[] = [];
+    const product: Product = {
+      id: pizzaOption.id,
+      name: `Pizza: ${pizzaOption.title}`,
+      price: pizzaOption.price,
+    };
+    const shoppingCardItem: ShoppingCardItem = {
+      item: product,
+      quantity: 1
+    };
+    shoppingCard.push(shoppingCardItem);
+    this.appStore.dispatch(saveShoppingCard({
+      payload: shoppingCard
+    }));
+  }
 
   private subscribeCarouselOptions() {
     this.pizzaCarouselList$ = this.appStore.pipe(

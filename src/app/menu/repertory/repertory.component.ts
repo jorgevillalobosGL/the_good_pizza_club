@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { PizzaMenuCardContent } from '@app-shared/models/general.model';
-import { fetchPizzas } from '../../store/app.actions';
+import { PizzaMenuCardContent, Product, ShoppingCardItem } from '@app-shared/models/general.model';
+import { fetchPizzas, saveShoppingCard } from '../../store/app.actions';
 import { AppState, selectPizzas } from '../../store/app.reducer';
 
 @Component({
@@ -13,6 +13,23 @@ import { AppState, selectPizzas } from '../../store/app.reducer';
 export class RepertoryComponent implements OnInit{
 
   public pizzasList$: Observable<PizzaMenuCardContent[]>;
+
+  public onPizzaClick(pizza: PizzaMenuCardContent): void {
+    const shoppingCard: ShoppingCardItem[] = [];
+    const product: Product = {
+      id: pizza.id,
+      name: `Pizza: ${pizza.title}`,
+      price: pizza.price,
+    };
+    const shoppingCardItem: ShoppingCardItem = {
+      item: product,
+      quantity: 1
+    };
+    shoppingCard.push(shoppingCardItem);
+    this.appStore.dispatch(saveShoppingCard({
+      payload: shoppingCard
+    }));
+  }
 
   private pizzasListSubscription() {
     this.pizzasList$ = this.appStore.pipe(
